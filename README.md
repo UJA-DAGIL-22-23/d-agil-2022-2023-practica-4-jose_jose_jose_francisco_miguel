@@ -1,2 +1,12 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/hCaQWL7N)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10981266&assignment_repo_type=AssignmentRepo)
+### Francisco javier Martinez Lomas
+<img src='/Fotos_de_perfil/foto_de_francisco.jpg' width='200px'>
+
+* **Correo**: fjml0023@ujaen.es
+* **Usuario de GitHub**: Fjml0023
+* **URL de GitHub**: https://github.com/Fjml0023
+* **Trello**: https://trello.com/b/kEY8Ub8H/practica3-da
+
+Mi deporte es: Natación Sincronizada
+
+### Trello
+https://trello.com/b/b3EMiSkn/practica4-da
