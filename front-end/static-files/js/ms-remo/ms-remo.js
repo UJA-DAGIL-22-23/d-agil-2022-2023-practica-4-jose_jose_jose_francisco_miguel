@@ -9,10 +9,10 @@
 
 
 /// Creo el espacio de nombres
-let Plantilla = {};
+let Remo = {};
 
 // Plantilla de datosDescargados vacíos
-Plantilla.datosDescargadosNulos = {
+Remo.datosDescargadosNulos = {
     mensaje: "Datos Descargados No válidos",
     autor: "",
     email: "",
@@ -24,7 +24,7 @@ Plantilla.datosDescargadosNulos = {
  * @param {string} ruta Ruta a descargar
  * @param {función} callBackFn Función a la que se llamará una vez recibidos los datos.
  */
-Plantilla.descargarRuta = async function (ruta, callBackFn) {
+Remo.descargarRuta = async function (ruta, callBackFn) {
     let response = null
 
     // Intento conectar con el microservicio Plantilla
@@ -50,7 +50,7 @@ Plantilla.descargarRuta = async function (ruta, callBackFn) {
 /**
  * Función principal para mostrar los datos enviados por la ruta "home" de MS Plantilla
  */
-Plantilla.mostrarHome = function (datosDescargados) {
+Remo.mostrarHome = function (datosDescargados) {
     // Si no se ha proporcionado valor para datosDescargados
     datosDescargados = datosDescargados || this.datosDescargadosNulos
 
@@ -66,7 +66,7 @@ Plantilla.mostrarHome = function (datosDescargados) {
 /**
  * Función principal para mostrar los datos enviados por la ruta "acerca de" de MS Plantilla
  */
-Plantilla.mostrarAcercaDe = function (datosDescargados) {
+Remo.mostrarAcercaDe = function (datosDescargados) {
     // Si no se ha proporcionado valor para datosDescargados
     datosDescargados = datosDescargados || this.datosDescargadosNulos
 
@@ -97,14 +97,14 @@ Plantilla.mostrarAcercaDe = function (datosDescargados) {
 /**
  * Función principal para responder al evento de elegir la opción "Home"
  */
-Plantilla.procesarHome = function () {
+Remo.procesarHome = function () {
     this.descargarRuta("/plantilla/", this.mostrarHome);
 }
 
 /**
  * Función principal para responder al evento de elegir la opción "Acerca de"
  */
-Plantilla.procesarAcercaDe = function () {
+Remo.procesarAcercaDe = function () {
     this.descargarRuta("/plantilla/acercade", this.mostrarAcercaDe);
 }
 
