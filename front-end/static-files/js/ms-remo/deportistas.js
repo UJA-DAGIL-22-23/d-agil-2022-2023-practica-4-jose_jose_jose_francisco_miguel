@@ -17,6 +17,17 @@ Deportistas.form = {
 
 Deportistas.formularioDeportista = {}
 
+Deportistas.ponerBotones = function(){
+    let msj = Deportistas.botones;
+    Frontend.Article.actualizar("Aplicación remo", msj)
+}
+
+Deportistas.botones=`<div>
+<a href="javascript:Deportistas.listarNombres()" class="opcion-principal mostrar"
+           title="Realiza un listado de los nombres de todos los deportistas que hay en la BBDD">Listar nombres Deportistas</a>
+        <a href="javascript:Deportistas.crear()" class="opcion-principal mostrar"
+           title="Realiza un formulario para crear un nuevo deportista">Crear nuevo deportista</a>
+</div>`
 
 // Cabecera del formulario
 Deportistas.formularioDeportista.formulario = `
@@ -103,7 +114,6 @@ Deportistas.tablaDeportistasDatos = {}
 Deportistas.tablaDeportistasNombres = {}
 Deportistas.tablaUnDeportista = {}
 Deportistas.plantillaModifica = {}
-
 
 // Cabecera de la tabla
 Deportistas.tablaDeportistasDatos.cabecera = `
