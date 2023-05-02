@@ -15,6 +15,14 @@ const ROUTES = [
             pathRewrite: {
                 [`^/waterpolo`]: '',
             },
+        },
+        url: '/remo',
+        proxy: {
+            target: "http://localhost:8003",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/remo`]: '',
+            },
         }
     }
 ]
