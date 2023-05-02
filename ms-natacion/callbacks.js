@@ -1,6 +1,6 @@
 /**
  * @file callbacks.js
- * @description Callbacks para el MS Plantilla.
+ * @description Callbacks para el MS Natacion.
  * Los callbacks son las funciones que se llaman cada vez que se recibe una petición a través de la API.
  * Las peticiones se reciben en las rutas definidas en routes.js, pero se procesan aquí.
  * @author Víctor M. Rivas <vrivas@ujaen.es>
@@ -195,7 +195,7 @@ const CB_OTHERS = {
      */
     home: async (req, res) => {
         try {
-            CORS(res).status(200).json({ mensaje: "Microservicio MS Plantilla: home" });
+            CORS(res).status(200).json({ mensaje: "Microservicio MS Natacion: home" });
         } catch (error) {
             CORS(res).status(500).json({ error: error.description })
         }
@@ -209,7 +209,7 @@ const CB_OTHERS = {
     acercaDe: async (req, res) => {
         try {
             CORS(res).status(200).json({
-                mensaje: "Microservicio MS Plantilla: acerca de",
+                mensaje: "Microservicio MS Natacion: acerca de",
                 autor: "Francisco Javier Martinez Lomas",
                 email: "fjml0023@red.ujaen.es",
                 fecha: "14/03/2023"
