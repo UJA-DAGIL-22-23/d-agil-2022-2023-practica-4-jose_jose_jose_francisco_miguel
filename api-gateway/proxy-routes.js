@@ -23,6 +23,14 @@ const ROUTES = [
             pathRewrite: {
                 [`^/natacion`]: '',
             },
+        },
+        url: '/Waterpolo',
+        proxy: {
+            target: "http://localhost:8004",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/Waterpolo`]: '',
+            },
         }
     },
 ]
