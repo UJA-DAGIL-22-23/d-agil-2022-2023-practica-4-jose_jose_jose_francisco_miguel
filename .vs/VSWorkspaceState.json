@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\api-gateway",
+    "\\front-end",
+    "\\front-end\\static-files",
+    "\\ms-remo"
+  ],
+  "SelectedNode": "\\api-gateway\\proxy-routes.js",
+  "PreviewInSolutionExplorer": false
+}
