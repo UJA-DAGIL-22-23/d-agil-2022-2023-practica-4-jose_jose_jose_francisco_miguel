@@ -1,0 +1,61 @@
+/**
+ * @file ms-plantilla.css
+ * @description Estilos aplicables a la visualización de elementos relacionados con el MS Plantilla
+ * @author Víctor M. Rivas Santos <vrivas@ujaen.es>
+ * @date 03-Feb-2023
+ */
+
+ 
+ table.listado-personas-SoloNombres {
+    width: 100%;
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+table.listado-personas-SoloNombres thead th {
+    margin: 3px;
+    height: 2.5em;
+    background-color: #39444e;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+table.listado-personas-SoloNombres tbody td {
+    padding: 0.5em;
+    text-align: center;
+    color: #ffffff;
+}
+
+table.listado-personas-SoloNombres tbody tr {
+    margin: 3px;
+    height: 2em;
+    background-color: #3d3d3d;
+}
+
+.form-persona-elemento:disabled {
+    color: #ffffff;
+    background-color: inherit;
+    border-width: 0px;
+    text-align: center;
+}
+
+.form-persona-elemento:enabled {
+    color: #ffffff;
+}
+
+.form-persona-elemento:enabled:required {
+    color: #ff6347;
+}
+
+table.listado-personas-SoloNombres thead,
+table.listado-personas-SoloNombres tbody,
+table.listado-personas-SoloNombres tr,
+table.listado-personas-SoloNombres td {
+    text-align: center;
+    margin: 0 auto 0 auto;
+}
+
+table.listado-personas-SoloNombres {
+    width: 100%;
+    margin-bottom: 5%;
+}
