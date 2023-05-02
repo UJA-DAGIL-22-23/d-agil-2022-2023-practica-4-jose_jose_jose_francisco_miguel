@@ -6,7 +6,7 @@
 
   <!-- Cargamos biblioteca Jasmine -->
 
-  <link rel="stylesheet" href="lib/jasmine-4.5.0/jasmine.css">
+   <link rel="stylesheet" href="lib/jasmine-4.5.0/jasmine.css">
   <script src="lib/jasmine-4.5.0/jasmine.js"></script>
   <script src="lib/jasmine-4.5.0/jasmine-html.js"></script>
   <script src="lib/jasmine-4.5.0/boot0.js"></script>
@@ -18,15 +18,17 @@
 </head>
 
 <body>
-  <h1>Aplicación Microservicios Deportes</h1>
+  <a href="index-natacion.html">Ir a natacion</a>
+
+  <h1>Aplicación Jugadores/as Waterpolo</h1>
   <!-- Barra de navegación de la aplicación -->
   <nav>
     <a href="javascript:Waterpolo.procesarHome()" class="opcion-principal"
       title="Llama a la ruta / del MS Plantilla">Home</a>
     <a href="javascript:Waterpolo.procesarAcercaDe()" class="opcion-principal"
       title="Llama a la ruta /acercade del MS Plantilla">Acerca de</a>
-    <a href="javascript:Deportistas.ponerBotones()" class="opcion-principal mostrar"
-       title="Realiza un formulario para crear un nuevo deportista">Aplicacion Remo</a>
+    <a href="javascript:Deportistas.ponerBotones()" class="opcion-principal"
+       title="Llama a la ruta /acercade del MS Plantilla">Aplicación remo</a>
     <a href="javascript:Waterpolo.listarSoloNombres()" class="opcion-principal mostrar"
       title="Realiza un listado de solo los nomnbres de todos/as los/as jugadores/as que hay en la BBDD">Listar solo
       nombres jugadores/as</a>
@@ -116,15 +118,13 @@
       </form>
     </div>
 
-
-
   </nav>
 
   <!-- 
         Article en el que se va a mostrar la info cuando se pinche una opción del menú 
         Todos los apartados de este article se rellenarán con funciones en Javascript
     -->
-  <article id="seccion-principal" class=" ocultar">
+  <article id="seccion-principal class=" ocultar">
     <!-- Título del article -->
     <h2 id="seccion-principal-titulo"></h2>
     <!-- Contenido del article -->
@@ -173,13 +173,10 @@
   </script>
 
   <!-- Cargamos ficheros spec con los tests -->
-  <!-- <script src="js/front-end-spec.js"></script>
-  <script src="js/ms-waterpolo-spec.js"></script> -->
-  <script src="js/front-end-spec.js"></script>
+  <!--<script src="js/front-end-spec.js"></script>
+  <script src="js/ms-waterpolo/ms-waterpolo-spec.js"></script> -->
   <script src="js/ms-remo/ms-remo-spec.js"></script>
   <script src="js/ms-remo/deportistas-spec.js"></script>
-
-
 </body>
 
 </html>
