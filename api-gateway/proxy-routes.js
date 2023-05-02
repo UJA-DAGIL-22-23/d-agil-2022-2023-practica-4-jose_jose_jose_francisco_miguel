@@ -16,6 +16,17 @@ const ROUTES = [
                 [`^/waterpolo`]: '',
             },
         }
+    },
+    {
+        url: '/natacion',
+
+        proxy: {
+            target: "http://localhost:8004",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/natacion`]: '',
+            },
+        }
     }
 ]
 
