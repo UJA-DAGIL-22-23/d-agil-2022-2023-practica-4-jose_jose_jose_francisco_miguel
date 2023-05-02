@@ -15,6 +15,14 @@ const ROUTES = [
             pathRewrite: {
                 [`^/plantilla`]: '',
             },
+        },
+        url: '/natacion',
+        proxy: {
+            target: "http://localhost:8003",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/natacion`]: '',
+            },
         }
     },
 ]
