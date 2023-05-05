@@ -1,9 +1,9 @@
 # Práctica 4
 ## Información del grupo
 ### Estudiante 1
-* **Nombre**:
-* **Apellidos**:
-* **Correo**:
+* **Nombre**: José
+* **Apellidos**: Collado Bravo
+* **Correo**: jcb00029@red.ujaen.es
 ### Estudiante 2
 * **Nombre**: José
 * **Apellidos**: Carpio Blanca
