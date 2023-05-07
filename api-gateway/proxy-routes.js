@@ -16,6 +16,8 @@ const ROUTES = [
                 [`^/waterpolo`]: '',
             },
         },
+    },
+    {
         url: '/remo',
         proxy: {
             target: "http://localhost:8003",
