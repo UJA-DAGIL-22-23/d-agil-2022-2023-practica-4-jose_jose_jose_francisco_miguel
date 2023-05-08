@@ -2,6 +2,7 @@ let Deportistas = {};
 
 Deportistas.ponerBotones = function(){
     let msj = Deportistas.botones;
+    Frontend.agregarHistorial("Pulsado botón Aplicación remo")
     Frontend.Article.actualizar("", msj)
 }
 
@@ -300,12 +301,13 @@ Deportistas.OrdenarDatos = function (vector) {
 
 Deportistas.OrdenarAlfabeticamenteN = function () {
     Deportistas.recupera(Deportistas.OrdenarNombres)
+    Frontend.agregarHistorial("Pulsado botón Ordenar alfabéticamente (remo)")
 
 }
 
 Deportistas.OrdenarAlfabeticamenteD = function () {
     Deportistas.recupera(Deportistas.OrdenarDatos)
-
+    Frontend.agregarHistorial("Pulsado botón Ordenar alfabéticamente (remo)")
 }
 
 /**
@@ -408,10 +410,12 @@ Deportistas.imprimeDatosMuchasPersonas = function (vector) {
  */
 Deportistas.listarDatos = function () {
     Deportistas.recupera(Deportistas.imprimeDatosMuchasPersonas);
+    Frontend.agregarHistorial("Pulsado botón Listar Datos Deportistas")
 }
 
 Deportistas.listarNombres = function () {
     Deportistas.recupera(Deportistas.imprimeNombreMuchasPersonas);
+    Frontend.agregarHistorial("Pulsado botón Listar nombres Deportistas")
 }
 
 Deportistas.deportistaModifica = function (deportista) {
@@ -447,10 +451,12 @@ Deportistas.almacenaDatos = function (deportista) {
 
 Deportistas.mostrar = function (id) {
     this.recuperaUnDeportista(id, Deportistas.imprimeUnaPersona);
+    Frontend.agregarHistorial("Pulsado botón Mostrar deportista (remo)")
 }
 
 Deportistas.crear = function () {
     let msj = Deportistas.formularioDeportista.formulario
+    Frontend.agregarHistorial("Pulsado botón Crear nuevo deportista")
     Frontend.Article.actualizar("Crear nuevo deportista", msj)
 }
 
@@ -478,6 +484,7 @@ Deportistas.recupera = async function (callBackFn) {
 }
 
 Deportistas.borrarN = async function (id) {
+    Frontend.agregarHistorial("Pulsado botón Borrar deportista (remo)")
     try {
         const url = Frontend.API_GATEWAY + "/remo/borrarDeportista/" + id
         const response = await fetch(url)
@@ -490,6 +497,7 @@ Deportistas.borrarN = async function (id) {
 }
 
 Deportistas.borrarD = async function (id) {
+    Frontend.agregarHistorial("Pulsado botón Borrar deportista (remo)")
     try {
         const url = Frontend.API_GATEWAY + "/remo/borrarDeportista/" + id
         const response = await fetch(url)
@@ -501,6 +509,7 @@ Deportistas.borrarD = async function (id) {
     }
 }
 Deportistas.guardar = async function () {
+    Frontend.agregarHistorial("Pulsado botón Guardar deportista (remo)")
     try {
         let url = Frontend.API_GATEWAY + "/remo/crearDeportista"
         let participaciones = document.getElementById("form-participaciones").value
@@ -547,11 +556,13 @@ Deportistas.guardar = async function () {
 Deportistas.modificar = function () {
     let msj = Deportistas.deportistaModifica(this.deportistaMostrado);
     Frontend.Article.actualizar("Modificar un deportista", msj)
+    Frontend.agregarHistorial("Pulsado botón Modificar deportista (remo)")
 }
 
 /*Convertimos la función a asíncrona para que se muestren los datos actualizados*/
 Deportistas.guardarModificacion = async function (id) {
     await this.modificarDeportista(id)
+    Frontend.agregarHistorial("Pulsado botón Guardar modificación (remo)")
     this.mostrar(id)
 }
 
@@ -612,9 +623,11 @@ Deportistas.almacenaVector = function (vector) {
 Deportistas.filtraNombreN = function () {
     let n = document.getElementById("filter-nombre").value
     Deportistas.imprimeNombreMuchasPersonas(this.vectorDeportistas.filter(each => each.data.nombre.includes(n)))
+    Frontend.agregarHistorial("Pulsado botón Buscar Deportista (remo) buscando por: " + n)
 }
 
 Deportistas.filtraNombreD = function () {
     let n = document.getElementById("filter-nombre").value
     Deportistas.imprimeDatosMuchasPersonas(this.vectorDeportistas.filter(each => each.data.nombre.includes(n)))
+    Frontend.agregarHistorial("Pulsado botón Buscar Deportista (remo) buscando por: " + n)
 }

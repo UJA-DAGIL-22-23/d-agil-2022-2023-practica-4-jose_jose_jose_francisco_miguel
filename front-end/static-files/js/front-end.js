@@ -7,6 +7,7 @@
 
 /// Espacio de nombres
 let Frontend = {};
+Frontend.historial = [];
 
 
 /// Dirección del MS que funciona como API_GATEWAY
@@ -21,6 +22,26 @@ Frontend.ID_SECCION_PRINCIPAL_CONTENIDO = "seccion-principal-contenido"
 /// Objeto Article dentro Frontend para tratar con el contenido del elemento Article del DOM
 Frontend.Article = {}
 
+Frontend.agregarHistorial = function(msj){
+    Frontend.historial.push(msj)
+
+    if(Frontend.historial.length > 10){
+        Frontend.historial.shift()
+    }
+    Frontend.mostrarHistorial()
+}
+
+Frontend.mostrarHistorial = function() {
+    const listaHistorial = document.getElementById("historial");
+    listaHistorial.innerHTML = "";
+
+    for (let i = 0; i < Frontend.historial.length; i++) {
+        const accion = Frontend.historial[i];
+        const li = document.createElement("li");
+        li.textContent = accion;
+        listaHistorial.insertBefore(li, listaHistorial.firstChild);
+    }
+}
 
 /**
  * Cambia toda la información del article

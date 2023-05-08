@@ -6,6 +6,17 @@
  */
 
 // SPECS para Jasmine
+describe('Frontend.mostrarHistorial y Frontend.agregarHistorial', function () {
+    it('Debería tener 1 elemento el historial al pulsar el botón "Aplicación remo"', function () {
+        Deportistas.ponerBotones();
+        expect(Frontend.historial.length).toEqual(1);
+    });
+    it('Debería mostrar el historial indicando que se ha pulsado el botón "Aplicación remo"', function () {
+        const listaHistorial = document.getElementById("historial");
+        expect(listaHistorial.innerHTML.search("Pulsado botón Aplicación remo") >= 0).toBeTrue();
+    });
+});
+
 describe("Frontend.Article.actualizar: ", function () {
     const elementoTitulo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
     const elementoContenido = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
