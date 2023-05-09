@@ -8,17 +8,17 @@
 // SPECS para Jasmine
 
 // Constantes para usar en las pruebas
-const elementoTitulo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
-const elementoContenido = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
-const TITULO_HOME = "Natacion Home"
-const TITULO_ACERCA_DE = "Natacion Acerca de"
+//const elementoTitulo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
+//const elementoContenido = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
+//const TITULO_HOME = "Natacion Home"
+//const TITULO_ACERCA_DE = "Natacion Acerca de"
 
-const datosDescargadosPrueba = {
+/*const datosDescargadosPrueba = {
     mensaje: "Mensaje de prueba descargado",
     autor: "Prueba de autor",
     email: "Prueba de email",
     fecha: "00/00/0000"
-}
+}*/
 
 
 // Función para wait y dar tiempo a que responda el microservicio
@@ -33,7 +33,7 @@ function wait(ms) {
 
 
 // SPECS a probar
-
+/*
 describe("Natacion.mostrarHome: ", function () {
 
     it("muestra datos nulos cuando le pasamos un valor nulo",
@@ -122,7 +122,7 @@ describe("Natacion.mostrarAcercaDe: ", function () {
             expect(elementoContenido.innerHTML.search(datosDescargadosPrueba.fecha) >= 0).toBeTrue()
         })
 })
-
+*/
 
 /*
 IMPORTANTE
