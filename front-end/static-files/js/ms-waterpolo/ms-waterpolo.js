@@ -147,6 +147,8 @@ Waterpolo.procesarHome = function () {
     porMinimoUnCriterio.style.display = 'none';
     porCuatroCriterios.style.display = 'none';
     this.descargarRuta("/waterpolo/", this.mostrarHome);
+    Frontend.agregarHistorial("Pulsado botón Home")
+
 }
 
 /**
@@ -157,6 +159,7 @@ Waterpolo.procesarAcercaDe = function () {
     porNombre.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
     porCuatroCriterios.style.display = 'none';
+    Frontend.agregarHistorial("Pulsado botón Acerca de")
     this.descargarRuta("/waterpolo/acercade", this.mostrarAcercaDe);
 }
 
@@ -228,6 +231,7 @@ Waterpolo.listarSoloNombres = function () {
     porMinimoUnCriterio.style.display = 'none';
     porCuatroCriterios.style.display = 'none';
     Waterpolo.recupera(Waterpolo.imprimeSoloNombres);
+    Frontend.agregarHistorial("Pulsado botón Listar solo nombres jugadores/as")
 }
 
 /**
@@ -238,6 +242,7 @@ Waterpolo.listarSoloNombresOrdenados = function () {
     porNombre.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
     porCuatroCriterios.style.display = 'none';
+    Frontend.agregarHistorial("Pulsado botón Listar solo nombres ORDENADOS ALFABÉTICAMENTE")
     Waterpolo.recupera(Waterpolo.imprimeSoloNombresOrdenados);
 }
 
@@ -357,6 +362,7 @@ Waterpolo.listarTodoLosDatos = function () {
     porNombre.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
     porCuatroCriterios.style.display = 'none';
+    Frontend.agregarHistorial("Pulsado botón Listar todos los jugadores/as")
     Waterpolo.recupera(Waterpolo.listarTodosLosDatos);
 }
 
@@ -369,6 +375,7 @@ Waterpolo.ordenarPor = function () {
     porNombre.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
     porCuatroCriterios.style.display = 'none';
+    Frontend.agregarHistorial("Pulsado botón OrdenarPor...")
 
     porCampo.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -587,6 +594,7 @@ Waterpolo.buscarPorNombre = function () {
     porCampo.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
     porCuatroCriterios.style.display = 'none';
+    Frontend.agregarHistorial("Pulsado botón Buscar Por Nombre")
 }
 
 /**
@@ -653,6 +661,7 @@ Waterpolo.buscarPorUnCriterioMinimo = function () {
     porCampo.style.display = 'none';
     porMinimoUnCriterio.style.display = 'block';
     porCuatroCriterios.style.display = 'none';
+    Frontend.agregarHistorial("Pulsado botón Buscar Por Minimo un criterio")
 }
 
 /**
@@ -693,6 +702,7 @@ Waterpolo.buscarHastaCuatroCriterios = function () {
     porCampo.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
     porCuatroCriterios.style.display = 'block';
+    Frontend.agregarHistorial("Pulsado botón Buscar Por Cuatro Criterios")
 }
 
 /**
