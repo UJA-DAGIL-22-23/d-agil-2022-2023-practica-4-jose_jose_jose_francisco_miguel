@@ -821,5 +821,6 @@ Natacion.botones=`<h1>Aplicación Microservicios natacion</h1>
     <option value="javascript:Natacion.listarOrNumJJOO()">Número de participacion en JJOO</option>
 </select>
 
-</nav>`
+</nav>
+<br/>`
 //-----------------------------------------------------------------------------------------------------------
