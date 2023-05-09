@@ -145,7 +145,7 @@ Esto afecta a los métodos:
 
  describe("Prueba de cabeceraTable HU 04", function() {
   it("Se deberia devolver una cadena HTML con la cabecera de la tabla", function() {
-    const resultadoEsperado =`<table class="listado-deportistas">
+    const resultadoEsperado =`<table class="listado-personas">
         <thead>
         <th>Nombre</th><th>Apellidos</th><th>Fecha Nac</th><th>Nacionalidad</th><th>Años_mundial</th><th>Num_Juegos_olimpicos</th>
         </thead>
@@ -339,7 +339,7 @@ describe("Prueba de deportistaMostrado HU 06", () => {
 
 describe("Pruebas para plantillaTablaDeportistas HU 06", function() {
     it("La cabecera de la tabla debería generarse correctamente", function() {
-      let esperado =`<table width="100%" class="listado-deportistas">
+      let esperado =`<table width="100%" class="listado-personas">
     <thead>
         <th width="10%">Id</th>
         <th width="10%">Nombre</th>
@@ -391,31 +391,31 @@ describe("Prueba para plantillaFormularioDeportista.formulario HU 06", function(
     it("El formulario debería generar correctamente", function() {
         let esperado = `
 <form method='post' action=''>
-    <table width="100%" class="listado-deportistas">
+    <table width="100%" class="listado-personas">
         <thead>
         <th>ID</th><th>Nombre</th><th>Apellidos</th><th>Fecha Nac</th><th>Nacionalidad</th><th>Años mundial</th><th>Nº Juegos olimpicos</th><th>Opciones</th>
         </thead>
         <tbody>
             <tr title="${Natacion.plantillaTags.ID}">
-                <td><input type="text" class="form-deportista-elemento" disabled id="form-deportista-id"
+                <td><input type="text" class="form-persona-elemento" disabled id="form-deportista-id"
                         value="${Natacion.plantillaTags.ID}" 
                         name="id_deportista"/></td>
-                <td><input type="text" class="form-deportista-elemento editable" disabled
+                <td><input type="text" class="form-persona-elemento editable" disabled
                         id="form-deportista-nombre" required value="${Natacion.plantillaTags.NOMBRE}" 
                         name="nombre"/></td>
-                <td><input type="text" class="form-deportista-elemento editable" disabled
+                <td><input type="text" class="form-persona-elemento editable" disabled
                         id="form-deportista-apellidos" value="${Natacion.plantillaTags.APELLIDOS}" 
                         name="apellidos"/></td>
-                <td><input type="text" class="form-deportista-elemento" disabled
+                <td><input type="text" class="form-persona-elemento" disabled
                         id="form-deportista-f_nac" required value="${Natacion.plantillaTags.FECHA_NAC}" 
                         name="fecha_nacimiento"/></td>
-                <td><input type="text" class="form-deportista-elemento editable" disabled
+                <td><input type="text" class="form-persona-elemento editable" disabled
                         id="form-deportista-nacionalidad" required value="${Natacion.plantillaTags.NACIONALIDAD}" 
                         name="nacionalidad"/></td>        
-                <td><input type="text" class="form-deportista-elemento" disabled
+                <td><input type="text" class="form-persona-elemento" disabled
                         id="form-deportistas-años_de_p_mundial" required value="${Natacion.plantillaTags["AÑOS_MUNDIAL"]}" 
                         name="años_de_participacion_mundial"/></td>  
-                <td><input type="number" class="form-deportista-elemento editable" disabled
+                <td><input type="number" class="form-persona-elemento editable" disabled
                         id="form-deportista-numero_de_participaciones_juegos_olimpicos" min="0" max="20" size="8" required
                         value="${Natacion.plantillaTags["NUM PARTICIPACION J OLIMPICOS"]}" 
                         name="numero_de_participaciones_juegos_olimpicos"/></td>
