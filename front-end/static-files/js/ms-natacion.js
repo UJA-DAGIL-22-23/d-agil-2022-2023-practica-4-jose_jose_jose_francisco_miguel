@@ -791,6 +791,7 @@ Natacion.imprimeOrdenadoNombre = function (vector) {
   
  //-----------------------------------------------------------------------------------------------------------
 // Proyecto grupal--------------------------------------------------------------------------------------------
+// HU 03: Ofrecer en la aplicación toda la funcionalidad de la práctica individual creada por el/la estudiante núm. 3 --------------------------------------------
 Natacion.ponerBotones = function(){
     let msj = Natacion.botones;
     Frontend.Article.actualizar2("", msj)
@@ -823,4 +824,70 @@ Natacion.botones=`<h1>Aplicación Microservicios natacion</h1>
 
 </nav>
 <br/>`
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+//HU 06: Ver en una sola página la información de todos los autores de la aplicación al pulsar en el botón “Acerca de”.
+  
+Natacion.procesarTodosAcercaDe = function () {
+    Natacion.descargarTodasRutas("/natacion/acercade", function(datosDescargados) {
+      Natacion.descargarTodasRutas("/waterpolo/acercade", function(datosDescargados2){
+        Natacion.mostrarTodosAcercaDe(datosDescargados,datosDescargados2);
+      });
+    });
+  }
+
+Natacion.mostrarTodosAcercaDe = function (datosDescargados1, datosDescargados2) {
+    // Combinar ambos conjuntos de datos
+    const todosLosDatos = {...datosDescargados1, ...datosDescargados2};
+  
+    // Verificar si los datos combinados son válidos
+    if (
+      typeof todosLosDatos.mensaje === "undefined" ||
+      typeof todosLosDatos.autor === "undefined" ||
+      typeof todosLosDatos.email === "undefined" ||
+      typeof todosLosDatos.fecha === "undefined"
+    ) {
+      todosLosDatos = this.datosDescargadosNulos;
+    }
+  
+    // Construir mensaje a mostrar
+    const mensajeAMostrar = `<div>
+      <p>${todosLosDatos.mensaje}</p>
+      <ul>
+          <li><b>Autor/a</b>: ${todosLosDatos.autor}</li>
+          <li><b>E-mail</b>: ${todosLosDatos.email}</li>
+          <li><b>Fecha</b>: ${todosLosDatos.fecha}</li>
+      </ul>
+      </div>
+    `;
+  
+    // Mostrar mensaje en elemento HTML
+    Frontend.Article.actualizar2("Natacion y Waterpolo Acerca de", mensajeAMostrar);
+  }
+  
+  Natacion.descargarTodasRutas = async function (ruta, callBackFn) {
+    let response = null
+
+    // Intento conectar con el microservicio Natacion
+    try {
+        const url = Frontend.API_GATEWAY + ruta
+        response = await fetch(url)
+
+    } catch (error) {
+        alert("Error: No se han podido acceder al API Gateway")
+        console.error(error)
+        //throw error
+    }
+
+    // Muestro la info que se han descargado
+    if (response) {
+        const nuevosDatos = await response.json()
+        if (this.datos && typeof this.datos === 'object') { // Si ya hay datos previos
+            this.datos = {...this.datos, ...nuevosDatos} // Combino los datos previos con los nuevos
+        } else { // Si no hay datos previos
+            this.datos = nuevosDatos
+        }
+        callBackFn(this.datos)
+    }
+}
+
 //-----------------------------------------------------------------------------------------------------------
