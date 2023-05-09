@@ -35,7 +35,7 @@ describe("Frontend.Article.actualizar: ", function () {
             expect(elementoTitulo.innerHTML).toBe("")
             expect(elementoContenido.innerHTML).toBe("")
         })
-    it("Debe actualizar2 el titulo y el contenido de las secciones del article",
+    it("Debe actualizar el titulo y el contenido de las secciones del article",
         function () {
             // Probamos solo el título
             Frontend.Article.actualizar(tituloPrueba)
