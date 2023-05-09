@@ -37,6 +37,18 @@ const ROUTES = [
                 [`^/natacion`]: '',
             },
         }
+    },
+
+    {
+        url: '/futbol',
+
+        proxy: {
+            target: "http://localhost:8005",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/futbol`]: '',
+            },
+        }
     }
 ]
 

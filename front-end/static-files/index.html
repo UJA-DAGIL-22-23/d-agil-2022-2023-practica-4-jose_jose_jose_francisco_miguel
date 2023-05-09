@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <a href="index-natacion.html">Ir a natacion</a>
+    <a href="index-natacion.html">Ir a natacion</a>
 
   <h1>Aplicación Microservicios deportes</h1>
   <!-- Barra de navegación de la aplicación -->
@@ -29,8 +29,6 @@
       title="Llama a la ruta /acercade del MS Plantilla">Acerca de</a>
     <a href="javascript:Deportistas.ponerBotones()" class="opcion-principal"
        title="Funcionalidades de la aplicación remo">Aplicación remo</a>
-       <a href="javascript:Natacion.ponerBotones()" class="opcion-principal"
-       title="Funcionalidades de la aplicación natacion">Aplicación natacion</a>
     <a href="javascript:Waterpolo.listarSoloNombres()" class="opcion-principal mostrar"
       title="Realiza un listado de solo los nomnbres de todos/as los/as jugadores/as que hay en la BBDD">Listar solo
       nombres jugadores/as</a>
@@ -49,91 +47,91 @@
     <a href="javascript:Waterpolo.buscarHastaCuatroCriterios()" class="opcion-principal mostrar"
       title="Buscar un/a jugador/a de la base de datos por cuatro criterios">Buscar por cuatro criterios</a>
 
-    <div id="porNombre" style="display: none;">
-      <form class="form">
-        <div class="form-header">
-          <h2>Buscar por Nombre</h2>
+        <div id="porNombre" style="display: none;">
+            <form class="form">
+                <div class="form-header">
+                    <h2>Buscar por Nombre</h2>
+                </div>
+                <div class="form-group">
+                    <label for="buscarNombre">Ingrese el nombre:</label>
+                    <input type="text" id="buscarNombre" name="buscarNombre">
+                </div>
+                <div class="form-group">
+                    <button class="opcion-principal mostrar" type="button" onclick="buscarPorNombre()">Buscar</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-          <label for="buscarNombre">Ingrese el nombre:</label>
-          <input type="text" id="buscarNombre" name="buscarNombre">
-        </div>
-        <div class="form-group">
-          <button class="opcion-principal mostrar" type="button" onclick="buscarPorNombre()">Buscar</button>
-        </div>
-      </form>
-    </div>
 
-    <div id="porCampo" style="display: none;">
-      <form class="form">
-        <div class="form-header">
-          <h2>Ordenar Por ...</h2>
+        <div id="porCampo" style="display: none;">
+            <form class="form">
+                <div class="form-header">
+                    <h2>Ordenar Por ...</h2>
+                </div>
+                <div class="form-group">
+                    <label for="campo">Seleccione el campo:</label>
+                    <select id="campo" name="campo">
+                        <option value="nombre">Nombre</option>
+                        <option value="apellidos">Apellidos</option>
+                        <option value="fec_nac">Fecha Nacimiento</option>
+                        <option value="nacionalidad">Nacionalidad</option>
+                        <option value="peso">Peso</option>
+                        <option value="posicion">Posicion</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="boton-aceptar" class="opcion-principal mostrar">Listar</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-          <label for="campo">Seleccione el campo:</label>
-          <select id="campo" name="campo">
-            <option value="nombre">Nombre</option>
-            <option value="apellidos">Apellidos</option>
-            <option value="fec_nac">Fecha Nacimiento</option>
-            <option value="nacionalidad">Nacionalidad</option>
-            <option value="peso">Peso</option>
-            <option value="posicion">Posicion</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <button type="submit" id="boton-aceptar" class="opcion-principal mostrar">Listar</button>
-        </div>
-      </form>
-    </div>
 
-    <div id="porMinimoUnCriterio" style="display: none;">
-      <form class="form">
-        <div class="form-header">
-          <h2>Busca por un criterio mínimo</h2>
+        <div id="porMinimoUnCriterio" style="display: none;">
+            <form class="form">
+                <div class="form-header">
+                    <h2>Busca por un criterio mínimo</h2>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
+                    <input type="text" id="nacionalidad" name="nacionalidad" placeholder="Nacionalidad">
+                    <input type="text" id="posicion" name="posicion" placeholder="Posicion">
+                </div>
+                <div class="form-group">
+                    <button class="opcion-principal mostrar" type="button" onclick="buscarPorMinimoUnCriterio()">Buscar</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-          <input type="text" id="nombre" name="nombre" placeholder="Nombre">
-          <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
-          <input type="text" id="nacionalidad" name="nacionalidad" placeholder="Nacionalidad">
-          <input type="text" id="posicion" name="posicion" placeholder="Posicion">
-        </div>
-        <div class="form-group">
-          <button class="opcion-principal mostrar" type="button" onclick="buscarPorMinimoUnCriterio()">Buscar</button>
-        </div>
-      </form>
-    </div>
 
-    <div id="porCuatroCriterios" style="display: none;">
-      <form class="form">
-        <div class="form-header">
-          <h2>Busca por cuatro criterios</h2>
+        <div id="porCuatroCriterios" style="display: none;">
+            <form class="form">
+                <div class="form-header">
+                    <h2>Busca por cuatro criterios</h2>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="nombre5" name="nombre5" placeholder="Nombre">
+                    <input type="text" id="apellidos5" name="apellidos5" placeholder="Apellidos">
+                    <input type="text" id="nacionalidad5" name="nacionalidad5" placeholder="Nacionalidad">
+                    <input type="text" id="posicion5" name="posicion5" placeholder="Posicion">
+                </div>
+                <div class="form-group">
+                    <button class="opcion-principal mostrar" type="button" onclick="buscarPorCuatroCriterios()">Buscar</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-          <input type="text" id="nombre5" name="nombre5" placeholder="Nombre">
-          <input type="text" id="apellidos5" name="apellidos5" placeholder="Apellidos">
-          <input type="text" id="nacionalidad5" name="nacionalidad5" placeholder="Nacionalidad">
-          <input type="text" id="posicion5" name="posicion5" placeholder="Posicion">
-        </div>
-        <div class="form-group">
-          <button class="opcion-principal mostrar" type="button" onclick="buscarPorCuatroCriterios()">Buscar</button>
-        </div>
-      </form>
-    </div>
 
-  </nav>
+    </nav>
 
-  <!-- 
-        Article en el que se va a mostrar la info cuando se pinche una opción del menú 
-        Todos los apartados de este article se rellenarán con funciones en Javascript
-    -->
-  <article id="seccion-principal" class="ocultar">
-    <!-- Título del article -->
-    <h2 id="seccion-principal-titulo"></h2>
-    <!-- Contenido del article -->
-    <div id="seccion-principal-contenido">
-      <div id="tabla-formulario-persona" class="ocultar"></div>
-    </div>
-  </article>
+    <!--
+          Article en el que se va a mostrar la info cuando se pinche una opción del menú
+          Todos los apartados de este article se rellenarán con funciones en Javascript
+      -->
+    <article id="seccion-principal" class="ocultar">
+        <!-- Título del article -->
+        <h2 id="seccion-principal-titulo"></h2>
+        <!-- Contenido del article -->
+        <div id="seccion-principal-contenido">
+            <div id="tabla-formulario-persona" class="ocultar"></div>
+        </div>
+    </article>
 
   <!-- 
         ...............  ZONA DE CARGA DE FICHEROS JS .........................
@@ -146,44 +144,39 @@
   <script src="js/ms-waterpolo/ms-waterpolo.js"></script>
   <script src="js/ms-remo/ms-remo.js"></script>
   <script src="js/ms-remo/deportistas.js"></script>
-  <script src="js/ms-natacion.js"></script>
 
-  <script>
-    function buscarPorMinimoUnCriterio() {
-      var nombre1 = document.getElementById("nombre").value;
-      var apellidos1 = document.getElementById("apellidos").value;
-      var nacionalidad1 = document.getElementById("nacionalidad").value;
-      var posicion1 = document.getElementById("posicion").value;
-      Waterpolo.buscarMinimoUnCriterio(nombre1, apellidos1, nacionalidad1, posicion1);
-    }
-  </script>
+    <script>
+        function buscarPorMinimoUnCriterio() {
+            var nombre1 = document.getElementById("nombre").value;
+            var apellidos1 = document.getElementById("apellidos").value;
+            var nacionalidad1 = document.getElementById("nacionalidad").value;
+            var posicion1 = document.getElementById("posicion").value;
+            Waterpolo.buscarMinimoUnCriterio(nombre1, apellidos1, nacionalidad1, posicion1);
+        }
+    </script>
 
-  <script>
-    function buscarPorCuatroCriterios() {
-      var nombre3 = document.getElementById("nombre5").value;
-      var apellidos3 = document.getElementById("apellidos5").value;
-      var nacionalidad3 = document.getElementById("nacionalidad5").value;
-      var posicion3 = document.getElementById("posicion5").value;
-      Waterpolo.buscarCuatroCriterios(nombre3, apellidos3, nacionalidad3, posicion3);
-    }
-  </script>
+    <script>
+        function buscarPorCuatroCriterios() {
+            var nombre3 = document.getElementById("nombre5").value;
+            var apellidos3 = document.getElementById("apellidos5").value;
+            var nacionalidad3 = document.getElementById("nacionalidad5").value;
+            var posicion3 = document.getElementById("posicion5").value;
+            Waterpolo.buscarCuatroCriterios(nombre3, apellidos3, nacionalidad3, posicion3);
+        }
+    </script>
 
-  <script>
-    function buscarPorNombre() {
-      var buscarNombre = document.getElementById("buscarNombre").value;
-      Waterpolo.buscaPorNombre(buscarNombre);
-    }
-  </script>
+    <script>
+        function buscarPorNombre() {
+            var buscarNombre = document.getElementById("buscarNombre").value;
+            Waterpolo.buscaPorNombre(buscarNombre);
+        }
+    </script>
 
   <!-- Cargamos ficheros spec con los tests -->
   <!--<script src="js/front-end-spec.js"></script>
   <script src="js/ms-waterpolo/ms-waterpolo-spec.js"></script> -->
   <script src="js/ms-remo/ms-remo-spec.js"></script>
   <script src="js/ms-remo/deportistas-spec.js"></script>
-
-  <!-- Natacion -->
-  <script src="js/front-end-spec.js"></script>
-  <script src="js/ms-natacion-spec.js"></script>
 </body>
 
 </html>
