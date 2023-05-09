@@ -14,7 +14,7 @@
 
   <!-- Cargamos nuestros CSS -->
   <link rel="stylesheet" href="css/front-end.css">
-
+  
 </head>
 
 <body>
@@ -29,6 +29,8 @@
       title="Llama a la ruta /acercade del MS Plantilla">Acerca de</a>
     <a href="javascript:Deportistas.ponerBotones()" class="opcion-principal"
        title="Funcionalidades de la aplicación remo">Aplicación remo</a>
+       <a href="javascript:Natacion.ponerBotones()" class="opcion-principal"
+       title="Funcionalidades de la aplicación natacion">Aplicación natacion</a>
     <a href="javascript:Waterpolo.listarSoloNombres()" class="opcion-principal mostrar"
       title="Realiza un listado de solo los nomnbres de todos/as los/as jugadores/as que hay en la BBDD">Listar solo
       nombres jugadores/as</a>
@@ -144,6 +146,7 @@
   <script src="js/ms-waterpolo/ms-waterpolo.js"></script>
   <script src="js/ms-remo/ms-remo.js"></script>
   <script src="js/ms-remo/deportistas.js"></script>
+  <script src="js/ms-natacion.js"></script>
 
   <script>
     function buscarPorMinimoUnCriterio() {
@@ -177,6 +180,10 @@
   <script src="js/ms-waterpolo/ms-waterpolo-spec.js"></script> -->
   <script src="js/ms-remo/ms-remo-spec.js"></script>
   <script src="js/ms-remo/deportistas-spec.js"></script>
+
+  <!-- Natacion -->
+  <script src="js/front-end-spec.js"></script>
+  <script src="js/ms-natacion-spec.js"></script>
 </body>
 
 </html>
