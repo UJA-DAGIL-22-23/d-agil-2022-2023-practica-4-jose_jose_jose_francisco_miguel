@@ -6,17 +6,6 @@
  */
 
 // SPECS para Jasmine
-describe('Frontend.mostrarHistorial y Frontend.agregarHistorial', function () {
-    it('Debería tener 1 elemento el historial al pulsar el botón "Aplicación remo"', function () {
-        Deportistas.ponerBotones();
-        expect(Frontend.historial.length).toEqual(1);
-    });
-    it('Debería mostrar el historial indicando que se ha pulsado el botón "Aplicación remo"', function () {
-        const listaHistorial = document.getElementById("historial");
-        expect(listaHistorial.innerHTML.search("Pulsado botón Aplicación remo") >= 0).toBeTrue();
-    });
-});
-
 describe("Frontend.Article.actualizar: ", function () {
     const elementoTitulo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
     const elementoContenido = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
@@ -273,4 +262,29 @@ describe("Prueba de Frontend.Article.actualizar2: ", function () {
         })
 
 })
+describe('Frontend.mostrarHistorial y Frontend.agregarHistorial', function () {
+    it('Debería tener 1 elemento el historial al pulsar el botón "Aplicación remo"', function () {
+        Deportistas.ponerBotones();
+        expect(Frontend.historial.length).toBeGreaterThan(0);
+    });
+    it('Debería mostrar el historial indicando que se ha pulsado el botón "Aplicación remo"', function () {
+        Frontend.mostrarHistorial()
+        const listaHistorial = document.getElementById("historial");
+        expect(listaHistorial.innerHTML.includes("Pulsado botón Aplicación remo")).toBeTrue();
+    });
+    it('Debería mostrar como máximo 10 acciones del usuario', function () {
+        Deportistas.ponerBotones();
+        Deportistas.ponerBotones();
+        Deportistas.ponerBotones();
+        Deportistas.ponerBotones();
+        Deportistas.ponerBotones();
+        Deportistas.ponerBotones();
+        Deportistas.ponerBotones();
+        Deportistas.ponerBotones();
+        Deportistas.ponerBotones();
+        Deportistas.ponerBotones();
+        expect(Frontend.historial.length).toBe(10);
+    });
+});
+
 //-------------------------------------------------------------------------------

@@ -201,11 +201,13 @@ Natacion.imprime = function (vector) {
 }
 
 Natacion.listar = function () {
+    Frontend.agregarHistorial("Pulsado botón Listar deportistas (natación)")
     this.recupera(this.imprime);
  }
  //----------------------------------------------------------------------------------------------------------
 //HU 02: Ver un listado solo con los nombres de todos los jugadores/equipos.--------------------------------
 Natacion.listarnombre = function (){
+    Frontend.agregarHistorial("Pulsado botón Listar nombres (natación)")
     this.recupera(this.imprimenombre);
 }
 Natacion.nombreTr = function (p) {
@@ -236,6 +238,7 @@ Natacion.imprimenombre = function (vector) {
 //-----------------------------------------------------------------------------------------------------------
 //HU 03: Ver un listado solo con los nombres de todos los jugadores/equipos ordenados alfabéticamente.-------
 Natacion.listarnombreordenado = function (){
+    Frontend.agregarHistorial("Pulsado botón Listar nombres ordenador alfabéticamente (natación)")
     this.recupera(this.imprimenombreOrdenado);
 }
 
@@ -445,6 +448,7 @@ Natacion.recuperaUnDeportista = async function (idDeportista, callBackFn) {
  * @param {String} idDeportista Identificador del deportista a mostrar
  */
 Natacion.mostrar = function (idDeportista) {
+    Frontend.agregarHistorial("Pulsado botón Mostrar deportista (natación)")
     this.recuperaUnDeportista(idDeportista, this.imprimeUnDeportista);
 }
 
@@ -575,6 +579,7 @@ Natacion.ocultarOcionesTerciariasEditar = function () {
  * Función que permite modificar los datos de una deportista
  */
 Natacion.editar = function () {
+    Frontend.agregarHistorial("Pulsado botón Editar por campos (natación)")
     this.ocultarOpcionesSecundarias()
     this.mostrarOcionesTerciariasEditar()
     this.habilitarCamposEditables()
@@ -584,6 +589,7 @@ Natacion.editar = function () {
  * Función que permite cancelar la acción sobre los datos de una deportista
  */
 Natacion.cancelar = function () {
+    Frontend.agregarHistorial("Pulsado botón cancelar (natación)")
     this.imprimeUnDeportista(this.recuperaDatosAlmacenados())
     this.deshabilitarCamposEditables()
     this.ocultarOcionesTerciariasEditar()
@@ -591,6 +597,7 @@ Natacion.cancelar = function () {
 }
 
 Natacion.guardar = async function () {
+    Frontend.agregarHistorial("Pulsado botón Guardar deportista (natación)")
     try {
         let url = Frontend.API_GATEWAY + "/natacion/setTodo/"
         let id_deportista = document.getElementById("form-deportista-id").value
@@ -632,7 +639,8 @@ Natacion.guardar = async function () {
 
  //HU 12: Modificar el nombre de un jugador/equipo.--------------------------------------------------------
  Natacion.editarNombre = function () {
-    this.ocultarOpcionesSecundarias()
+     Frontend.agregarHistorial("Pulsado botón Editar nombre (natación)")
+     this.ocultarOpcionesSecundarias()
     this.mostrarOcionesTerciariasEditar()
     this.habilitarCampoNombre()
 }
@@ -655,7 +663,8 @@ Natacion.formNombre = {
  //HU 05:Ver un listado con todos los datos de todos los jugadores/equipos ordenado por el campo del jugador/equipo que el usuario desee.
  
  Natacion.listarOrNombre = function () {
-    this.recupera(this.imprimeOrdenadoNombre);
+     Frontend.agregarHistorial("Pulsado botón Listar por nombre (natación)")
+     this.recupera(this.imprimeOrdenadoNombre);
  }
 
 Natacion.imprimeOrdenadoNombre = function (vector) {
@@ -674,7 +683,8 @@ Natacion.imprimeOrdenadoNombre = function (vector) {
   }
 
   Natacion.listarOrApellidos = function () {
-    this.recupera(this.imprimeOrdenadoApellidos);
+      Frontend.agregarHistorial("Pulsado botón Listar por apellidos (natación)")
+      this.recupera(this.imprimeOrdenadoApellidos);
  }
 
 
@@ -695,7 +705,8 @@ Natacion.imprimeOrdenadoNombre = function (vector) {
 
 
   Natacion.listarOrFecha = function () {
-    this.recupera(this.imprimeOrdenadoFechaNacimiento);
+      Frontend.agregarHistorial("Pulsado botón Listar por fecha (natación)")
+      this.recupera(this.imprimeOrdenadoFechaNacimiento);
  }
 
   Natacion.imprimeOrdenadoFechaNacimiento = function (vector) {
@@ -725,7 +736,8 @@ Natacion.imprimeOrdenadoNombre = function (vector) {
   }
   
   Natacion.listarOrNacionalidad = function () {
-    this.recupera(this.imprimeOrdenadoNacionalidad);
+      Frontend.agregarHistorial("Pulsado botón Listar por nacionalidad (natación)")
+      this.recupera(this.imprimeOrdenadoNacionalidad);
  }
   Natacion.imprimeOrdenadoNacionalidad = function (vector) {
     // Ordenar el vector por nacionalidad
@@ -743,7 +755,8 @@ Natacion.imprimeOrdenadoNombre = function (vector) {
   }
   
   Natacion.listarOrAniosMuldial = function () {
-    this.recupera(this.imprimeOrdenadoAniosParticipacionMundial);
+      Frontend.agregarHistorial("Pulsado botón Listar por años en mundiales (natación)")
+      this.recupera(this.imprimeOrdenadoAniosParticipacionMundial);
  }
 
   Natacion.imprimeOrdenadoAniosParticipacionMundial = function (vector) {
@@ -766,7 +779,8 @@ Natacion.imprimeOrdenadoNombre = function (vector) {
   
 
   Natacion.listarOrNumJJOO = function () {
-    this.recupera(this.imprimeOrdenadoNumParticipacionesJO);
+      Frontend.agregarHistorial("Pulsado botón Listar por participaciones en JJOO (natación)")
+      this.recupera(this.imprimeOrdenadoNumParticipacionesJO);
  }
 
   Natacion.imprimeOrdenadoNumParticipacionesJO = function (vector) {
@@ -794,6 +808,7 @@ Natacion.imprimeOrdenadoNombre = function (vector) {
 // HU 03: Ofrecer en la aplicación toda la funcionalidad de la práctica individual creada por el/la estudiante núm. 3 --------------------------------------------
 Natacion.ponerBotones = function(){
     let msj = Natacion.botones;
+    Frontend.agregarHistorial("Pulsado botón Aplicación natacion")
     Frontend.Article.actualizar2("", msj)
 }
 Natacion.botones=`<h1>Aplicación Microservicios natacion</h1>

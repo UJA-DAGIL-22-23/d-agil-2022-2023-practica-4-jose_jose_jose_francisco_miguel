@@ -238,6 +238,7 @@ FutbolAmer.plantillaTablaPersonas.actualiza2 = function (persona) {
 
 
 FutbolAmer.ordena = function () {
+    Frontend.agregarHistorial("Pulsado botón Ordenar por nombre (futbol americano)")
     // Obtener la tabla y la columna que deseas ordenar
     var table = document.getElementById("tabla-personas");
     var column = 1; // La columna "Nombre" es la segunda (índice 1)
@@ -268,6 +269,7 @@ FutbolAmer.ordena = function () {
 };
 
 FutbolAmer.ordenaEq = function () {
+    Frontend.agregarHistorial("Pulsado botón Ordenar por equipo (futbol americano)")
     // Obtener la tabla y la columna que deseas ordenar
     var table = document.getElementById("tabla-personas");
     var column = 4; // La columna "Equipo" es la tercer (índice 3)
@@ -352,10 +354,12 @@ FutbolAmer.imprimeMuchasPersonas2 = function (vector) {
 }
 
 FutbolAmer.listar = function () {
+    Frontend.agregarHistorial("Pulsado botón Aplicación Futbol Americano")
     FutbolAmer.recupera(FutbolAmer.imprimeMuchasPersonas);
 }
 
 FutbolAmer.listar2 = function () {
+    Frontend.agregarHistorial("Pulsado botón Editar todo (futbol americano)")
     FutbolAmer.recupera(FutbolAmer.imprimeMuchasPersonas2);
 }
 
@@ -405,6 +409,7 @@ FutbolAmer.recuperaUnaPersona = async function (idPersona, callBackFn) {
 
 
 FutbolAmer.mostrar = function (idPersona) {
+    Frontend.agregarHistorial("Pulsado botón mostrar (futbol americano)")
     this.recuperaUnaPersona(idPersona, this.imprimeUnaPersona);
 }
 
@@ -479,6 +484,7 @@ FutbolAmer.plantillaFormularioPersona.formulario = `
 `;
 
 FutbolAmer.editar = function () {
+    Frontend.agregarHistorial("Pulsado botón editar (futbol americano)")
     this.ocultarOpcionesSecundarias()
     this.mostrarOcionesTerciariasEditar()
     this.habilitarCamposEditables()
@@ -518,6 +524,7 @@ FutbolAmer.habilitarDeshabilitarCamposEditables = function (deshabilitando) {
 }
 
 FutbolAmer.cancelar = function () {
+    Frontend.agregarHistorial("Pulsado botón cancelar (futbol americano)")
     this.imprimeUnaPersona(this.recuperaDatosAlmacenados())
     this.deshabilitarCamposEditables()
     this.ocultarOcionesTerciariasEditar()
@@ -554,6 +561,7 @@ FutbolAmer.personaComoFormulario = function (persona) {
 
 
 FutbolAmer.guardar = async function () {
+    Frontend.agregarHistorial("Pulsado botón guardar (futbol americano)")
     try {
         let url = Frontend.API_GATEWAY + "/futbol/setTodo/"
         let id_persona = document.getElementById("form-persona-id").value
