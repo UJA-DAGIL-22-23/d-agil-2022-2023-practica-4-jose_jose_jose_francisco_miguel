@@ -25,8 +25,14 @@
   .mostrar {
     display: inline-block;
   }
+
+  .ocultar {
+    display: none;
+}
   
-  .opcion-principal {
+  .opcion-principal,
+  .opcion-secundaria,
+  .opcion-terciaria {
     background: linear-gradient(180deg, #65bce8 0%, #306485 49%, #fbde74 50%, #ff9900 100%);
     background-size: 1px 100px;
     transition: all .3s;
@@ -37,7 +43,9 @@
     margin-bottom: 5px;
   }
   
-  .opcion-principal:hover  {
+  .opcion-principal:hover,
+  .opcion-secundaria:hover,
+  .opcion-secundaria:hover {
     background-position: 0 50px;
     transition: all .7s;
   }
@@ -46,10 +54,25 @@
     background-position: 0 50px;
     transition: all .7s;
   }
+  .opcion-secundaria:active  {
+    background-position: 0 50px;
+    transition: all .7s;
+  }
+  .opcion-terciaria:active  {
+    background-position: 0 50px;
+    transition: all .7s;
+  }
   
   .jasmine_html-reporter {
     border-top: 10cm;
   }
+
+  .opcion-secundaria,
+  .opcion-terciaria {
+    max-width: 5em;
+    min-width: 5em;
+    margin: 0.2em auto 0.2em auto;
+}
 
   /* Estilos para el formulario *//*
   .form {

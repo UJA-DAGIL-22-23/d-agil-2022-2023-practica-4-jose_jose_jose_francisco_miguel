@@ -138,7 +138,7 @@ Natacion.recupera = async function (callBackFn) {
  * @returns Cabecera de la tabla
  */
 Natacion.cabeceraTable = function () {
-    return `<table class="listado-deportistas">
+    return `<table class="listado-personas">
         <thead>
         <th>Nombre</th><th>Apellidos</th><th>Fecha Nac</th><th>Nacionalidad</th><th>Años_mundial</th><th>Num_Juegos_olimpicos</th>
         </thead>
@@ -220,7 +220,7 @@ Natacion.nombreTr = function (p) {
 Natacion.imprimenombre = function (vector) {
     //console.log( vector ) // Para comprobar lo que hay en vector
     let msj = "";
-    msj += `<table class="listado-deportistas">
+    msj += `<table class="listado-personas">
     <thead>
     <th>Nombre</th>
     </thead>
@@ -247,7 +247,7 @@ Natacion.imprimenombreOrdenado = function (vector) {
     });
 
     let msj = "";
-    msj += `<table class="listado-deportistas">
+    msj += `<table class="listado-personas">
     <thead>
     <th>Nombre</th>
     </thead>
@@ -285,31 +285,31 @@ Natacion.plantillaFormularioDeportista = {}
 // Cabecera del formulario
 Natacion.plantillaFormularioDeportista.formulario = `
 <form method='post' action=''>
-    <table width="100%" class="listado-deportistas">
+    <table width="100%" class="listado-personas">
         <thead>
         <th>ID</th><th>Nombre</th><th>Apellidos</th><th>Fecha Nac</th><th>Nacionalidad</th><th>Años mundial</th><th>Nº Juegos olimpicos</th><th>Opciones</th>
         </thead>
         <tbody>
             <tr title="${Natacion.plantillaTags.ID}">
-                <td><input type="text" class="form-deportista-elemento" disabled id="form-deportista-id"
+                <td><input type="text" class="form-persona-elemento" disabled id="form-deportista-id"
                         value="${Natacion.plantillaTags.ID}" 
                         name="id_deportista"/></td>
-                <td><input type="text" class="form-deportista-elemento editable" disabled
+                <td><input type="text" class="form-persona-elemento editable" disabled
                         id="form-deportista-nombre" required value="${Natacion.plantillaTags.NOMBRE}" 
                         name="nombre"/></td>
-                <td><input type="text" class="form-deportista-elemento editable" disabled
+                <td><input type="text" class="form-persona-elemento editable" disabled
                         id="form-deportista-apellidos" value="${Natacion.plantillaTags.APELLIDOS}" 
                         name="apellidos"/></td>
-                <td><input type="text" class="form-deportista-elemento" disabled
+                <td><input type="text" class="form-persona-elemento" disabled
                         id="form-deportista-f_nac" required value="${Natacion.plantillaTags.FECHA_NAC}" 
                         name="fecha_nacimiento"/></td>
-                <td><input type="text" class="form-deportista-elemento editable" disabled
+                <td><input type="text" class="form-persona-elemento editable" disabled
                         id="form-deportista-nacionalidad" required value="${Natacion.plantillaTags.NACIONALIDAD}" 
                         name="nacionalidad"/></td>        
-                <td><input type="text" class="form-deportista-elemento" disabled
+                <td><input type="text" class="form-persona-elemento" disabled
                         id="form-deportistas-años_de_p_mundial" required value="${Natacion.plantillaTags["AÑOS_MUNDIAL"]}" 
                         name="años_de_participacion_mundial"/></td>  
-                <td><input type="number" class="form-deportista-elemento editable" disabled
+                <td><input type="number" class="form-persona-elemento editable" disabled
                         id="form-deportista-numero_de_participaciones_juegos_olimpicos" min="0" max="20" size="8" required
                         value="${Natacion.plantillaTags["NUM PARTICIPACION J OLIMPICOS"]}" 
                         name="numero_de_participaciones_juegos_olimpicos"/></td>
@@ -330,7 +330,7 @@ Natacion.plantillaTablaDeportistas = {}
 
 
 // Cabecera de la tabla
-Natacion.plantillaTablaDeportistas.cabecera =`<table width="100%" class="listado-deportistas">
+Natacion.plantillaTablaDeportistas.cabecera =`<table width="100%" class="listado-personas">
     <thead>
         <th width="10%">Id</th>
         <th width="10%">Nombre</th>
@@ -790,3 +790,104 @@ Natacion.imprimeOrdenadoNombre = function (vector) {
   
   
  //-----------------------------------------------------------------------------------------------------------
+// Proyecto grupal--------------------------------------------------------------------------------------------
+// HU 03: Ofrecer en la aplicación toda la funcionalidad de la práctica individual creada por el/la estudiante núm. 3 --------------------------------------------
+Natacion.ponerBotones = function(){
+    let msj = Natacion.botones;
+    Frontend.Article.actualizar2("", msj)
+}
+Natacion.botones=`<h1>Aplicación Microservicios natacion</h1>
+<nav>
+<a href="javascript:Natacion.procesarHome()" class="opcion-principal"
+    title="Llama a la ruta / del MS Natacion">Home</a>
+<a href="javascript:Natacion.procesarAcercaDe()" class="opcion-principal"
+    title="Llama a la ruta /acercade del MS Natacion">Acerca de</a>
+<a href="javascript:Natacion.listar()" class="opcion-principal mostrar"
+    title="Realiza un listado de todas los deportistas que hay en la BBDD">Listar deportistas</a>
+<a href="javascript:Natacion.listarnombre()" class="opcion-principal mostrar"
+    title="Realiza un listado de todas los nombres de deportistas que hay en la BBDD">Listar nombres deportistas</a>
+<a href="javascript:Natacion.listarnombreordenado()" class="opcion-principal mostrar"
+    title="Realiza un listado de todas los nombres de deportistas que hay en la BBDD ordenados alfabeticamente">Listar nombres ordenados alfabeticamente</a>
+<a href="javascript:Natacion.mostrar('359174888402976973')" class="opcion-principal mostrar"
+    title="Muestra los datos de un deportista como ejemplo">Mostrar un deportista de ejemplo</a>
+      
+    <label for="order-by-select">Ordenar listado de deportistas por:</label>
+<select id="order-by-select" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+    <option value="">Selecciona una opción</option>
+    <option value="javascript:Natacion.listarOrNombre()">Nombre</option>
+    <option value="javascript:Natacion.listarOrApellidos()">Apellido</option>
+    <option value="javascript:Natacion.listarOrFecha()">Fecha de nacimiento</option>
+    <option value="javascript:Natacion.listarOrNacionalidad()">Nacionalidad</option>
+    <option value="javascript:Natacion.listarOrAniosMuldial()">Años en mundiales</option>
+    <option value="javascript:Natacion.listarOrNumJJOO()">Número de participacion en JJOO</option>
+</select>
+
+</nav>
+<br/>`
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+//HU 06: Ver en una sola página la información de todos los autores de la aplicación al pulsar en el botón “Acerca de”.
+  
+Natacion.procesarTodosAcercaDe = function () {
+    Natacion.descargarTodasRutas("/natacion/acercade", function(datosDescargados) {
+      Natacion.descargarTodasRutas("/waterpolo/acercade", function(datosDescargados2){
+        Natacion.mostrarTodosAcercaDe(datosDescargados,datosDescargados2);
+      });
+    });
+  }
+
+Natacion.mostrarTodosAcercaDe = function (datosDescargados1, datosDescargados2) {
+    // Combinar ambos conjuntos de datos
+    const todosLosDatos = {...datosDescargados1, ...datosDescargados2};
+  
+    // Verificar si los datos combinados son válidos
+    if (
+      typeof todosLosDatos.mensaje === "undefined" ||
+      typeof todosLosDatos.autor === "undefined" ||
+      typeof todosLosDatos.email === "undefined" ||
+      typeof todosLosDatos.fecha === "undefined"
+    ) {
+      todosLosDatos = this.datosDescargadosNulos;
+    }
+  
+    // Construir mensaje a mostrar
+    const mensajeAMostrar = `<div>
+      <p>${todosLosDatos.mensaje}</p>
+      <ul>
+          <li><b>Autor/a</b>: ${todosLosDatos.autor}</li>
+          <li><b>E-mail</b>: ${todosLosDatos.email}</li>
+          <li><b>Fecha</b>: ${todosLosDatos.fecha}</li>
+      </ul>
+      </div>
+    `;
+  
+    // Mostrar mensaje en elemento HTML
+    Frontend.Article.actualizar2("Natacion y Waterpolo Acerca de", mensajeAMostrar);
+  }
+  
+  Natacion.descargarTodasRutas = async function (ruta, callBackFn) {
+    let response = null
+
+    // Intento conectar con el microservicio Natacion
+    try {
+        const url = Frontend.API_GATEWAY + ruta
+        response = await fetch(url)
+
+    } catch (error) {
+        alert("Error: No se han podido acceder al API Gateway")
+        console.error(error)
+        //throw error
+    }
+
+    // Muestro la info que se han descargado
+    if (response) {
+        const nuevosDatos = await response.json()
+        if (this.datos && typeof this.datos === 'object') { // Si ya hay datos previos
+            this.datos = {...this.datos, ...nuevosDatos} // Combino los datos previos con los nuevos
+        } else { // Si no hay datos previos
+            this.datos = nuevosDatos
+        }
+        callBackFn(this.datos)
+    }
+}
+
+//-----------------------------------------------------------------------------------------------------------

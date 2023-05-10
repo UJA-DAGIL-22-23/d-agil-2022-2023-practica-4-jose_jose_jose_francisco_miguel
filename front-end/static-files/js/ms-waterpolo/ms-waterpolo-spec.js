@@ -21,8 +21,8 @@ const datosDescargadosPrueba = {
 }
 
 
-// Función para esperar y dar tiempo a que responda el microservicio
-function esperar(ms) {
+// Función para wait y dar tiempo a que responda el microservicio
+function wait(ms) {
   var inicio = new Date().getTime();
   var fin = 0;
   while ((fin - inicio) < ms) {

@@ -8,12 +8,12 @@
 // SPECS para Jasmine
 
 // Constantes para usar en las pruebas
-const elementoTitulo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
-const elementoContenido = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
-const TITULO_HOME = "Natacion Home"
-const TITULO_ACERCA_DE = "Natacion Acerca de"
+const elementoTitulo2 = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
+const elementoContenido2 = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
+const TITULO_HOME2 = "Natacion Home"
+const TITULO_ACERCA_DE2 = "Natacion Acerca de"
 
-const datosDescargadosPrueba = {
+const datosDescargadosPrueba2 = {
     mensaje: "Mensaje de prueba descargado",
     autor: "Prueba de autor",
     email: "Prueba de email",
@@ -21,8 +21,8 @@ const datosDescargadosPrueba = {
 }
 
 
-// Función para esperar y dar tiempo a que responda el microservicio
-function esperar(ms) {
+// Función para wait y dar tiempo a que responda el microservicio
+function wait(ms) {
     var inicio = new Date().getTime();
     var fin = 0;
     while ((fin - inicio) < ms) {
@@ -39,35 +39,35 @@ describe("Natacion.mostrarHome: ", function () {
     it("muestra datos nulos cuando le pasamos un valor nulo",
         function () {
             Natacion.mostrarHome()
-            expect(elementoTitulo.innerHTML).toBe("\n"+TITULO_HOME)
-            expect(elementoContenido.innerHTML).toBe("\n"+Natacion.datosDescargadosNulos.mensaje)
+            expect(elementoTitulo2.innerHTML).toBe("\n"+TITULO_HOME2)
+            expect(elementoContenido2.innerHTML).toBe("\n"+Natacion.datosDescargadosNulos.mensaje)
         })
 
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto",
         function () {
             Natacion.mostrarHome(23)
-            expect(elementoTitulo.innerHTML).toBe("\n"+TITULO_HOME)
-            expect(elementoContenido.innerHTML).toBe("\n"+Natacion.datosDescargadosNulos.mensaje)
+            expect(elementoTitulo2.innerHTML).toBe("\n"+TITULO_HOME2)
+            expect(elementoContenido2.innerHTML).toBe("\n"+Natacion.datosDescargadosNulos.mensaje)
         })
 
     it("muestra datos nulos cuando le pasamos un objeto que no tiene campo mensaje",
         function () {
             // Objeto vacío
             Natacion.mostrarHome({})
-            expect(elementoTitulo.innerHTML).toBe("\n"+TITULO_HOME)
-            expect(elementoContenido.innerHTML).toBe("\n"+Natacion.datosDescargadosNulos.mensaje)
+            expect(elementoTitulo2.innerHTML).toBe("\n"+TITULO_HOME2)
+            expect(elementoContenido2.innerHTML).toBe("\n"+Natacion.datosDescargadosNulos.mensaje)
 
             // Objeto sin campo mensaje
             Natacion.mostrarHome({ foo: "bar" })
-            expect(elementoTitulo.innerHTML).toBe("\n"+TITULO_HOME)
-            expect(elementoContenido.innerHTML).toBe("\n"+Natacion.datosDescargadosNulos.mensaje)
+            expect(elementoTitulo2.innerHTML).toBe("\n"+TITULO_HOME2)
+            expect(elementoContenido2.innerHTML).toBe("\n"+Natacion.datosDescargadosNulos.mensaje)
         })
 
     it("muestra correctamente el título y el mensaje",
         function () {
             Natacion.mostrarHome(datosDescargadosPrueba)
-            expect(elementoTitulo.innerHTML).toBe("\n"+TITULO_HOME)
-            expect(elementoContenido.innerHTML).toBe("\n"+datosDescargadosPrueba.mensaje)
+            expect(elementoTitulo2.innerHTML).toBe("\n"+TITULO_HOME2)
+            expect(elementoContenido2.innerHTML).toBe("\n"+datosDescargadosPrueba2.mensaje)
         })
 })
 
@@ -76,53 +76,52 @@ describe("Natacion.mostrarAcercaDe: ", function () {
     it("muestra datos nulos cuando le pasamos un valor nulo",
         function () {
             Natacion.mostrarAcercaDe()
-            expect(elementoTitulo.innerHTML).toBe("\n"+TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Natacion.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoTitulo2.innerHTML).toBe("\n"+TITULO_ACERCA_DE2)
+            expect(elementoContenido2.innerHTML.search(Natacion.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
         })
 
     it("muestra datos nulos cuando le pasamos un valor que no es un objeto",
         function () {
             Natacion.mostrarAcercaDe(23)
-            expect(elementoTitulo.innerHTML).toBe("\n"+TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Natacion.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoTitulo2.innerHTML).toBe("\n"+TITULO_ACERCA_DE2)
+            expect(elementoContenido2.innerHTML.search(Natacion.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
         })
 
     it("muestra datos nulos cuando le pasamos un objeto que no tiene campo mensaje o autor o email o fecha ",
         function () {
             // Objeto vacío
             Natacion.mostrarAcercaDe({})
-            expect(elementoTitulo.innerHTML).toBe("\n"+TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Natacion.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoTitulo2.innerHTML).toBe("\n"+TITULO_ACERCA_DE2)
+            expect(elementoContenido2.innerHTML.search(Natacion.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
 
             // Objeto sin campo mensaje
             Natacion.mostrarAcercaDe({ autor: "un autor", email: "un email", fecha: "una fecha" })
-            expect(elementoTitulo.innerHTML).toBe("\n"+TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Natacion.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoTitulo2.innerHTML).toBe("\n"+TITULO_ACERCA_DE2)
+            expect(elementoContenido2.innerHTML.search(Natacion.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
             // Objeto sin campo autor
             Natacion.mostrarAcercaDe({ mensaje: "un mensaje", email: "un email", fecha: "una fecha" })
-            expect(elementoTitulo.innerHTML).toBe("\n"+TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Natacion.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoTitulo2.innerHTML).toBe("\n"+TITULO_ACERCA_DE2)
+            expect(elementoContenido2.innerHTML.search(Natacion.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
             // Objeto sin campo email
             Natacion.mostrarAcercaDe({ mensaje: "un mensaje", autor: "un autor", fecha: "una fecha" })
-            expect(elementoTitulo.innerHTML).toBe("\n"+TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search("\n"+Natacion.datosDescargadosNulos.mensaje) >= 0).toBeFalse()
+            expect(elementoTitulo2.innerHTML).toBe("\n"+TITULO_ACERCA_DE2)
+            expect(elementoContenido2.innerHTML.search("\n"+Natacion.datosDescargadosNulos.mensaje) >= 0).toBeFalse()
             // Objeto sin campo fecha
             Natacion.mostrarAcercaDe({ mensaje: "un mensaje", autor: "un autor", email: "un email" })
-            expect(elementoTitulo.innerHTML).toBe("\n"+TITULO_ACERCA_DE)
-            expect(elementoContenido.innerHTML.search(Natacion.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
+            expect(elementoTitulo2.innerHTML).toBe("\n"+TITULO_ACERCA_DE2)
+            expect(elementoContenido2.innerHTML.search(Natacion.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
         })
     it("muestra correctamente el título y el mensaje conteniendo el autor, el email y la fecha",
         function () {
-            Natacion.mostrarAcercaDe(datosDescargadosPrueba)
-            expect(elementoTitulo.innerHTML).toBe("\n"+TITULO_ACERCA_DE)
+            Natacion.mostrarAcercaDe(datosDescargadosPrueba2)
+            expect(elementoTitulo2.innerHTML).toBe("\n"+TITULO_ACERCA_DE2)
 
             // Comprobamos que al buscar el autor, el email y la fecha de prueba los encuentra dentro del contenido del article
-            expect(elementoContenido.innerHTML.search(datosDescargadosPrueba.autor) >= 0).toBeTrue()
-            expect(elementoContenido.innerHTML.search(datosDescargadosPrueba.email) >= 0).toBeTrue()
-            expect(elementoContenido.innerHTML.search(datosDescargadosPrueba.fecha) >= 0).toBeTrue()
+            expect(elementoContenido2.innerHTML.search(datosDescargadosPrueba2.autor) >= 0).toBeTrue()
+            expect(elementoContenido2.innerHTML.search(datosDescargadosPrueba2.email) >= 0).toBeTrue()
+            expect(elementoContenido2.innerHTML.search(datosDescargadosPrueba2.fecha) >= 0).toBeTrue()
         })
 })
-
 
 /*
 IMPORTANTE
@@ -143,9 +142,9 @@ Esto afecta a los métodos:
  //HU 04: Ver un listado con todos los datos de todos los jugadores/equipos.---------------------------------
  // SPECS para Jasmine
 
- describe("Prueba de cabeceraTable HU 04", function() {
+ describe("Prueba de Natacion.cabeceraTable HU 04", function() {
   it("Se deberia devolver una cadena HTML con la cabecera de la tabla", function() {
-    const resultadoEsperado =`<table class="listado-deportistas">
+    const resultadoEsperado =`<table class="listado-personas">
         <thead>
         <th>Nombre</th><th>Apellidos</th><th>Fecha Nac</th><th>Nacionalidad</th><th>Años_mundial</th><th>Num_Juegos_olimpicos</th>
         </thead>
@@ -156,7 +155,7 @@ Esto afecta a los métodos:
   });
 });
 
-describe("Prueba de cuerpoTr HU 04", function () {
+describe("Prueba de Natacion.cuerpoTr HU 04", function () {
 
     // Preparo los datos
     let d = {
@@ -185,7 +184,7 @@ describe("Prueba de cuerpoTr HU 04", function () {
         });
 });
 
-describe("Prueba de pieTable HU 04", function() {
+describe("Prueba de Natacion.pieTable HU 04", function() {
   it("Se deberia devolver una cadena HTML con el pie de la tabla", function() {
     const resultadoEsperado = "</tbody></table>";
     const resultadoObtenido = Natacion.pieTable();
@@ -194,7 +193,7 @@ describe("Prueba de pieTable HU 04", function() {
 });
 
 
-describe("Prueba de recupera HU 04", function() {
+describe("Prueba de Natacion.recupera HU 04", function() {
     beforeEach(function() {
       spyOn(window, "fetch").and.returnValue(Promise.resolve({
         status: 200,
@@ -211,7 +210,7 @@ describe("Prueba de recupera HU 04", function() {
     });
   });
 
-    describe("Prueba de listar HU 04", function () {
+    describe("Prueba de Natacion.listar HU 04", function () {
         it("debería llamar a recupera", function() {
             // Espía para la funcion recupera
             spyOn(Natacion, "recupera");
@@ -223,7 +222,7 @@ describe("Prueba de recupera HU 04", function() {
           
 //-----------------------------------------------------------------------------------------------------------
 //HU 02: Ver un listado solo con los nombres de todos los jugadores/equipos.---------------------------------
-describe("Prueba listarnombre HU 02", function() {
+describe("Prueba Natacion.listarnombre HU 02", function() {
   beforeEach(function() {
   // Le paso datos a  recupera() para que devuelva una lista de deportistas
     spyOn(Natacion, "recupera").and.callFake(function(callback) {
@@ -244,7 +243,7 @@ describe("Prueba listarnombre HU 02", function() {
   });
 });
 
-describe("Prueba nombreTr HU 02", function () {
+describe("Prueba Natacion.nombreTr HU 02", function () {
 
     // Preparo los datos
     let d = {
@@ -260,7 +259,7 @@ describe("Prueba nombreTr HU 02", function () {
             expect(msj.includes(d.nombre)).toBeTrue();
         });
 });
-describe("Pruebas para imprimenombre HU 02", function() {
+describe("Pruebas para Natacion.imprimenombre HU 02", function() {
   it("debe imprimir los nombres", function() {
     // Preparamos los datos
     let vector = [
@@ -280,7 +279,7 @@ describe("Pruebas para imprimenombre HU 02", function() {
 
 //-----------------------------------------------------------------------------------------------------------
 //HU 03: Ver un listado solo con los nombres de todos los jugadores/equipos ordenados alfabéticamente.-------
-describe("Pruebas para listarnombreordenado HU 03", function() {
+describe("Pruebas para Natacion.listarnombreordenado HU 03", function() {
   beforeEach(function() {
     //Preparamos los datos
     spyOn(Natacion, "recupera");
@@ -293,7 +292,7 @@ describe("Pruebas para listarnombreordenado HU 03", function() {
   });
 });
 
-describe("Pruebas para imprimenombreOrdenado HU 03", function() {
+describe("Pruebas para Natacion.imprimenombreOrdenado HU 03", function() {
   it("debe ordenar el vector alfabéticamente por nombre", function() {
     // Preparamos los datos
     let vector = [
@@ -314,7 +313,7 @@ describe("Pruebas para imprimenombreOrdenado HU 03", function() {
 
 //-----------------------------------------------------------------------------------------------------------
 //HU 06: Ver todos los datos de un determinado jugador/equipo.-----------------------------------------------
-describe("Prueba de deportistaMostrado HU 06", () => {
+describe("Prueba de Natacion.deportistaMostrado HU 06", () => {
 
   beforeEach(() => {
     // Reiniciamos la variable antes de cada prueba
@@ -337,9 +336,9 @@ describe("Prueba de deportistaMostrado HU 06", () => {
 
 });
 
-describe("Pruebas para plantillaTablaDeportistas HU 06", function() {
+describe("Pruebas para Natacion.plantillaTablaDeportistas HU 06", function() {
     it("La cabecera de la tabla debería generarse correctamente", function() {
-      let esperado =`<table width="100%" class="listado-deportistas">
+      let esperado =`<table width="100%" class="listado-personas">
     <thead>
         <th width="10%">Id</th>
         <th width="10%">Nombre</th>
@@ -387,35 +386,35 @@ describe("Pruebas para plantillaTablaDeportistas HU 06", function() {
       });
   });
 
-describe("Prueba para plantillaFormularioDeportista.formulario HU 06", function() {
+describe("Prueba para Natacion.plantillaFormularioDeportista.formulario HU 06", function() {
     it("El formulario debería generar correctamente", function() {
         let esperado = `
 <form method='post' action=''>
-    <table width="100%" class="listado-deportistas">
+    <table width="100%" class="listado-personas">
         <thead>
         <th>ID</th><th>Nombre</th><th>Apellidos</th><th>Fecha Nac</th><th>Nacionalidad</th><th>Años mundial</th><th>Nº Juegos olimpicos</th><th>Opciones</th>
         </thead>
         <tbody>
             <tr title="${Natacion.plantillaTags.ID}">
-                <td><input type="text" class="form-deportista-elemento" disabled id="form-deportista-id"
+                <td><input type="text" class="form-persona-elemento" disabled id="form-deportista-id"
                         value="${Natacion.plantillaTags.ID}" 
                         name="id_deportista"/></td>
-                <td><input type="text" class="form-deportista-elemento editable" disabled
+                <td><input type="text" class="form-persona-elemento editable" disabled
                         id="form-deportista-nombre" required value="${Natacion.plantillaTags.NOMBRE}" 
                         name="nombre"/></td>
-                <td><input type="text" class="form-deportista-elemento editable" disabled
+                <td><input type="text" class="form-persona-elemento editable" disabled
                         id="form-deportista-apellidos" value="${Natacion.plantillaTags.APELLIDOS}" 
                         name="apellidos"/></td>
-                <td><input type="text" class="form-deportista-elemento" disabled
+                <td><input type="text" class="form-persona-elemento" disabled
                         id="form-deportista-f_nac" required value="${Natacion.plantillaTags.FECHA_NAC}" 
                         name="fecha_nacimiento"/></td>
-                <td><input type="text" class="form-deportista-elemento editable" disabled
+                <td><input type="text" class="form-persona-elemento editable" disabled
                         id="form-deportista-nacionalidad" required value="${Natacion.plantillaTags.NACIONALIDAD}" 
                         name="nacionalidad"/></td>        
-                <td><input type="text" class="form-deportista-elemento" disabled
+                <td><input type="text" class="form-persona-elemento" disabled
                         id="form-deportistas-años_de_p_mundial" required value="${Natacion.plantillaTags["AÑOS_MUNDIAL"]}" 
                         name="años_de_participacion_mundial"/></td>  
-                <td><input type="number" class="form-deportista-elemento editable" disabled
+                <td><input type="number" class="form-persona-elemento editable" disabled
                         id="form-deportista-numero_de_participaciones_juegos_olimpicos" min="0" max="20" size="8" required
                         value="${Natacion.plantillaTags["NUM PARTICIPACION J OLIMPICOS"]}" 
                         name="numero_de_participaciones_juegos_olimpicos"/></td>
@@ -437,7 +436,7 @@ describe("Prueba para plantillaFormularioDeportista.formulario HU 06", function(
     });
   });
 
-describe("Pruebas para plantillaTags HU 06", function() {
+describe("Pruebas para Natacion.plantillaTags HU 06", function() {
   it("Las etiquetas de la plantilla deberían generarse correctamente", function() {
     let esperado = {
       "ID": "### ID ###",
@@ -456,7 +455,7 @@ describe("Pruebas para plantillaTags HU 06", function() {
 });
 
 
-describe("Prueba de sustituyeTags HU 06", () => {
+describe("Prueba de Natacion.sustituyeTags HU 06", () => {
 
   const plantilla = "El deportista {ID} se llama {NOMBRE} {APELLIDOS}, nació el {FECHA_NAC} en {NACIONALIDAD}, ha participado en {AÑOS_MUNDIAL} mundiales y {NUM PARTICIPACION J OLIMPICOS} juegos olímpicos.";
   
@@ -480,7 +479,7 @@ describe("Prueba de sustituyeTags HU 06", () => {
 
 });
 
-describe('Pruebas para plantillaTablaDeportistas.actualiza', function() {
+describe('Pruebas para Natacion.plantillaTablaDeportistas.actualiza', function() {
   it('debe llamar a Natacion.sustituyeTags con los argumentos correctos', function() {
     const deportista = { 
       nombre: 'Juan',
@@ -523,7 +522,7 @@ describe('Pruebas para plantillaTablaDeportistas.actualiza', function() {
 });
 
 
-describe('Pruebas para plantillaFormularioDeportista.actualiza', function() {
+describe('Pruebas para Natacion.plantillaFormularioDeportista.actualiza', function() {
   it('debe llamar a Natacion.sustituyeTags con los argumentos correctos', function() {
     const deportista = {
       nombre: 'Juan',
@@ -566,7 +565,7 @@ describe('Pruebas para plantillaFormularioDeportista.actualiza', function() {
 });
 
 
-describe('Prueba de imprimeUnDeportista', function() {
+describe('Prueba de Natacion.imprimeUnDeportista', function() {
   beforeEach(function () {
     // Crea un espía en las funciones que usará la prueba
     spyOn(Natacion, 'deportistaComoFormulario').and.returnValue('<form>Mocked form</form>');
@@ -621,7 +620,7 @@ describe('Prueba de imprimeUnDeportista', function() {
   });
 });
 
-describe('Pruebas de deportistaComoFormulario', function() {
+describe('Pruebas de Natacion.deportistaComoFormulario', function() {
   beforeEach(function() {
     spyOn(Natacion.plantillaFormularioDeportista, 'actualiza');
   });
@@ -663,7 +662,7 @@ describe('Pruebas de deportistaComoFormulario', function() {
 });
 
 
-describe('Prueba para mostrar', function() {
+describe('Prueba para Natacion.mostrar', function() {
   beforeEach(function () {
     // Crea un espía en las funciones que usará la prueba
     spyOn(Natacion, 'recuperaUnDeportista');
@@ -679,7 +678,7 @@ describe('Prueba para mostrar', function() {
 });
 
 
-describe('Prueba de deportistaComoTabla', function() {
+describe('Prueba de Natacion.deportistaComoTabla', function() {
   let spyCabecera, spyActualiza, spyPie;
   const deportista = {
     ref: { '@ref': { id: 'abc123' } },
@@ -708,7 +707,7 @@ describe('Prueba de deportistaComoTabla', function() {
 //----------------------------------------------------------------------------------------------------------------------------------------
 //HU 13:Modificar varios de los datos a la vez de un jugador/equipo. Se deberán poder modificar al menos 3 campos además del nombre-------
 
-describe("Prueba de almacenaDatos", function() {
+describe("Prueba de Natacion.almacenaDatos", function() {
   it("Almacena correctamente el objeto deportista en Natacion.deportistaMostrado", function() {
     var deportista = {
       nombre: "Juan",
@@ -725,7 +724,7 @@ describe("Prueba de almacenaDatos", function() {
   });
 });
 
-describe("Prueba para recuperaDatosAlmacenados", function() {
+describe("Prueba para Natacion.recuperaDatosAlmacenados", function() {
   it("debe devolver the deportistaMostrado almacenado", function() {
     const deportista = {
       nombre: "Juan",
@@ -761,7 +760,7 @@ describe("Pruebas para Natacion.form", function() {
   });
 });
 
-describe("Pruebas de habilitarDeshabilitarCamposEditables", function() {
+describe("Pruebas de Natacion.habilitarDeshabilitarCamposEditables", function() {
   let formElement1, formElement2, formElement3, formElement4;
 
   beforeEach(function() {
@@ -816,7 +815,7 @@ describe("Pruebas de habilitarDeshabilitarCamposEditables", function() {
   });
 }); 
 
-describe("Prueba de deshabilitarCamposEditables", function () {
+describe("Prueba de Natacion.deshabilitarCamposEditables", function () {
   it("debería llamar a habilitarDeshabilitarCamposEditables con false", function () {
     spyOn(Natacion, "habilitarDeshabilitarCamposEditables");
     Natacion.deshabilitarCamposEditables();
@@ -824,7 +823,7 @@ describe("Prueba de deshabilitarCamposEditables", function () {
   });
 });
 
-describe("Prueba de habilitarCamposEditables", function () {
+describe("Prueba de Natacion.habilitarCamposEditables", function () {
   it("debería llamar a habilitarDeshabilitarCamposEditables con true", function () {
     spyOn(Natacion, "habilitarDeshabilitarCamposEditables");
     Natacion.habilitarCamposEditables();
@@ -832,7 +831,7 @@ describe("Prueba de habilitarCamposEditables", function () {
   });
 });
 
-describe("Prueba para opcionesMostrarOcultar", function() {
+describe("Prueba para Natacion.opcionesMostrarOcultar", function() {
   // Creamos  elementos de prueba
   let elemento1, elemento2, elemento3;
 
@@ -874,7 +873,7 @@ describe("Prueba para opcionesMostrarOcultar", function() {
     });
 });
 
-describe("Prueba de ocultarOpcionesSecundarias", function() {
+describe("Prueba de Natacion.ocultarOpcionesSecundarias", function() {
   // Crea algunos elementos de prueba
   let elemento1, elemento2, elemento3;
 
@@ -912,7 +911,7 @@ describe("Prueba de ocultarOpcionesSecundarias", function() {
   });
 });
 
-describe("Prueba de mostrarOpcionesSecundarias", function() {
+describe("Prueba de Natacion.mostrarOpcionesSecundarias", function() {
   // Crea algunos elementos de prueba
   let elemento1, elemento2, elemento3;
 
@@ -952,7 +951,7 @@ describe("Prueba de mostrarOpcionesSecundarias", function() {
   });
 });
 
-describe("Prueba para mostrarOcionesTerciariasEditar", function() {
+describe("Prueba para Natacion.mostrarOcionesTerciariasEditar", function() {
   // Crea algunos elementos de prueba
   let elemento1, elemento2, elemento3;
 
@@ -993,7 +992,7 @@ describe("Prueba para mostrarOcionesTerciariasEditar", function() {
   });
 });
 
-describe("Prueba para ocultarOcionesTerciariasEditar", function() {
+describe("Prueba para Natacion.ocultarOcionesTerciariasEditar", function() {
   // Crea algunos elementos de prueba
   let elemento1, elemento2, elemento3;
 
@@ -1034,7 +1033,7 @@ describe("Prueba para ocultarOcionesTerciariasEditar", function() {
   });
 });
 
-describe("Prueba para editar", function() {
+describe("Prueba para Natacion.editar", function() {
 
   it("debería llamar a las funciones necesarias para editar la plantilla", function() {
     spyOn(Natacion, "ocultarOpcionesSecundarias");
@@ -1049,7 +1048,7 @@ describe("Prueba para editar", function() {
   });
 });
 
-describe("Prueba para cancelar", function() {
+describe("Prueba para Natacion.cancelar", function() {
 
   it("debería llamar a las funciones necesarias para cancelar la edición de la plantilla", function() {
     spyOn(Natacion, "imprimeUnDeportista");
@@ -1068,7 +1067,7 @@ describe("Prueba para cancelar", function() {
 //-----------------------------------------------------------------------------------------------------------
  //HU 12: Modificar el nombre de un jugador/equipo.----------------------------------------------------------
 
- describe("Prueba de editarNombre", function() {
+ describe("Prueba de Natacion.editarNombre", function() {
 
   it("debería llamar a las funciones necesarias para editar el nombre en la plantilla", function() {
     spyOn(Natacion, "ocultarOpcionesSecundarias");
@@ -1084,7 +1083,7 @@ describe("Prueba para cancelar", function() {
 });
 
 
-describe('Prueba de habilitarCampoNombre', function() {
+describe('Prueba de Natacion.habilitarCampoNombre', function() {
   it('debería llamar a habilitarDeshabilitarCampoNombre pasando false y devolver el objeto Natacion', function() {
     spyOn(Natacion, 'habilitarDeshabilitarCampoNombre');
     
@@ -1096,7 +1095,7 @@ describe('Prueba de habilitarCampoNombre', function() {
 });
 
 
-  describe('Pruebas para habilitarDeshabilitarCampoNombre', function() {
+  describe('Pruebas para Natacion.habilitarDeshabilitarCampoNombre', function() {
     it('deberia deshabilitar todos los campos del formulario si se le pasa true', function() {
       spyOn(document, 'getElementById').and.callFake(function(id) {
         return { disabled: false };
@@ -1134,7 +1133,7 @@ describe('Prueba de habilitarCampoNombre', function() {
     });
   });
 
-    describe('Prueba para formNombre', function() {
+    describe('Prueba para Natacion.formNombre', function() {
       it('debería asignar correctamente los nombres de los campos', function() {
         expect(Natacion.formNombre.NOMBRE).toEqual("form-deportista-nombre");
       });
@@ -1143,7 +1142,7 @@ describe('Prueba de habilitarCampoNombre', function() {
  //-----------------------------------------------------------------------------------------------------------
   //HU 05:Ver un listado con todos los datos de todos los jugadores/equipos ordenado por el campo del jugador/equipo que el usuario desee.
 
-describe("Prueba de listarOrNombre", function() {
+describe("Prueba de Natacion.listarOrNombre", function() {
   it("debe llamar a recupera con imprimeOrdenadoNombre como argumento", function() {
     spyOn(Natacion, "recupera");
     spyOn(Natacion, "imprimeOrdenadoNombre");
@@ -1155,7 +1154,7 @@ describe("Prueba de listarOrNombre", function() {
   });
 });
 
-describe("Prueba de imprimeOrdenadoNombre", function() {
+describe("Prueba de Natacion.imprimeOrdenadoNombre", function() {
   it("debería ordenar el vector por nombre ", function() {
     // Crear datos simulados
     const deportista1 = {
@@ -1206,7 +1205,7 @@ describe("Prueba de imprimeOrdenadoNombre", function() {
 });
 
 
-describe("listarOrApellidos", function() {
+describe("Prueba de Natacion.listarOrApellidos", function() {
   it("debe llamar a recupera con imprimeOrdenadoApellidos como argumento", function() {
     spyOn(Natacion, "recupera");
     spyOn(Natacion, "imprimeOrdenadoApellidos");
@@ -1218,7 +1217,7 @@ describe("listarOrApellidos", function() {
   });
 });
 
-describe("Prueba de imprimeOrdenadoApellidos", function() {
+describe("Prueba de Natacion.imprimeOrdenadoApellidos", function() {
   it("debería ordenar el vector por apellidos ", function() {
     // Crear datos simulados
     const deportista1 = {
@@ -1269,7 +1268,7 @@ describe("Prueba de imprimeOrdenadoApellidos", function() {
 });
 
 
-describe("listarOrFecha", function() {
+describe("Prueba de Natacion.listarOrFecha", function() {
   it("debe llamar a recupera con imprimeOrdenadoFechaNacimiento como argumento", function() {
     spyOn(Natacion, "recupera");
     spyOn(Natacion, "imprimeOrdenadoFechaNacimiento");
@@ -1281,7 +1280,7 @@ describe("listarOrFecha", function() {
   });
 });
 
-describe("Prueba de imprimeOrdenadoFechaNacimiento", function() {
+describe("Prueba de Natacion.imprimeOrdenadoFechaNacimiento", function() {
   it("debería ordenar el vector por fecha de nacimiento ", function() {
     // Crear datos simulados
     const deportista1 = {
@@ -1335,7 +1334,7 @@ describe("Prueba de imprimeOrdenadoFechaNacimiento", function() {
 });
 
 
-describe("listarOrNacionalidad", function() {
+describe("Prueba de Natacion.listarOrNacionalidad", function() {
   it("debe llamar a recupera con imprimeOrdenadoNacionalidad como argumento", function() {
     spyOn(Natacion, "recupera");
     spyOn(Natacion, "imprimeOrdenadoNacionalidad");
@@ -1347,7 +1346,7 @@ describe("listarOrNacionalidad", function() {
   });
 });
 
-describe("Prueba de imprimeOrdenadoNacionalidad", function() {
+describe("Prueba de Natacion.imprimeOrdenadoNacionalidad", function() {
   it("debería ordenar el vector por nacionalidad ", function() {
     // Crear datos simulados
     const deportista1 = {
@@ -1398,7 +1397,7 @@ describe("Prueba de imprimeOrdenadoNacionalidad", function() {
 });
 
   
-describe("listarOrAniosMuldial", function() {
+describe("Prueba de Natacion.listarOrAniosMuldial", function() {
   it("debe llamar a recupera con imprimeOrdenadoAniosParticipacionMundial como argumento", function() {
     spyOn(Natacion, "recupera");
     spyOn(Natacion, "imprimeOrdenadoAniosParticipacionMundial");
@@ -1410,7 +1409,7 @@ describe("listarOrAniosMuldial", function() {
   });
 });
 
-describe("Prueba de imprimeOrdenadoAniosParticipacionMundial", function() {
+describe("Prueba de Natacion.imprimeOrdenadoAniosParticipacionMundial", function() {
   it("debería ordenar el vector por años_de_participación_mundial ", function() {
     // Crear datos simulados
     const deportista1 = {
@@ -1460,7 +1459,7 @@ describe("Prueba de imprimeOrdenadoAniosParticipacionMundial", function() {
 });
 
 
-describe("listarOrNumJJOO", function() {
+describe("Prueba de Natacion.listarOrNumJJOO", function() {
   it("debe llamar a recupera con imprimeOrdenadoNumParticipacionesJO como argumento", function() {
     spyOn(Natacion, "recupera");
     spyOn(Natacion, "imprimeOrdenadoNumParticipacionesJO");
@@ -1472,7 +1471,7 @@ describe("listarOrNumJJOO", function() {
   });
 });
 
-describe("Prueba de imprimeOrdenadoNumParticipacionesJO", function() {
+describe("Prueba de Natacion.imprimeOrdenadoNumParticipacionesJO", function() {
   it("debería ordenar el vector por número de participaciones en Juegos Olímpicos ", function() {
     // Crear datos simulados
     const deportista1 = {
