@@ -262,6 +262,8 @@ describe("Prueba de Frontend.Article.actualizar2: ", function () {
         })
 
 })
+
+//-------------------------------------------------------------------------------
 describe('Frontend.mostrarHistorial y Frontend.agregarHistorial', function () {
     it('Debería tener 1 elemento el historial al pulsar el botón "Aplicación remo"', function () {
         Deportistas.ponerBotones();
@@ -286,5 +288,3 @@ describe('Frontend.mostrarHistorial y Frontend.agregarHistorial', function () {
         expect(Frontend.historial.length).toBe(10);
     });
 });
-
-//-------------------------------------------------------------------------------
