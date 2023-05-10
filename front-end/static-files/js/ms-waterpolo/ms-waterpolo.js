@@ -7,8 +7,37 @@
 
 "use strict";
 
+
+
 /// Creo el espacio de nombres
 let Waterpolo = {};
+
+Waterpolo.ponerBotones = function () {
+    let msj = Waterpolo.botones;
+    Frontend.agregarHistorial("Pulsado botón Aplicación Waterpolo")
+    Frontend.Article.actualizar("", msj)
+}
+
+Waterpolo.botones = `
+<h1>Aplicación Microservicios Waterpolo</h1>
+<a href="javascript:Waterpolo.listarSoloNombres()" class="opcion-principal mostrar"
+title="Realiza un listado de solo los nomnbres de todos/as los/as jugadores/as que hay en la BBDD">Listar solo
+nombres jugadores/as</a>
+<a href="javascript:Waterpolo.listarSoloNombresOrdenados()" class="opcion-principal mostrar"
+title="Realiza un listado de solo los nombres de todos/as los/as jugadores/as que hay en la BBDD pero ORDENADOS ALFABÉTICAMENTE">Listar
+solo nombres jugadores/as ORDENADOS ALFABÉTICAMENTE</a>
+<a href="javascript:Waterpolo.listarTodoLosDatos()" class="opcion-principal mostrar"
+title="Realiza un listado de todos los datos de todos/as los/as jugadores/as que hay en la BBDD">Listar todos los
+jugadores/as</a>
+<a href="javascript:Waterpolo.ordenarPor()" class="opcion-principal mostrar"
+title="Listar por el campo que el usuario desee">Ordenar Por...</a>
+<a href="javascript:Waterpolo.buscarPorNombre()" class="opcion-principal mostrar"
+title="Buscar un/a jugador/a de la base de datos por el nombre">Buscar Por Nombre</a>
+<a href="javascript:Waterpolo.buscarPorUnCriterioMinimo()" class="opcion-principal mostrar"
+title="Buscar un/a jugador/a de la base de datos por mínimo un criterio">Buscar por mínimo un criterio</a>
+<a href="javascript:Waterpolo.buscarHastaCuatroCriterios()" class="opcion-principal mostrar"
+title="Buscar un/a jugador/a de la base de datos por cuatro criterios">Buscar por cuatro criterios</a>
+<br/><br/>`;
 
 // Plantilla de datosDescargados vacíos
 Waterpolo.datosDescargadosNulos = {
@@ -116,25 +145,36 @@ Waterpolo.mostrarAcercaDe = function (datosDescargados) {
     // Si no se ha proporcionado valor para datosDescargados
     datosDescargados = datosDescargados || this.datosDescargadosNulos
 
-    // Si datos descargados NO es un objeto 
-    if (typeof datosDescargados !== "object") datosDescargados = this.datosDescargadosNulos
-
-    // Si datos descargados NO contiene los campos mensaje, autor, o email
-    if (typeof datosDescargados.mensaje === "undefined" ||
-        typeof datosDescargados.autor === "undefined" ||
-        typeof datosDescargados.email === "undefined" ||
-        typeof datosDescargados.fecha === "undefined"
-    ) datosDescargados = this.datosDescargadosNulos
-
     const mensajeAMostrar = `<div>
     <p>${datosDescargados.mensaje}</p>
-    <ul>
-        <li><b>Autor/a</b>: ${datosDescargados.autor}</li>
-        <li><b>E-mail</b>: ${datosDescargados.email}</li>
-        <li><b>Fecha</b>: ${datosDescargados.fecha}</li>
-    </ul>
-    </div>
-    `;
+    <table style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+            <th style="border: 1px solid black; padding: 10px;">Autor/a</th>
+            <th style="border: 1px solid black; padding: 10px;">E-mail</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black; padding: 10px;">${datosDescargados.autor1}</td>
+            <td style="border: 1px solid black; padding: 10px;">${datosDescargados.email1}</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black; padding: 10px;">${datosDescargados.autor2}</td>
+            <td style="border: 1px solid black; padding: 10px;">${datosDescargados.email2}</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black; padding: 10px;">${datosDescargados.autor3}</td>
+            <td style="border: 1px solid black; padding: 10px;">${datosDescargados.email3}</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black; padding: 10px;">${datosDescargados.autor4}</td>
+            <td style="border: 1px solid black; padding: 10px;">${datosDescargados.email4}</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black; padding: 10px;">${datosDescargados.autor5}</td>
+            <td style="border: 1px solid black; padding: 10px;">${datosDescargados.email5}</td>
+        </tr>
+    </table>
+</div><br/><br/>`;
+
     Frontend.Article.actualizar("Plantilla Acerca de", mensajeAMostrar)
 }
 
