@@ -878,31 +878,5 @@ Natacion.mostrarTodosAcercaDe = function (datosDescargados1, datosDescargados2) 
     // Mostrar mensaje en elemento HTML
     Frontend.Article.actualizar2("Natacion y Waterpolo Acerca de", mensajeAMostrar);
   }
-  
-  Natacion.descargarTodasRutas = async function (ruta, callBackFn) {
-    let response = null
-
-    // Intento conectar con el microservicio Natacion
-    try {
-        const url = Frontend.API_GATEWAY + ruta
-        response = await fetch(url)
-
-    } catch (error) {
-        alert("Error: No se han podido acceder al API Gateway")
-        console.error(error)
-        //throw error
-    }
-
-    // Muestro la info que se han descargado
-    if (response) {
-        const nuevosDatos = await response.json()
-        if (this.datos && typeof this.datos === 'object') { // Si ya hay datos previos
-            this.datos = {...this.datos, ...nuevosDatos} // Combino los datos previos con los nuevos
-        } else { // Si no hay datos previos
-            this.datos = nuevosDatos
-        }
-        callBackFn(this.datos)
-    }
-}
 
 //-----------------------------------------------------------------------------------------------------------
