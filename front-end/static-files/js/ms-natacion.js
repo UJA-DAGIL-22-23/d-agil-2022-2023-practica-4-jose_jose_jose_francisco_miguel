@@ -842,14 +842,6 @@ Natacion.botones=`<h1>Aplicación Microservicios natacion</h1>
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 //HU 06: Ver en una sola página la información de todos los autores de la aplicación al pulsar en el botón “Acerca de”.
   
-Natacion.procesarTodosAcercaDe = function () {
-    Natacion.descargarTodasRutas("/natacion/acercade", function(datosDescargados) {
-      Natacion.descargarTodasRutas("/waterpolo/acercade", function(datosDescargados2){
-        Natacion.mostrarTodosAcercaDe(datosDescargados,datosDescargados2);
-      });
-    });
-  }
-
 Natacion.mostrarTodosAcercaDe = function (datosDescargados1, datosDescargados2) {
     // Combinar ambos conjuntos de datos
     const todosLosDatos = {...datosDescargados1, ...datosDescargados2};
