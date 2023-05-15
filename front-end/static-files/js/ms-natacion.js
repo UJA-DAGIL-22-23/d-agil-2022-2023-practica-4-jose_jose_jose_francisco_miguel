@@ -840,35 +840,8 @@ Natacion.botones=`<h1>Aplicación Microservicios natacion</h1>
 </nav>
 <br/>`
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-//HU 06: Ver en una sola página la información de todos los autores de la aplicación al pulsar en el botón “Acerca de”.
+//
   
-Natacion.mostrarTodosAcercaDe = function (datosDescargados1, datosDescargados2) {
-    // Combinar ambos conjuntos de datos
-    const todosLosDatos = {...datosDescargados1, ...datosDescargados2};
-  
-    // Verificar si los datos combinados son válidos
-    if (
-      typeof todosLosDatos.mensaje === "undefined" ||
-      typeof todosLosDatos.autor === "undefined" ||
-      typeof todosLosDatos.email === "undefined" ||
-      typeof todosLosDatos.fecha === "undefined"
-    ) {
-      todosLosDatos = this.datosDescargadosNulos;
-    }
-  
-    // Construir mensaje a mostrar
-    const mensajeAMostrar = `<div>
-      <p>${todosLosDatos.mensaje}</p>
-      <ul>
-          <li><b>Autor/a</b>: ${todosLosDatos.autor}</li>
-          <li><b>E-mail</b>: ${todosLosDatos.email}</li>
-          <li><b>Fecha</b>: ${todosLosDatos.fecha}</li>
-      </ul>
-      </div>
-    `;
-  
-    // Mostrar mensaje en elemento HTML
-    Frontend.Article.actualizar2("Natacion y Waterpolo Acerca de", mensajeAMostrar);
-  }
+
 
 //-----------------------------------------------------------------------------------------------------------
