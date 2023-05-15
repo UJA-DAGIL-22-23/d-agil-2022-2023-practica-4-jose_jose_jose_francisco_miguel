@@ -13,6 +13,8 @@
 * **Apellidos**: Martinez Lomas
 * **Correo**: fjml0023@red.ujaen.es
 ### Estudiante 4
+<img src='/jose.png' width='200px'>
+
 * **Nombre**: Jose Manuel
 * **Apellidos**: Gamarra Espinar
 * **Correo**: jmge0004@red.ujaen.es
