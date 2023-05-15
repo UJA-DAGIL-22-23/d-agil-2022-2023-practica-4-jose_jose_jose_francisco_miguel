@@ -840,8 +840,8 @@ Natacion.botones=`<h1>Aplicación Microservicios natacion</h1>
 </nav>
 <br/>`
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-//
-  
+//HU 07: Ver un listado solo con los nombres de todos los jugadores/equipos de todos los deportes incluidos en la app.
 
+  
 
 //-----------------------------------------------------------------------------------------------------------
