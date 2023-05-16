@@ -798,7 +798,7 @@ Waterpolo.recuperaVector = async function () {
     }
 
     if (response) {
-        let vectorDeportistas = await response.json();
-        return vectorDeportistas.data;
+        let vectorWaterpolo = await response.json();
+        return vectorWaterpolo.data;
       }
 }

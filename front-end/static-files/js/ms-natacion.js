@@ -842,33 +842,6 @@ Natacion.botones=`<h1>Aplicación Microservicios natacion</h1>
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 //HU 07: Ver un listado solo con los nombres de todos los jugadores/equipos de todos los deportes incluidos en la app.
 
-
-  Natacion.listarnombreTodos = function (){
-    Frontend.agregarHistorial("Pulsado botón Listar nombres (natación)")
-    Natacion.recupera(Natacion.imprimenombreTodos);
-    Waterpolo.recupera(Natacion.imprimenombreTodos);
-    
-}
-
-// No hay forma de concatenar los vectores
-Natacion.imprimenombreTodos = function (vector1) {
-    let msj = '';
-    msj += '<table class="listado-personas">';
-    msj += '<thead><th>Nombre</th></thead>';
-    msj += '<tbody>';
-  
-    // Imprime los nombres de los deportistas de Natación
-    vector1.forEach(e => msj += Natacion.nombreTr(e));
-  
-    // Imprime los nombres de los deportistas de Waterpolo
-
-  
-    msj += '</tbody></table>';
-  
-    // Borra toda la info de Article y la sustituye por la que me interesa
-    Frontend.Article.actualizar2("Listado de nombres de deportistas", msj);
-  };
-
   Natacion.recuperaVector = async function () {
     let response = null;
   
@@ -881,10 +854,22 @@ Natacion.imprimenombreTodos = function (vector1) {
     }
   
     if (response) {
-      let vectorDeportistas = await response.json();
-      return vectorDeportistas.data;
+      let vectorNatacion = await response.json();
+      return vectorNatacion.data;
     }
   }
+
+  Natacion.listarnombreTodos = async function() {
+    Frontend.agregarHistorial("Pulsado botón Listar nombres (todos los MS)");
   
+    // Obtener los vectores de cada MS y concatenarlos
+    const vectorNatacion = await Natacion.recuperaVector();
+    const vectorWaterpolo = await Waterpolo.recuperaVector(); // ejemplo de otro MS
+    const vectoresConcatenados = vectorNatacion.concat(vectorWaterpolo);
+  
+    // Mostrar los nombres del vector resultante
+    this.imprimenombre(vectoresConcatenados);
+  }
+    
   
 //-----------------------------------------------------------------------------------------------------------
