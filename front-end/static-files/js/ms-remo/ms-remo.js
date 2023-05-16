@@ -108,6 +108,26 @@ Remo.procesarAcercaDe = function () {
     this.descargarRuta("/plantilla/acercade", this.mostrarAcercaDe);
 }
 
+//Practica Grupal-------------------------------------------------------------
+//HU 07-----------------------------------------------------------------------
+Remo.recuperaVector = async function () {
+    let response = null
+
+    // Intento conectar con el microservicio personas
+    try {
+        const url = Frontend.API_GATEWAY + "/remo/getTodas"
+        response = await fetch(url)
+
+    } catch (error) {
+        console.error(error)
+    }
+
+    if (response) {
+        let vectorRemo = await response.json();
+        return vectorRemo.data;
+      }
+}
+//---------------------------------------------------------------------------
 
 
 

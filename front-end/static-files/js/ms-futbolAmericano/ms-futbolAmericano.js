@@ -602,5 +602,25 @@ FutbolAmer.guardar = async function () {
     }
 }
 
+//Practica Grupal-------------------------------------------------------------
+//HU 07-----------------------------------------------------------------------
+FutbolAmer.recuperaVector = async function () {
+    let response = null
+
+    // Intento conectar con el microservicio personas
+    try {
+        const url = Frontend.API_GATEWAY + "/futbol/getTodas"
+        response = await fetch(url)
+
+    } catch (error) {
+        console.error(error)
+    }
+
+    if (response) {
+        let vectorFutbolAmer = await response.json();
+        return vectorFutbolAmer.data;
+      }
+}
+//---------------------------------------------------------------------------
 
 
