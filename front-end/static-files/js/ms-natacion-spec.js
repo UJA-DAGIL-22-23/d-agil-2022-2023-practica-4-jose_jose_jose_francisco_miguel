@@ -1520,4 +1520,24 @@ describe("Prueba de Natacion.imprimeOrdenadoNumParticipacionesJO", function() {
   });
 });
 
+// Proyecto grupal--------------------------------------------------------------------------------------------
+describe("Natacion.recuperaVector", function() {
+  it("debe devolver un vector con los datos de natación desde la API Gateway", async function() {
+    // Arrange: Configuración previa a la prueba
+    spyOn(window, "fetch").and.returnValue(Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({ data: [1, 2, 3] })
+    }));
+
+    // Act: Ejecución de la función que queremos probar
+    const result = await Natacion.recuperaVector();
+
+    // Assert: Verificación de que el resultado es el esperado
+    expect(result).toEqual([1, 2, 3]);
+    expect(window.fetch).toHaveBeenCalledWith(
+      Frontend.API_GATEWAY + "/natacion/getTodas"
+    );
+  });
+});
+
   

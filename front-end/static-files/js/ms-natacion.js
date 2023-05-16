@@ -873,7 +873,8 @@ Natacion.botones=`<h1>Aplicación Microservicios natacion</h1>
     // Mostrar los nombres del vector resultante
     this.imprimenombre(vectoresConcatenados);
   }
-
+  //-----------------------------------------------------------------------------------------------------------
+// HU 08: Ver un listado solo con los nombres de todos los jugadores/equipos ordenados alfabéticamente de todos los deportes incluidos en la app. (Todos los nombres aparecerán ordenados en una sola tabla)
   Natacion.listarnombreTodosOrdenado = async function() {
     Frontend.agregarHistorial("Pulsado botón Listar nombres (todos los MS)");
   
