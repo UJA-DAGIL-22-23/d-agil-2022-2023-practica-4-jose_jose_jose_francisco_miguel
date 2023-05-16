@@ -868,5 +868,23 @@ Natacion.imprimenombreTodos = function (vector1) {
     // Borra toda la info de Article y la sustituye por la que me interesa
     Frontend.Article.actualizar2("Listado de nombres de deportistas", msj);
   };
+
+  Natacion.recuperaVector = async function () {
+    let response = null;
+  
+    try {
+      const url = Frontend.API_GATEWAY + "/natacion/getTodas";
+      response = await fetch(url);
+    } catch (error) {
+      alert("Error: No se han podido acceder al API Gateway");
+      console.error(error);
+    }
+  
+    if (response) {
+      let vectorDeportistas = await response.json();
+      return vectorDeportistas.data;
+    }
+  }
+  
   
 //-----------------------------------------------------------------------------------------------------------
