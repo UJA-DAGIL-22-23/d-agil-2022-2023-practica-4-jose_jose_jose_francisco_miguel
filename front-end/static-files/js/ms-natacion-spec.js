@@ -1521,6 +1521,27 @@ describe("Prueba de Natacion.imprimeOrdenadoNumParticipacionesJO", function() {
 });
 
 // Proyecto grupal--------------------------------------------------------------------------------------------
+// HU 03: Ofrecer en la aplicación toda la funcionalidad de la práctica individual creada por el/la estudiante núm. 3 --------------------------------------------
+describe("Natacion.ponerBotones", function() {
+  beforeEach(function() {
+    spyOn(Frontend, "agregarHistorial");
+    spyOn(Frontend.Article, "actualizar2");
+  });
+
+  it("debe obtener los botones correspondientes de Natacion.botones y actualizar el contenido de un artículo", async function() {
+    Natacion.botones = [
+      { id: 1, nombre: "Botón 1" },
+      { id: 2, nombre: "Botón 2" },
+      { id: 3, nombre: "Botón 3" }
+    ];
+
+    Natacion.ponerBotones();
+
+    expect(Frontend.agregarHistorial).toHaveBeenCalledWith("Pulsado botón Aplicación natacion");
+    expect(Frontend.Article.actualizar2).toHaveBeenCalledWith("", Natacion.botones);
+  });
+});
+
 //HU 07: Ver un listado solo con los nombres de todos los jugadores/equipos de todos los deportes incluidos en la app.
 
 describe("Natacion.recuperaVector", function() {
