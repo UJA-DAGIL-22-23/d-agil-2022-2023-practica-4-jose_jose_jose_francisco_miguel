@@ -817,16 +817,14 @@ describe("FutbolAmer.form", function () {
 // Proyecto grupal--------------------------------------------------------------------------------------------
 describe("FutbolAmer.recuperaVector", function() {
     it("debe devolver un vector con los datos de natación desde la API Gateway", async function() {
-      // Arrange: Configuración previa a la prueba
+
       spyOn(window, "fetch").and.returnValue(Promise.resolve({
         ok: true,
         json: () => Promise.resolve({ data: [1, 2, 3] })
       }));
-  
-      // Act: Ejecución de la función que queremos probar
+
       const result = await FutbolAmer.recuperaVector();
-  
-      // Assert: Verificación de que el resultado es el esperado
+
       expect(result).toEqual([1, 2, 3]);
       expect(window.fetch).toHaveBeenCalledWith(
         Frontend.API_GATEWAY + "/futbol/getTodas"
