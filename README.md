@@ -46,3 +46,12 @@ Como podemos ver, hemos elegido hacer todas las HU del product backlog para este
 
 <img src='assets/img/HU_11.PNG'>
 
+#### Funcionalidades implementadas por el estudiante 3 Francisco Javier Martinez Lomas
+
+##### HU_3
+
+##### HU_07
+
+##### HU_08
+
+
