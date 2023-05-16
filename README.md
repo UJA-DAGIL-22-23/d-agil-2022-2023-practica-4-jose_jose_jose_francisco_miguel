@@ -32,3 +32,17 @@ https://trello.com/b/b3EMiSkn/practica4-da
 ## Descripción del incremento realizado
 ### Captura del tablero Trello al principio del Sprint
 
+<img src='assets/img/Trello_inicio.png'>
+
+Como podemos ver, hemos elegido hacer todas las HU del product backlog para este sprint.
+
+#### Funcionalidades implementadas por el estufdiante 2
+
+##### HU_2
+
+<img src='assets/img/HU_2.PNG'>
+
+##### HU_11
+
+<img src='assets/img/HU_11.PNG'>
+
