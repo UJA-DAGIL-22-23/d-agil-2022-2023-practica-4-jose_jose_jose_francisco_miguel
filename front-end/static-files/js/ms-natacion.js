@@ -873,6 +873,21 @@ Natacion.botones=`<h1>Aplicación Microservicios natacion</h1>
     // Mostrar los nombres del vector resultante
     this.imprimenombre(vectoresConcatenados);
   }
+
+  Natacion.listarnombreTodosOrdenado = async function() {
+    Frontend.agregarHistorial("Pulsado botón Listar nombres (todos los MS)");
+  
+    // Obtener los vectores de cada MS y concatenarlos
+    const vectorNatacion = await Natacion.recuperaVector();
+    const vectorWaterpolo = await Waterpolo.recuperaVector();
+    const vectorRemo = await Remo.recuperaVector();
+    const vectorFutbolAmer = await FutbolAmer.recuperaVector();
     
+    const vectoresConcatenados = vectorNatacion.concat(vectorWaterpolo, vectorRemo, vectorFutbolAmer);
+  
+    // Mostrar los nombres del vector resultante
+    this.imprimenombreOrdenado(vectoresConcatenados);
+  }
+  
   
 //-----------------------------------------------------------------------------------------------------------
