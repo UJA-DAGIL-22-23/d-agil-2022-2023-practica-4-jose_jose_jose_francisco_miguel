@@ -1540,4 +1540,36 @@ describe("Natacion.recuperaVector", function() {
   });
 });
 
+describe("Natacion.listarnombreTodos", function() {
+  beforeEach(function() {
+    spyOn(Frontend, "agregarHistorial");
+    spyOn(Natacion, "recuperaVector").and.returnValue(Promise.resolve([{ nombre: "Juan" }, { nombre: "Pedro" }]));
+    spyOn(Waterpolo, "recuperaVector").and.returnValue(Promise.resolve([{ nombre: "Ana" }, { nombre: "María" }]));
+    spyOn(Remo, "recuperaVector").and.returnValue(Promise.resolve([]));
+    spyOn(FutbolAmer, "recuperaVector").and.returnValue(Promise.resolve([{ nombre: "Carlos" }]));
+
+    spyOn(Natacion, "imprimenombre");
+  });
+
+  it("debe obtener los vectores de cada MS y concatenarlos correctamente", async function() {
+    // Act: Ejecución de la función que queremos probar
+    await Natacion.listarnombreTodos();
+
+    // Assert: Verificación de que se llamaron a las funciones correctas con los argumentos correctos
+    expect(Natacion.recuperaVector).toHaveBeenCalled();
+    expect(Waterpolo.recuperaVector).toHaveBeenCalled();
+    expect(Remo.recuperaVector).toHaveBeenCalled();
+    expect(FutbolAmer.recuperaVector).toHaveBeenCalled();
+
+    expect(Natacion.imprimenombre).toHaveBeenCalledWith([
+      { nombre: "Juan" },
+      { nombre: "Pedro" },
+      { nombre: "Ana" },
+      { nombre: "María" },
+      { nombre: "Carlos" }
+    ]);
+  });
+});
+
+
   
