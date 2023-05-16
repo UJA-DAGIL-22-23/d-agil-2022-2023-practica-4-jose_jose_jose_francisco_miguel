@@ -36,7 +36,7 @@ https://trello.com/b/b3EMiSkn/practica4-da
 
 Como podemos ver, hemos elegido hacer todas las HU del product backlog para este sprint.
 
-#### Funcionalidades implementadas por el estufdiante 2
+#### Funcionalidades implementadas por el estudiante 2
 
 ##### HU_2
 
