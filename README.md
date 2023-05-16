@@ -53,16 +53,16 @@ Donde se ofrece la funcionalidad de un historial de las ultimas 10 opciones que 
 ##### HU_3
 Donde se ofrece de toda la funcionalidad del microservicio Natacion:
 
-<img src='assets/img/HU_03.PNG'>
+<img src='assets/img/HU_03.JPG'>
 
 ##### HU_07
 Donde se ofrece la funcionalidad de un listado con todos los nombres de todas las BBDD de los diferentes microservicios:
 
-<img src='assets/img/HU_07.PNG'>
+<img src='assets/img/HU_07.JPG'>
 
 ##### HU_08
 Donde se ofrece la funcionalidad de un listado ordenado alfabeticamente con todos los nombres de todas las BBDD de los diferentes microservicios:
 
-<img src='assets/img/HU_07.PNG'>
+<img src='assets/img/HU_07.JPG'>
 
 
