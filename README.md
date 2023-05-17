@@ -38,6 +38,21 @@ https://trello.com/b/b3EMiSkn/practica4-da
 <img src='assets/img/Trello_inicio.png'>
 
 Como podemos ver, hemos elegido hacer todas las HU del product backlog para este sprint.
+Tambien todas las HU han sido asignadas al princio de la siguiente forma:
+- El estudiante 1 se encargadra de las historias de Usuario: 01, 06 y 10.
+- El estudiante 2 se encargadra de las historias de Usuario: 02 y 11.
+- El estudiante 3 se encargadra de las historias de Usuario: 03, 07 y 08.
+- El estudiante 4 se encargadra de las historias de Usuario: 04 y 09.
+- El estudiante 5 se encargadra de las historias de Usuario: 05.
+
+#### Funcionalidades implementadas por el estudiante 1: José Collado Bravo
+
+##### HU_1
+
+##### HU_06
+
+##### HU_10
+
 
 #### Funcionalidades implementadas por el estudiante 2: José Carpio Blanca
 
@@ -67,5 +82,14 @@ Donde se ofrece la funcionalidad de un listado con todos los nombres de deportis
 Donde se ofrece la funcionalidad de un listado ordenado alfabeticamente con todos los nombres de deportistas de todas las BBDD de los diferentes microservicios:
 
 <img src='assets/img/HU_08.JPG'>
+
+#### Funcionalidades implementadas por el estudiante 4: Jose Manuel Gamarra Espinar
+
+##### HU_04
+##### HU_09
+
+#### Funcionalidades implementadas por el estudiante 5: Miguel Liébana Beltrán
+
+##### HU_05
 
 
