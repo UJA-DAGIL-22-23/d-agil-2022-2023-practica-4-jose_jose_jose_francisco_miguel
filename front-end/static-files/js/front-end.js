@@ -173,4 +173,24 @@ Frontend.Article.actualizar2 = function (titulo, contenido) {
         .mostrar()
     return this;
 }
+
+//Prueba de que se queden los botones
+/*
+Frontend.ID_SECCION_PRINCIPAL_BOTONES = "seccion-principal-botones"
+
+Frontend.Article.aniadirBotones = function (texto) {
+    document.getElementById(Frontend.ID_SECCION_PRINCIPAL_BOTONES).innerHTML += "\n" + texto;
+    return this;
+}
+Frontend.Article.actualizar3 = function (titulo,boton, contenido) {
+    titulo = titulo || ""
+    boton = boton || ""
+    contenido = contenido || ""
+    this.borrar()
+        .aniadirTitulo(titulo)
+        .aniadirBotones(boton)
+        .aniadirContenido(contenido)
+        .mostrar()
+    return this;
+}*/
 //--------------------------------------------------------------------------------------------
