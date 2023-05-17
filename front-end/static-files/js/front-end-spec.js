@@ -270,6 +270,7 @@ describe('Frontend.mostrarHistorial y Frontend.agregarHistorial', function () {
         expect(Frontend.historial.length).toBeGreaterThan(0);
     });
     it('Debería mostrar el historial indicando que se ha pulsado el botón "Aplicación remo"', function () {
+        Deportistas.ponerBotones();
         Frontend.mostrarHistorial()
         const listaHistorial = document.getElementById("historial");
         expect(listaHistorial.innerHTML !== "").toBeTrue();
