@@ -163,10 +163,18 @@
         function toggleModo() {
             const body = document.body;
             const modoBtn = document.getElementById("modoBtn");
+            const switchSlider = document.querySelector(".switch-slider");
 
             body.classList.toggle("dark-mode");
             modoBtn.classList.toggle("dark-mode");
+
+            if (body.classList.contains("dark-mode")) {
+                switchSlider.style.transform = "translateX(46px)";
+            } else {
+                switchSlider.style.transform = "translateX(0)";
+            }
         }
+
     </script>
 
     <script>
