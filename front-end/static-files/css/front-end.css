@@ -109,6 +109,15 @@
   border-radius: 50%;
   transition: transform 0.2s ease-in-out;
 }
+
+.switch-container button.dark-mode {
+  background-color: #333;
+}
+
+.switch-container button.dark-mode .switch-slider {
+  transform: translateX(46px);
+  background-color: #fff;
+}
   /* Estilos para el formulario *//*
   .form {
     background-color: #2c2c2c;
