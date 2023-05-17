@@ -624,3 +624,77 @@ FutbolAmer.recuperaVector = async function () {
 //---------------------------------------------------------------------------
 
 
+//HU 09
+FutbolAmer.muestracadena = async function () {
+    const vectorNatacion = await Natacion.recuperaVector();
+    const vectorWaterpolo = await Waterpolo.recuperaVector();
+    const vectorRemo = await Remo.recuperaVector();
+    const vectorFutbolAmer = await FutbolAmer.recuperaVector();
+
+    const vectoresConcatenados = vectorNatacion.concat(vectorWaterpolo, vectorRemo, vectorFutbolAmer);
+
+    const nombresDeportes = {
+        Natacion: "Natación",
+        Waterpolo: "Waterpolo",
+        Remo: "Remo",
+        Futbol_Americano: "Futbol Americano"
+    };
+
+    vectoresConcatenados.forEach(function (objeto) {
+        if (vectorNatacion.includes(objeto)) {
+            objeto.tabla = nombresDeportes.Natacion;
+        } else if (vectorWaterpolo.includes(objeto)) {
+            objeto.tabla = nombresDeportes.Waterpolo;
+        } else if (vectorRemo.includes(objeto)) {
+            objeto.tabla = nombresDeportes.Remo;
+        } else if (vectorFutbolAmer.includes(objeto)) {
+            objeto.tabla = nombresDeportes["Fútbol Americano"];
+        }
+    });
+
+    this.imprimenombre(vectoresConcatenados);
+    /*
+    var cadenaUsuario = prompt("Introduce una cadena:");
+    var resultados = vectoresConcatenados.filter(function (elemento) {
+        if (typeof elemento.nombre === "string") {
+            return elemento.nombre.includes(cadenaUsuario);
+        } else {
+            return false; // Otra acción si el nombre no es una cadena
+        }
+    });
+    // Mostrar los nombres del vector resultante
+    resultados.forEach(function (resultado) {
+        console.log("Nombre: " + resultado.nombre + ", Deporte: " + resultado.deporte);
+        this.imprimenombre(resultado);
+    });
+    */
+}
+
+FutbolAmer.imprimenombre = function (vector) {
+    //console.log( vector ) // Para comprobar lo que hay en vector
+    let msj = "";
+    msj += `<table class="listado-personas">
+    <thead>
+    <th>Nombre</th>
+    <th>Deporte</th>
+    </thead>
+    <tbody>
+`;
+
+    vector.forEach(e => msj += FutbolAmer.nombreTr(e))
+    msj += FutbolAmer.plantillaTablaPersonas.pie;
+
+    // Borro toda la info de Article y la sustituyo por la que me interesa
+    Frontend.Article.actualizar2("Estas no son horas de llamar", msj)
+}
+
+FutbolAmer.nombreTr = function (p) {
+    const d = p.data
+    const nombreTabla = p.tabla;
+
+    return `<tr>
+    <td>${d.nombre}</td>
+    <td>${nombreTabla}</td>
+    </tr>
+    `;
+}
