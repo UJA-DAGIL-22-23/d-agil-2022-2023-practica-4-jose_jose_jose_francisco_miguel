@@ -8,12 +8,12 @@
 // SPECS para Jasmine
 
 // Constantes para usar en las pruebas
-const elementoTitulo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
-const elementoContenido = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
-const TITULO_HOME = "Plantilla Home"
-const TITULO_ACERCA_DE = "Plantilla Acerca de"
+const elementoTituloCo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
+const elementoContenidoCo = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
+const TITULO_HOMECo = "Plantilla Home"
+const TITULO_ACERCA_DECo = "Plantilla Acerca de"
 
-const datosDescargadosPrueba = {
+const datosDescargadosPruebaCo = {
   mensaje: "Mensaje de prueba descargado",
   autor: "Prueba de autor",
   email: "Prueba de email",
@@ -39,35 +39,35 @@ describe("Waterpolo.mostrarHome: ", function () {
   it("muestra datos nulos cuando le pasamos un valor nulo",
     function () {
       Waterpolo.mostrarHome()
-      expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
-      expect(elementoContenido.innerHTML).toBe(Waterpolo.datosDescargadosNulos.mensaje)
+        expect(elementoTituloCo.innerHTML).toBe(TITULO_HOMECo)
+        expect(elementoContenidoCo.innerHTML).toBe(Waterpolo.datosDescargadosNulos.mensaje)
     })
 
   it("muestra datos nulos cuando le pasamos un valor que no es un objeto",
     function () {
       Waterpolo.mostrarHome(23)
-      expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
-      expect(elementoContenido.innerHTML).toBe(Waterpolo.datosDescargadosNulos.mensaje)
+        expect(elementoTituloCo.innerHTML).toBe(TITULO_HOMECo)
+        expect(elementoContenidoCo.innerHTML).toBe(Waterpolo.datosDescargadosNulos.mensaje)
     })
 
   it("muestra datos nulos cuando le pasamos un objeto que no tiene campo mensaje",
     function () {
       // Objeto vacío
       Waterpolo.mostrarHome({})
-      expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
-      expect(elementoContenido.innerHTML).toBe(Waterpolo.datosDescargadosNulos.mensaje)
+        expect(elementoTituloCo.innerHTML).toBe(TITULO_HOMECo)
+        expect(elementoContenidoCo.innerHTML).toBe(Waterpolo.datosDescargadosNulos.mensaje)
 
       // Objeto sin campo mensaje
       Waterpolo.mostrarHome({ foo: "bar" })
-      expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
-      expect(elementoContenido.innerHTML).toBe(Waterpolo.datosDescargadosNulos.mensaje)
+        expect(elementoTituloCo.innerHTML).toBe(TITULO_HOMECo)
+        expect(elementoContenidoCo.innerHTML).toBe(Waterpolo.datosDescargadosNulos.mensaje)
     })
 
   it("muestra correctamente el título y el mensaje",
     function () {
-      Waterpolo.mostrarHome(datosDescargadosPrueba)
-      expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
-      expect(elementoContenido.innerHTML).toBe(datosDescargadosPrueba.mensaje)
+        Waterpolo.mostrarHome(datosDescargadosPruebaCo)
+        expect(elementoTituloCo.innerHTML).toBe(TITULO_HOMECo)
+        expect(elementoContenidoCo.innerHTML).toBe(datosDescargadosPruebaCo.mensaje)
     })
 })
 
@@ -76,38 +76,38 @@ describe("Waterpolo.mostrarAcercaDe: ", function () {
   it("muestra datos nulos cuando le pasamos un valor nulo",
     function () {
       Waterpolo.mostrarAcercaDe()
-      expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
+        expect(elementoTituloCo.innerHTML).toBe(TITULO_ACERCA_DECo)
     })
 
   it("muestra datos nulos cuando le pasamos un valor que no es un objeto",
     function () {
       Waterpolo.mostrarAcercaDe(23)
-      expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
+        expect(elementoTituloCo.innerHTML).toBe(TITULO_ACERCA_DECo)
     })
 
   it("muestra datos nulos cuando le pasamos un objeto que no tiene campo mensaje o autor o email o fecha ",
     function () {
       // Objeto vacío
       Waterpolo.mostrarAcercaDe({})
-      expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
+        expect(elementoTituloCo.innerHTML).toBe(TITULO_ACERCA_DECo)
 
       // Objeto sin campo mensaje
       Waterpolo.mostrarAcercaDe({ autor: "un autor", email: "un email", fecha: "una fecha" })
-      expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
+        expect(elementoTituloCo.innerHTML).toBe(TITULO_ACERCA_DECo)
       // Objeto sin campo autor
       Waterpolo.mostrarAcercaDe({ mensaje: "un mensaje", email: "un email", fecha: "una fecha" })
-      expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
+        expect(elementoTituloCo.innerHTML).toBe(TITULO_ACERCA_DECo)
       // Objeto sin campo email
       Waterpolo.mostrarAcercaDe({ mensaje: "un mensaje", autor: "un autor", fecha: "una fecha" })
-      expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
+        expect(elementoTituloCo.innerHTML).toBe(TITULO_ACERCA_DECo)
       // Objeto sin campo fecha
       Waterpolo.mostrarAcercaDe({ mensaje: "un mensaje", autor: "un autor", email: "un email" })
-      expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
+        expect(elementoTituloCo.innerHTML).toBe(TITULO_ACERCA_DECo)
     })
   it("muestra correctamente el título y el mensaje conteniendo el autor, el email y la fecha",
     function () {
-      Waterpolo.mostrarAcercaDe(datosDescargadosPrueba)
-      expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
+        Waterpolo.mostrarAcercaDe(datosDescargadosPruebaCo)
+        expect(elementoTituloCo.innerHTML).toBe(TITULO_ACERCA_DECo)
     })
 })
 

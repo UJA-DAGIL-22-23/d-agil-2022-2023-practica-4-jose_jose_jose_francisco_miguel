@@ -643,7 +643,7 @@ FutbolAmer.muestracadena = async function () {
         Beisbol: "Beisbol"
     };
 
-    const cadenaUsuario = prompt("Introduce una cadena:");
+    const cadenaUsuario = document.getElementById("cadenaInput").value;
     const resultados = vectoresConcatenados.filter(function (objeto) {
         return objeto.data.nombre.includes(cadenaUsuario);
     });
