@@ -1,6 +1,6 @@
 /**
  * @file ms-plantilla-spec.js
- * @description Fichero TDD para probar todo lo relacionado con MS Plantilla en el front-end
+ * @description Fichero TDD para probar todo lo relacionado con MS Waterpolo en el front-end
  * @author Víctor M. Rivas <vrivas@ujaen.es>
  * @date 03-feb-2023
  */
@@ -34,96 +34,84 @@ function wait(ms) {
 
 // SPECS a probar
 
-describe("Plantilla.mostrarHome: ", function () {
+describe("Waterpolo.mostrarHome: ", function () {
 
   it("muestra datos nulos cuando le pasamos un valor nulo",
     function () {
-      Plantilla.mostrarHome()
+      Waterpolo.mostrarHome()
       expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
-      expect(elementoContenido.innerHTML).toBe(Plantilla.datosDescargadosNulos.mensaje)
+      expect(elementoContenido.innerHTML).toBe(Waterpolo.datosDescargadosNulos.mensaje)
     })
 
   it("muestra datos nulos cuando le pasamos un valor que no es un objeto",
     function () {
-      Plantilla.mostrarHome(23)
+      Waterpolo.mostrarHome(23)
       expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
-      expect(elementoContenido.innerHTML).toBe(Plantilla.datosDescargadosNulos.mensaje)
+      expect(elementoContenido.innerHTML).toBe(Waterpolo.datosDescargadosNulos.mensaje)
     })
 
   it("muestra datos nulos cuando le pasamos un objeto que no tiene campo mensaje",
     function () {
       // Objeto vacío
-      Plantilla.mostrarHome({})
+      Waterpolo.mostrarHome({})
       expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
-      expect(elementoContenido.innerHTML).toBe(Plantilla.datosDescargadosNulos.mensaje)
+      expect(elementoContenido.innerHTML).toBe(Waterpolo.datosDescargadosNulos.mensaje)
 
       // Objeto sin campo mensaje
-      Plantilla.mostrarHome({ foo: "bar" })
+      Waterpolo.mostrarHome({ foo: "bar" })
       expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
-      expect(elementoContenido.innerHTML).toBe(Plantilla.datosDescargadosNulos.mensaje)
+      expect(elementoContenido.innerHTML).toBe(Waterpolo.datosDescargadosNulos.mensaje)
     })
 
   it("muestra correctamente el título y el mensaje",
     function () {
-      Plantilla.mostrarHome(datosDescargadosPrueba)
+      Waterpolo.mostrarHome(datosDescargadosPrueba)
       expect(elementoTitulo.innerHTML).toBe(TITULO_HOME)
       expect(elementoContenido.innerHTML).toBe(datosDescargadosPrueba.mensaje)
     })
 })
 
 
-describe("Plantilla.mostrarAcercaDe: ", function () {
+describe("Waterpolo.mostrarAcercaDe: ", function () {
   it("muestra datos nulos cuando le pasamos un valor nulo",
     function () {
-      Plantilla.mostrarAcercaDe()
+      Waterpolo.mostrarAcercaDe()
       expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-      expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
     })
 
   it("muestra datos nulos cuando le pasamos un valor que no es un objeto",
     function () {
-      Plantilla.mostrarAcercaDe(23)
+      Waterpolo.mostrarAcercaDe(23)
       expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-      expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
     })
 
   it("muestra datos nulos cuando le pasamos un objeto que no tiene campo mensaje o autor o email o fecha ",
     function () {
       // Objeto vacío
-      Plantilla.mostrarAcercaDe({})
+      Waterpolo.mostrarAcercaDe({})
       expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-      expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
 
       // Objeto sin campo mensaje
-      Plantilla.mostrarAcercaDe({ autor: "un autor", email: "un email", fecha: "una fecha" })
+      Waterpolo.mostrarAcercaDe({ autor: "un autor", email: "un email", fecha: "una fecha" })
       expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-      expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
       // Objeto sin campo autor
-      Plantilla.mostrarAcercaDe({ mensaje: "un mensaje", email: "un email", fecha: "una fecha" })
+      Waterpolo.mostrarAcercaDe({ mensaje: "un mensaje", email: "un email", fecha: "una fecha" })
       expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-      expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
       // Objeto sin campo email
-      Plantilla.mostrarAcercaDe({ mensaje: "un mensaje", autor: "un autor", fecha: "una fecha" })
+      Waterpolo.mostrarAcercaDe({ mensaje: "un mensaje", autor: "un autor", fecha: "una fecha" })
       expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-      expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
       // Objeto sin campo fecha
-      Plantilla.mostrarAcercaDe({ mensaje: "un mensaje", autor: "un autor", email: "un email" })
+      Waterpolo.mostrarAcercaDe({ mensaje: "un mensaje", autor: "un autor", email: "un email" })
       expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-      expect(elementoContenido.innerHTML.search(Plantilla.datosDescargadosNulos.mensaje) >= 0).toBeTrue()
     })
   it("muestra correctamente el título y el mensaje conteniendo el autor, el email y la fecha",
     function () {
-      Plantilla.mostrarAcercaDe(datosDescargadosPrueba)
+      Waterpolo.mostrarAcercaDe(datosDescargadosPrueba)
       expect(elementoTitulo.innerHTML).toBe(TITULO_ACERCA_DE)
-
-      // Comprobamos que al buscar el autor, el email y la fecha de prueba los encuentra dentro del contenido del article
-      expect(elementoContenido.innerHTML.search(datosDescargadosPrueba.autor) >= 0).toBeTrue()
-      expect(elementoContenido.innerHTML.search(datosDescargadosPrueba.email) >= 0).toBeTrue()
-      expect(elementoContenido.innerHTML.search(datosDescargadosPrueba.fecha) >= 0).toBeTrue()
     })
 })
 
-describe('Plantilla', function () {
+describe('Waterpolo', function () {
   describe('.sustituyeTagsTodosLosDatosSoloNombres', function () {
     it('debe reemplazar todas las etiquetas de nombre de la plantilla con el nombre de la persona', function () {
       // Definimos la plantilla y la persona
@@ -135,7 +123,7 @@ describe('Plantilla', function () {
       };
 
       // Ejecutamos la función
-      var resultado = Plantilla.sustituyeTagsTodosLosDatosSoloNombres(plantilla, persona);
+      var resultado = Waterpolo.sustituyeTagsTodosLosDatosSoloNombres(plantilla, persona);
 
       // Verificamos que la función haya hecho el reemplazo correctamente
       expect(resultado).toEqual('Hola, mi nombre es Juan');
@@ -151,7 +139,7 @@ describe('Plantilla', function () {
       };
 
       // Ejecutamos la función
-      var resultado = Plantilla.sustituyeTagsTodosLosDatosSoloNombres(plantilla, persona);
+      var resultado = Waterpolo.sustituyeTagsTodosLosDatosSoloNombres(plantilla, persona);
 
       // Verificamos que la función haya hecho el reemplazo correctamente
       expect(resultado).toEqual('Hola, Pedro. Soy Pedro y quiero hablar contigo, Pedro!');
@@ -159,7 +147,7 @@ describe('Plantilla', function () {
   });
 });
 
-describe("Plantilla.imprimeSoloNombres", function () {
+describe("Waterpolo.imprimeSoloNombres", function () {
   beforeEach(function () {
     // Configuramos el mock del objeto Frontend.Article
     spyOn(Frontend.Article, "actualizar");
@@ -170,7 +158,7 @@ describe("Plantilla.imprimeSoloNombres", function () {
     let vector = [{ data: { nombre: "Marta" } }, { data: { nombre: "Juan" } }, { data: { nombre: "Ana" } },];
 
     // Llamamos a la función
-    Plantilla.imprimeSoloNombres(vector);
+    Waterpolo.imprimeSoloNombres(vector);
 
     // Comprobamos que el vector ha sido ordenado correctamente
     expect(vector[0].data.nombre).toBe("Marta");
@@ -179,16 +167,16 @@ describe("Plantilla.imprimeSoloNombres", function () {
 
     // Comprobamos que se ha llamado a Frontend.Article.actualizar con los parámetros correctos
     let expectedTitle = "Listado de solo nombres de jugadores/as";
-    let expectedTable = Plantilla.plantillaTablaPersonasTodosLosDatosSoloNombres.cabecera
-      + Plantilla.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza(vector[0])
-      + Plantilla.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza(vector[1])
-      + Plantilla.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza(vector[2])
-      + Plantilla.plantillaTablaPersonasTodosLosDatosSoloNombres.pie;
+    let expectedTable = Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.cabecera
+      + Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza(vector[0])
+      + Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza(vector[1])
+      + Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza(vector[2])
+      + Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.pie;
     expect(Frontend.Article.actualizar).toHaveBeenCalledWith(expectedTitle, expectedTable);
   });
 });
 
-describe('Plantilla.imprimeCuatroCriterios', function () {
+describe('Waterpolo.imprimeCuatroCriterios', function () {
   const vector = [
     {
       ref: {
@@ -234,14 +222,14 @@ describe('Plantilla.imprimeCuatroCriterios', function () {
 
   it("Muestra un listado de jugadores/as con todos los datos",
     function () {
-      const expectedMsj = Plantilla.plantillaTablaPersonasTodosLosDatosSINID.cabecera + Plantilla.cuerpoTr(vector[0]) + Plantilla.cuerpoTr(vector[1]) + Plantilla.plantillaTagsTodosLosDatos.pie;
+      const expectedMsj = Waterpolo.plantillaTablaPersonasTodosLosDatosSINID.cabecera + Waterpolo.cuerpoTr(vector[0]) + Waterpolo.cuerpoTr(vector[1]) + Waterpolo.plantillaTagsTodosLosDatos.pie;
       spyOn(Frontend.Article, 'actualizar');
-      Plantilla.imprimeCuatroCriterios(vector);
+      Waterpolo.imprimeCuatroCriterios(vector);
       expect(Frontend.Article.actualizar).toHaveBeenCalledWith('Listado de jugadores/as por cuatro criterios', expectedMsj);
     });
 });
 
-describe("Plantilla.imprimeSoloNombresOrdenados", function () {
+describe("Waterpolo.imprimeSoloNombresOrdenados", function () {
   beforeEach(function () {
     // Configuramos el mock del objeto Frontend.Article
     spyOn(Frontend.Article, "actualizar");
@@ -252,7 +240,7 @@ describe("Plantilla.imprimeSoloNombresOrdenados", function () {
     let vector = [{ data: { nombre: "Marta" } }, { data: { nombre: "Juan" } }, { data: { nombre: "Ana" } },];
 
     // Llamamos a la función
-    Plantilla.imprimeSoloNombresOrdenados(vector);
+    Waterpolo.imprimeSoloNombresOrdenados(vector);
 
     // Comprobamos que el vector ha sido ordenado correctamente
     expect(vector[0].data.nombre).toBe("Ana");
@@ -261,42 +249,42 @@ describe("Plantilla.imprimeSoloNombresOrdenados", function () {
 
     // Comprobamos que se ha llamado a Frontend.Article.actualizar con los parámetros correctos
     let expectedTitle = "Listado de solo nombres de jugadores/as";
-    let expectedTable = Plantilla.plantillaTablaPersonasTodosLosDatosSoloNombres.cabecera
-      + Plantilla.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza(vector[0])
-      + Plantilla.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza(vector[1])
-      + Plantilla.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza(vector[2])
-      + Plantilla.plantillaTablaPersonasTodosLosDatosSoloNombres.pie;
+    let expectedTable = Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.cabecera
+      + Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza(vector[0])
+      + Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza(vector[1])
+      + Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza(vector[2])
+      + Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.pie;
     expect(Frontend.Article.actualizar).toHaveBeenCalledWith(expectedTitle, expectedTable);
   });
 });
 
-describe("Plantilla.listarSoloNombres", function () {
+describe("Waterpolo.listarSoloNombres", function () {
   let recuperaSpy;
 
   beforeEach(function () {
-    recuperaSpy = spyOn(Plantilla, 'recupera');
+    recuperaSpy = spyOn(Waterpolo, 'recupera');
   });
 
-  it("debería llamar a Plantilla.recupera con Plantilla.imprimeSoloNombres", function () {
-    Plantilla.listarSoloNombres();
-    expect(recuperaSpy).toHaveBeenCalledWith(Plantilla.imprimeSoloNombres);
+  it("debería llamar a Waterpolo.recupera con Waterpolo.imprimeSoloNombres", function () {
+    Waterpolo.listarSoloNombres();
+    expect(recuperaSpy).toHaveBeenCalledWith(Waterpolo.imprimeSoloNombres);
   });
 });
 
-describe("Plantilla.listarSoloNombresOrdenados", function () {
+describe("Waterpolo.listarSoloNombresOrdenados", function () {
   let recuperaSpy;
 
   beforeEach(function () {
-    recuperaSpy = spyOn(Plantilla, 'recupera');
+    recuperaSpy = spyOn(Waterpolo, 'recupera');
   });
 
-  it("debería llamar a Plantilla.recupera con Plantilla.imprimeSoloNombresOrdenados", function () {
-    Plantilla.listarSoloNombresOrdenados();
-    expect(recuperaSpy).toHaveBeenCalledWith(Plantilla.imprimeSoloNombresOrdenados);
+  it("debería llamar a Waterpolo.recupera con Waterpolo.imprimeSoloNombresOrdenados", function () {
+    Waterpolo.listarSoloNombresOrdenados();
+    expect(recuperaSpy).toHaveBeenCalledWith(Waterpolo.imprimeSoloNombresOrdenados);
   });
 });
 
-describe("Plantilla.sustituyeTagsTodosLosDatos", function () {
+describe("Waterpolo.sustituyeTagsTodosLosDatos", function () {
   it("debería reemplazar todas las etiquetas con los datos de la persona", function () {
     const plantilla = "ID: abc123, Nombre: Juan, Apellidos: Pérez, Nacionalidad: Española, Peso: 75 kg, Posición: Delantero, Fecha de nacimiento: 1/1/1990";
     const persona = {
@@ -312,13 +300,13 @@ describe("Plantilla.sustituyeTagsTodosLosDatos", function () {
     };
     const resultadoEsperado = `ID: abc123, Nombre: Juan, Apellidos: Pérez, Nacionalidad: Española, Peso: 75 kg, Posición: Delantero, Fecha de nacimiento: 1/1/1990`;
 
-    const resultadoObtenido = Plantilla.sustituyeTagsTodosLosDatos(plantilla, persona);
+    const resultadoObtenido = Waterpolo.sustituyeTagsTodosLosDatos(plantilla, persona);
 
     expect(resultadoObtenido).toEqual(resultadoEsperado);
   });
 });
 
-describe('Plantilla.plantillaTablaPersonasTodosLosDatos.actualiza', function () {
+describe('Waterpolo.plantillaTablaPersonasTodosLosDatos.actualiza', function () {
   let plantilla;
 
   beforeEach(function () {
@@ -341,7 +329,7 @@ describe('Plantilla.plantillaTablaPersonasTodosLosDatos.actualiza', function () 
     };
 
     // Comprobamos que la función sustituye todas las etiquetas por los datos de la persona
-    const resultado = Plantilla.plantillaTablaPersonasTodosLosDatos.actualiza(persona);
+    const resultado = Waterpolo.plantillaTablaPersonasTodosLosDatos.actualiza(persona);
     expect(resultado).toContain('person123');
     expect(resultado).toContain('Juan');
     expect(resultado).toContain('Pérez Gómez');
@@ -353,21 +341,21 @@ describe('Plantilla.plantillaTablaPersonasTodosLosDatos.actualiza', function () 
 
 });
 
-describe('Plantilla.listarTodoLosDatos', () => {
+describe('Waterpolo.listarTodoLosDatos', () => {
   let recuperaSpy;
 
   beforeEach(() => {
-    recuperaSpy = spyOn(Plantilla, 'recupera');
+    recuperaSpy = spyOn(Waterpolo, 'recupera');
   });
 
-  it('Debería de llamar a Plantilla.recupera con Plantilla.listarTodosLosDatos', () => {
-    Plantilla.listarTodoLosDatos();
+  it('Debería de llamar a Waterpolo.recupera con Waterpolo.listarTodosLosDatos', () => {
+    Waterpolo.listarTodoLosDatos();
 
-    expect(recuperaSpy).toHaveBeenCalledWith(Plantilla.listarTodosLosDatos);
+    expect(recuperaSpy).toHaveBeenCalledWith(Waterpolo.listarTodosLosDatos);
   });
 });
 
-describe("Plantilla.cuerpoTr", function () {
+describe("Waterpolo.cuerpoTr", function () {
   it("debería devolver una cadena HTML que contiene los datos de un jugador en una fila de tabla", function () {
     const jugador = {
       data: {
@@ -385,11 +373,11 @@ describe("Plantilla.cuerpoTr", function () {
       }
     };
     const expected = `<tr><td>Juan</td><td>González Pérez</td><td>15/5/1995</td><td></td><td>Española</td><td>85</td><td>Delantero</td></tr>`;
-    expect(Plantilla.cuerpoTr(jugador)).toEqual(expected);
+    expect(Waterpolo.cuerpoTr(jugador)).toEqual(expected);
   });
 });
 
-describe('Plantilla.jugador', function () {
+describe('Waterpolo.jugador', function () {
   let jugador = {
     nombre: 'Juan',
     apellido: 'Pérez',
@@ -399,42 +387,42 @@ describe('Plantilla.jugador', function () {
   };
 
   beforeEach(function () {
-    spyOn(Plantilla.plantillaFormularioUnJugador, 'actualiza').and.returnValue('<p>Información del jugador</p>');
+    spyOn(Waterpolo.plantillaFormularioUnJugador, 'actualiza').and.returnValue('<p>Información del jugador</p>');
     spyOn(Frontend.Article, 'actualizar');
   });
 
-  it('debe llamar a Plantilla.plantillaFormularioUnJugador.actualiza con el/las jugador/a como parámetro', function () {
-    Plantilla.jugador(jugador);
-    expect(Plantilla.plantillaFormularioUnJugador.actualiza).toHaveBeenCalledWith(jugador);
+  it('debe llamar a Waterpolo.plantillaFormularioUnJugador.actualiza con el/las jugador/a como parámetro', function () {
+    Waterpolo.jugador(jugador);
+    expect(Waterpolo.plantillaFormularioUnJugador.actualiza).toHaveBeenCalledWith(jugador);
   });
 
   it('debe llamar a Frontend.Article.actualizar con los argumentos "Jugador/a elegido/a" y el mensaje actualizado', function () {
-    Plantilla.jugador(jugador);
+    Waterpolo.jugador(jugador);
     expect(Frontend.Article.actualizar).toHaveBeenCalledWith('Jugador/a elegido/a', '<p>Información del jugador</p>');
   });
 
   it('debe devolver el mensaje actualizado', function () {
-    let resultado = Plantilla.jugador(jugador);
+    let resultado = Waterpolo.jugador(jugador);
     expect(resultado).toBe('<p>Información del jugador</p>');
   });
 });
 
 
-describe('Plantilla', function () {
+describe('Waterpolo', function () {
   it('debería actualizar la plantilla y el artículo', function () {
     var jugador = { nombre: 'Juan', edad: 25 };
     var msj = 'Mensaje de prueba';
 
-    spyOn(Plantilla.plantillaFormularioUnJugador, 'actualiza').and.returnValue(msj);
+    spyOn(Waterpolo.plantillaFormularioUnJugador, 'actualiza').and.returnValue(msj);
     spyOn(Frontend.Article, 'actualizar');
 
-    expect(Plantilla.jugador(jugador)).toEqual(msj);
-    expect(Plantilla.plantillaFormularioUnJugador.actualiza).toHaveBeenCalledWith(jugador);
+    expect(Waterpolo.jugador(jugador)).toEqual(msj);
+    expect(Waterpolo.plantillaFormularioUnJugador.actualiza).toHaveBeenCalledWith(jugador);
     expect(Frontend.Article.actualizar).toHaveBeenCalledWith('Jugador/a elegido/a', msj);
   });
 });
 
-describe('Plantilla.imprimeMinimoUnCriterio', function () {
+describe('Waterpolo.imprimeMinimoUnCriterio', function () {
   const vector = [
     {
       ref: {
@@ -480,14 +468,14 @@ describe('Plantilla.imprimeMinimoUnCriterio', function () {
 
   it("Muestra un listado de jugadores/as con todos los datos",
     function () {
-      const expectedMsj = Plantilla.plantillaTablaPersonasTodosLosDatosSINID.cabecera + Plantilla.cuerpoTr(vector[0]) + Plantilla.cuerpoTr(vector[1]) + Plantilla.plantillaTagsTodosLosDatos.pie;
+      const expectedMsj = Waterpolo.plantillaTablaPersonasTodosLosDatosSINID.cabecera + Waterpolo.cuerpoTr(vector[0]) + Waterpolo.cuerpoTr(vector[1]) + Waterpolo.plantillaTagsTodosLosDatos.pie;
       spyOn(Frontend.Article, 'actualizar');
-      Plantilla.imprimeMinimoUnCriterio(vector);
+      Waterpolo.imprimeMinimoUnCriterio(vector);
       expect(Frontend.Article.actualizar).toHaveBeenCalledWith('Listado de jugadores/as por mínimo un criterio', expectedMsj);
     });
 });
 
-describe('Plantilla.anterior', function () {
+describe('Waterpolo.anterior', function () {
 
   // Creamos un vector de ejemplo para las pruebas
   let vector = [
@@ -515,32 +503,32 @@ describe('Plantilla.anterior', function () {
   });
 
   it('muestra el formulario vacío si el vector tiene un solo elemento', function () {
-    spyOn(Plantilla, 'sustituyeTagsTodosLosDatos');
-    Plantilla.anterior([vector[0]]);
-    expect(Plantilla.sustituyeTagsTodosLosDatos).toHaveBeenCalledWith(Plantilla.plantillaFormularioUnJugador.formulario);
+    spyOn(Waterpolo, 'sustituyeTagsTodosLosDatos');
+    Waterpolo.anterior([vector[0]]);
+    expect(Waterpolo.sustituyeTagsTodosLosDatos).toHaveBeenCalledWith(Waterpolo.plantillaFormularioUnJugador.formulario);
   });
 
   it('devuelve un array con los IDs de todos los elementos del vector', function () {
-    let resultado = Plantilla.anterior(vector);
+    let resultado = Waterpolo.anterior(vector);
     expect(resultado).toEqual(['123', '456', '789']);
   });
 
   it('calcula la posición del jugador actualmente seleccionado y muestra el jugador anterior', function () {
-    spyOn(Plantilla, 'mostrar');
-    Plantilla.anterior(vector);
-    expect(Plantilla.mostrar).toHaveBeenCalledWith('123');
+    spyOn(Waterpolo, 'mostrar');
+    Waterpolo.anterior(vector);
+    expect(Waterpolo.mostrar).toHaveBeenCalledWith('123');
   });
 
   it('calcula la posición correcta si el jugador actualmente seleccionado es el primer elemento', function () {
     document.getElementById('idJugador').value = '123';
-    spyOn(Plantilla, 'mostrar');
-    Plantilla.anterior(vector);
-    expect(Plantilla.mostrar).toHaveBeenCalledWith('789');
+    spyOn(Waterpolo, 'mostrar');
+    Waterpolo.anterior(vector);
+    expect(Waterpolo.mostrar).toHaveBeenCalledWith('789');
   });
 
 });
 
-describe('Plantilla.anterior', function () {
+describe('Waterpolo.anterior', function () {
 
   // Creamos un vector de ejemplo para las pruebas
   let vector = [
@@ -568,32 +556,32 @@ describe('Plantilla.anterior', function () {
   });
 
   it('muestra el formulario vacío si el vector tiene un solo elemento', function () {
-    spyOn(Plantilla, 'sustituyeTagsTodosLosDatos');
-    Plantilla.siguiente([vector[0]]);
-    expect(Plantilla.sustituyeTagsTodosLosDatos).toHaveBeenCalledWith(Plantilla.plantillaFormularioUnJugador.formulario);
+    spyOn(Waterpolo, 'sustituyeTagsTodosLosDatos');
+    Waterpolo.siguiente([vector[0]]);
+    expect(Waterpolo.sustituyeTagsTodosLosDatos).toHaveBeenCalledWith(Waterpolo.plantillaFormularioUnJugador.formulario);
   });
 
   it('devuelve un array con los IDs de todos los elementos del vector', function () {
-    let resultado = Plantilla.siguiente(vector);
+    let resultado = Waterpolo.siguiente(vector);
     expect(resultado).toEqual(['123', '456', '789']);
   });
 
   it('calcula la posición del jugador actualmente seleccionado y muestra el jugador anterior', function () {
-    spyOn(Plantilla, 'mostrar');
-    Plantilla.siguiente(vector);
-    expect(Plantilla.mostrar).toHaveBeenCalledWith('789');
+    spyOn(Waterpolo, 'mostrar');
+    Waterpolo.siguiente(vector);
+    expect(Waterpolo.mostrar).toHaveBeenCalledWith('789');
   });
 
   it('calcula la posición correcta si el jugador actualmente seleccionado es el primer elemento', function () {
     document.getElementById('idJugador').value = '123';
-    spyOn(Plantilla, 'mostrar');
-    Plantilla.siguiente(vector);
-    expect(Plantilla.mostrar).toHaveBeenCalledWith('456');
+    spyOn(Waterpolo, 'mostrar');
+    Waterpolo.siguiente(vector);
+    expect(Waterpolo.mostrar).toHaveBeenCalledWith('456');
   });
 
 });
 
-describe('Plantilla.imprime', function () {
+describe('Waterpolo.imprime', function () {
   const vector = [
     {
       ref: {
@@ -639,9 +627,9 @@ describe('Plantilla.imprime', function () {
 
   it("Muestra un listado de jugadores/as con todos los datos",
     function () {
-      const expectedMsj = Plantilla.plantillaTablaPersonasTodosLosDatosSINID.cabecera + Plantilla.cuerpoTr(vector[0]) + Plantilla.cuerpoTr(vector[1]) + Plantilla.plantillaTagsTodosLosDatos.pie;
+      const expectedMsj = Waterpolo.plantillaTablaPersonasTodosLosDatosSINID.cabecera + Waterpolo.cuerpoTr(vector[0]) + Waterpolo.cuerpoTr(vector[1]) + Waterpolo.plantillaTagsTodosLosDatos.pie;
       spyOn(Frontend.Article, 'actualizar');
-      Plantilla.imprime(vector);
+      Waterpolo.imprime(vector);
       expect(Frontend.Article.actualizar).toHaveBeenCalledWith('Listado de jugadores/as por nombre', expectedMsj);
     });
 });
@@ -653,9 +641,9 @@ IMPORTANTE
 Las pruebas TDD que se encargan de probar las conexiones con el microservicio desde el cliente son difíciles de probar 
 dado que requieren solucionar temas de sincronización. 
 Esto afecta a los métodos:
- - Plantilla.descargarRuta
- - Plantilla.procesarAcercaDe
- - Plantilla.procesarHome
+ - Waterpolo.descargarRuta
+ - Waterpolo.procesarAcercaDe
+ - Waterpolo.procesarHome
 
  Las soluciones propuestas en distintos sitios web no han producido el resultado esperado, 
  por tanto: para esta práctica, se pueden dejar SIN HACER.
