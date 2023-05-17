@@ -686,3 +686,23 @@ Jugadores.guardar = async function () {
 Jugadores.almacenaVector = function (vector) {
     this.vectorDeportistas = vector
 }
+
+Jugadores.ponerBotones = function(){
+    let msj = Jugadores.botones;
+    Frontend.agregarHistorial("Pulsado botón Aplicación beisbol")
+    Frontend.Article.actualizar2("", msj)
+}
+Jugadores.botones=`<h1>Aplicación Microservicios beisbol</h1>
+<nav>
+<a href="javascript:Jugadores.procesarHome()" class="opcion-principal"
+    title="Llama a la ruta / del MS Beisbol">Home</a>
+<a href="javascript:Jugadores.procesarAcercaDe()" class="opcion-principal"
+    title="Llama a la ruta /acercade del MS Beisbol">Acerca de</a>
+<a href="javascript:Jugadores.listadoNombres()" class="opcion-principal mostrar"
+    title="Realiza un listado de todas los nombres de los jugadores que hay en la BBDD">Listar nombres Jugadores</a>
+    <a href="javascript:Jugadores.ordenarListadoNombresAlfabeticamente()" class="opcion-principal mostrar"
+    title="Realiza un listado de todas las personas que hay en la BBDD ordenado alfabeticamente">Listar personas Alfabéticamente</a>
+<a href="javascript:Jugadores.listadoDatos()" class="opcion-principal mostrar"
+    title="Realiza un listado de todas las personas con todos sus datos">Listado Datos</a>
+</nav>
+<br/>`
