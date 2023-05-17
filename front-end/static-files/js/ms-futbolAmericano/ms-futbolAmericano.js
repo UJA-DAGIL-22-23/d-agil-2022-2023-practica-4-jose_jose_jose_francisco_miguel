@@ -631,14 +631,16 @@ FutbolAmer.muestracadena = async function () {
     const vectorWaterpolo = await Waterpolo.recuperaVector();
     const vectorRemo = await Remo.recuperaVector();
     const vectorFutbolAmer = await FutbolAmer.recuperaVector();
+    const vectorBeisbol = await Jugadores.recuperaVector();
 
-    const vectoresConcatenados = vectorNatacion.concat(vectorWaterpolo, vectorRemo, vectorFutbolAmer);
+    const vectoresConcatenados = vectorNatacion.concat(vectorWaterpolo, vectorRemo, vectorFutbolAmer, vectorBeisbol);
 
     const nombresDeportes = {
         Natacion: "Natación",
         Waterpolo: "Waterpolo",
         Remo: "Remo",
-        Futbol_Americano: "Futbol Americano"
+        Futbol_Americano: "Futbol Americano",
+        Beisbol: "Beisbol"
     };
 
     const cadenaUsuario = prompt("Introduce una cadena:");
@@ -655,6 +657,8 @@ FutbolAmer.muestracadena = async function () {
             objeto.tabla = nombresDeportes.Remo;
         } else if (vectorFutbolAmer.includes(objeto)) {
             objeto.tabla = nombresDeportes.Futbol_Americano;
+        } else if (vectorBeisbol.includes(objeto)) {
+            objeto.tabla = nombresDeportes.Beisbol;
         }
     });
 
