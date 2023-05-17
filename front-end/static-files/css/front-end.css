@@ -17,6 +17,11 @@
     background-color: #1a1a1a;
     color: #fff;
   }
+
+  body.dark-mode {
+    background-color: #fff; /* Modo oscuro */
+    color: #1a1a1a; /* Color de texto en modo oscuro */
+  }
   
   #seccion-principal {
     width: 100%;
