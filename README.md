@@ -1,6 +1,9 @@
 # Práctica 4
 ## Información del grupo
 ### Estudiante 1
+
+<img src='/jcollado.png' width='200px'>
+
 * **Nombre**: José
 * **Apellidos**: Collado Bravo
 * **Correo**: jcb00029@red.ujaen.es
