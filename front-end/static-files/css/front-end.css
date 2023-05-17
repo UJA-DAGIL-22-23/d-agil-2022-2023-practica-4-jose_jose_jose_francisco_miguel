@@ -81,9 +81,9 @@
 
 .switch-container {
   display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 34px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
 }
 
 .switch-container button {
