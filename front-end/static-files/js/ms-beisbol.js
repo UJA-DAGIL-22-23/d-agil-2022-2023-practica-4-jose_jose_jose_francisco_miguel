@@ -396,6 +396,7 @@ Jugadores.imprimeMuchasPersonas = function (vector) {
  * @param {Vector_de_personas} vector Vector con los datos de las personas a mostrar
  */
 Jugadores.imprimeListadoNombres = function (vector) {
+    Frontend.agregarHistorial("Pulsado botón Listar nombres jugadores (beisbol)")
      //console.log( vector ) // Para comprobar lo que hay en vector
      let msj = "";
      msj += Jugadores.tablaJugadoresNombres.cabecera;
@@ -445,6 +446,7 @@ Jugadores.OrdenarAlfabeticamenteN = function () {
  * @param {Vector_de_personas} vector Vector con los datos de las personas a mostrar
  */
 Jugadores.imprimeListadoNombresAlfabeticamente = function (vector) {
+    Frontend.agregarHistorial("Pulsado botón Listar personas alfabéticamente (beisbol)")
       //console.log( vector ) // Para comprobar lo que hay en vector
       let msj = "";
       msj += Jugadores.tablaJugadoresNombres.cabecera;
@@ -522,6 +524,7 @@ Jugadores.ordenarListadoNombresAlfabeticamente = function(){
     Jugadores.recupera(Jugadores.OrdenarNombres)
 }
 Jugadores.listadoDatos = function(){
+    Frontend.agregarHistorial("Pulsado botón Listado datos (beisbol)")
     Jugadores.recupera(Jugadores.imprimeListadoDatos);
 }
 
