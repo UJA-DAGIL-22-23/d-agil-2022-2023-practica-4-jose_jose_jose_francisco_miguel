@@ -640,7 +640,12 @@ FutbolAmer.muestracadena = async function () {
         Futbol_Americano: "Futbol Americano"
     };
 
-    vectoresConcatenados.forEach(function (objeto) {
+    const cadenaUsuario = prompt("Introduce una cadena:");
+    const resultados = vectoresConcatenados.filter(function (objeto) {
+        return objeto.data.nombre.includes(cadenaUsuario);
+    });
+
+    resultados.forEach(function (objeto) {
         if (vectorNatacion.includes(objeto)) {
             objeto.tabla = nombresDeportes.Natacion;
         } else if (vectorWaterpolo.includes(objeto)) {
@@ -648,29 +653,16 @@ FutbolAmer.muestracadena = async function () {
         } else if (vectorRemo.includes(objeto)) {
             objeto.tabla = nombresDeportes.Remo;
         } else if (vectorFutbolAmer.includes(objeto)) {
-            objeto.tabla = nombresDeportes["Fútbol Americano"];
+            objeto.tabla = nombresDeportes.Futbol_Americano;
         }
     });
 
-    this.imprimenombre(vectoresConcatenados);
-    /*
-    var cadenaUsuario = prompt("Introduce una cadena:");
-    var resultados = vectoresConcatenados.filter(function (elemento) {
-        if (typeof elemento.nombre === "string") {
-            return elemento.nombre.includes(cadenaUsuario);
-        } else {
-            return false; // Otra acción si el nombre no es una cadena
-        }
-    });
-    // Mostrar los nombres del vector resultante
-    resultados.forEach(function (resultado) {
-        console.log("Nombre: " + resultado.nombre + ", Deporte: " + resultado.deporte);
-        this.imprimenombre(resultado);
-    });
-    */
+
+    this.imprimenombre(resultados, cadenaUsuario);
+
 }
 
-FutbolAmer.imprimenombre = function (vector) {
+FutbolAmer.imprimenombre = function (vector,cadenaUsuario) {
     //console.log( vector ) // Para comprobar lo que hay en vector
     let msj = "";
     msj += `<table class="listado-personas">
@@ -681,20 +673,19 @@ FutbolAmer.imprimenombre = function (vector) {
     <tbody>
 `;
 
-    vector.forEach(e => msj += FutbolAmer.nombreTr(e))
-    msj += FutbolAmer.plantillaTablaPersonas.pie;
 
+    vector.forEach(function (jugador) {
+        const nombreTabla = jugador.tabla;
+        msj += FutbolAmer.nombreTr(jugador.data, nombreTabla);
+    });
+    msj += FutbolAmer.plantillaTablaPersonas.pie;
     // Borro toda la info de Article y la sustituyo por la que me interesa
-    Frontend.Article.actualizar2("Estas no son horas de llamar", msj)
+    Frontend.Article.actualizar2("Listado de jugadores con la cadena seleccionada", msj)
 }
 
-FutbolAmer.nombreTr = function (p) {
-    const d = p.data
-    const nombreTabla = p.tabla;
-
+FutbolAmer.nombreTr = function (data, nombreTabla) {
     return `<tr>
-    <td>${d.nombre}</td>
+    <td>${data.nombre}</td>
     <td>${nombreTabla}</td>
-    </tr>
-    `;
+  </tr>`;
 }
