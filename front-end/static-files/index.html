@@ -161,6 +161,7 @@
 
     <script>
         function toggleModo() {
+            Frontend.agregarHistorial("Pulsado botón Cambiar Modo")
             const body = document.body;
             const modoBtn = document.getElementById("modoBtn");
             const switchSlider = document.querySelector(".switch-slider");
@@ -174,7 +175,6 @@
                 switchSlider.style.transform = "translateX(0)";
             }
         }
-
     </script>
 
     <script>
