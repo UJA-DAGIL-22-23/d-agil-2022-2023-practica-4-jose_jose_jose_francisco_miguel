@@ -626,6 +626,7 @@ FutbolAmer.recuperaVector = async function () {
 
 //HU 09
 FutbolAmer.muestracadena = async function () {
+    Frontend.agregarHistorial("Pulsado botón Introduce cadena (todos los MS)");
     const vectorNatacion = await Natacion.recuperaVector();
     const vectorWaterpolo = await Waterpolo.recuperaVector();
     const vectorRemo = await Remo.recuperaVector();
@@ -663,7 +664,7 @@ FutbolAmer.muestracadena = async function () {
 }
 
 FutbolAmer.imprimenombre = function (vector,cadenaUsuario) {
-    //console.log( vector ) // Para comprobar lo que hay en vector
+   
     let msj = "";
     msj += `<table class="listado-personas">
     <thead>
@@ -679,7 +680,7 @@ FutbolAmer.imprimenombre = function (vector,cadenaUsuario) {
         msj += FutbolAmer.nombreTr(jugador.data, nombreTabla);
     });
     msj += FutbolAmer.plantillaTablaPersonas.pie;
-    // Borro toda la info de Article y la sustituyo por la que me interesa
+    
     Frontend.Article.actualizar2("Listado de jugadores con la cadena seleccionada", msj)
 }
 
