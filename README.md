@@ -36,13 +36,33 @@ https://trello.com/b/b3EMiSkn/practica4-da
 
 Como podemos ver, hemos elegido hacer todas las HU del product backlog para este sprint.
 
-#### Funcionalidades implementadas por el estudiante 2
+#### Funcionalidades implementadas por el estudiante 2: José Carpio Blanca
 
 ##### HU_2
+Donde se ofrece de toda la funcionalidad del microservicio Remo:
 
 <img src='assets/img/HU_2.PNG'>
 
 ##### HU_11
+Donde se ofrece la funcionalidad de un historial de las ultimas 10 opciones que ha pulsado el usuario en la app.
 
 <img src='assets/img/HU_11.PNG'>
+
+#### Funcionalidades implementadas por el estudiante 3: Francisco Javier Martinez Lomas
+
+##### HU_3
+Donde se ofrece de toda la funcionalidad del microservicio Natacion:
+
+<img src='assets/img/HU_03.JPG'>
+
+##### HU_07
+Donde se ofrece la funcionalidad de un listado con todos los nombres de deportistas de todas las BBDD de los diferentes microservicios:
+
+<img src='assets/img/HU_07.JPG'>
+
+##### HU_08
+Donde se ofrece la funcionalidad de un listado ordenado alfabeticamente con todos los nombres de deportistas de todas las BBDD de los diferentes microservicios:
+
+<img src='assets/img/HU_08.JPG'>
+
 
