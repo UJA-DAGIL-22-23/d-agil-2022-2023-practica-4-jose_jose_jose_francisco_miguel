@@ -33,9 +33,9 @@ function wait(ms) {
 
 // SPECS de prueba
 
-//Spec listarNombres
+//Spec listadoNombres
 //-----------------------------------------------------------------------------------------------------------
-//HU 02: Ver un listado solo con los nombres de todos los jugadores/equipos.---------------------------------
+//HU 02: Ver un listado solo con los nombres de todos los jugadores.---------------------------------
 describe("Prueba Jugadores.listadoNombres HU 02", function() {
   beforeEach(function() {
   // Le paso datos a  recupera() para que devuelva una lista de deportistas
@@ -55,3 +55,38 @@ describe("Prueba Jugadores.listadoNombres HU 02", function() {
     expect(Jugadores.imprimeListadoNombres).toHaveBeenCalled();
   });
 });
+
+//-----------------------------------------------------------------------------------------------------------
+//HU 03: Ver un listado solo con los nombres de todos los jugadores/equipos ordenados alfabéticamente.-------
+describe("Pruebas para Jugadores.ordenarListadoNombresAlfabeticamente HU 03", function() {
+    beforeEach(function() {
+      //Preparamos los datos
+      spyOn(Jugadores, "recupera");
+      spyOn(Jugadores, "imprimeListadoNombresAlfabeticamente");
+    });
+  
+    it("debe llamar a la funcion recupera", function() {
+      Jugadores.ordenarListadoNombresAlfabeticamente();
+      expect(Jugadores.recupera).toHaveBeenCalled();
+    });
+  });
+  
+  describe("Pruebas para Natacion.imprimenombreOrdenado HU 03", function() {
+    it("debe ordenar el vector alfabéticamente por nombre", function() {
+      // Preparamos los datos
+      let vector = [
+        { data: { nombre: "Miguel" } },
+        { data: { nombre: "Ilde" } },
+        { data: { nombre: "Alvaro" } }
+      ];
+  
+      Jugadores.ordenarListadoNombresAlfabeticamente(vector);
+  
+      // Verifico que el vector fue ordenado correctamente
+      expect(vector[0].data.nombre).toBe("Alvaro");
+      expect(vector[1].data.nombre).toBe("Ilde");
+      expect(vector[2].data.nombre).toBe("Miguel");
+    });
+  });
+  
+  
