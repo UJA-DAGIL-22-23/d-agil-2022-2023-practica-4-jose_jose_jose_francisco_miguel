@@ -1,135 +1,53 @@
-
-
-table.listado-personas {
+body {
+    background-color: #fff; /* Modo claro */
+    color: #000; /* Color de texto en modo claro */
+  }
+  
+  body.dark-mode {
+    background-color: #333; /* Modo oscuro */
+    color: #fff; /* Color de texto en modo oscuro */
+  }
+  
+  /* Estilos para la tabla en modo claro */
+  table.listado-personas {
     width: 100%;
     border: 1px solid rgba(0, 0, 100, 0.8);
-}
-
-table.listado-personas thead th {
+  }
+  
+  table.listado-personas thead th {
     margin: 3px;
     height: 2.5em;
     background-color: rgba(0, 0, 300, 0.4);
     text-transform: uppercase;
-
-}
-
-table.listado-personas tbody td {
+  }
+  
+  table.listado-personas tbody td {
     padding: 0.5em;
     text-align: center;
-}
-
-table.listado-personas tbody tr {
+  }
+  
+  table.listado-personas tbody tr {
     margin: 3px;
     height: 2em;
     background-color: rgba(0, 0, 100, 0.1)
-}
-
-form.listado-personas {
-    width: 50%;
-    margin-left: 20em;
-    border: 1px solid rgba(0, 0, 100, 0.8);
-}
-
-form.listado-personas h1{
-    margin: 3px;
-    height: 2.5em;
-    background-color: rgba(0, 0, 300, 0.4);
-    text-transform: uppercase;
-}
-
-form.listado-personas input {
-    padding: 0.5em;
-    text-align: center;
-    width: 98%;
-}
-
-form.listado-personas p {
-    margin: 3px;
-    height: 2em;
-    background-color: rgba(0, 0, 100, 0.1)
-}
-
-
-.form-persona-elemento:disabled {
-    color: black;
-    background-color: inherit;
-    border-width: 0px;
-    text-align: center;
-}
-
-.form-persona-elemento:enabled {
-    color:rgba(0, 0, 100, 0.8);
-}
-
-.form-persona-elemento:enabled:required {
-    color:rgba(100, 0, 0, 0.8);
-}
-
-table.listado-personas thead,
-table.listado-personas tbody,
-table.listado-personas tr,
-table.listado-personas td {
-    text-align: center;
-    margin: 0 auto 0 auto;
-}
-
-table.listado-personas {
-    width: 100%;
-}
-
-
-
-
-table.listado-personas-SoloNombres {
-    width: 100%;
-    background-color: #1f1f1f;
-    color: #ffffff;
-}
-
-table.listado-personas-SoloNombres thead th {
-    margin: 3px;
-    height: 2.5em;
-    background-color: #39444e;
-    text-transform: uppercase;
-    color: #ffffff;
-}
-
-table.listado-personas-SoloNombres tbody td {
-    padding: 0.5em;
-    text-align: center;
-    color: #ffffff;
-}
-
-table.listado-personas-SoloNombres tbody tr {
-    margin: 3px;
-    height: 2em;
-    background-color: #3d3d3d;
-}
-
-.form-persona-elemento:disabled {
-    color: #ffffff;
-    background-color: inherit;
-    border-width: 0px;
-    text-align: center;
-}
-
-.form-persona-elemento:enabled {
-    color: #ffffff;
-}
-
-.form-persona-elemento:enabled:required {
-    color: #ff6347;
-}
-
-table.listado-personas-SoloNombres thead,
-table.listado-personas-SoloNombres tbody,
-table.listado-personas-SoloNombres tr,
-table.listado-personas-SoloNombres td {
-    text-align: center;
-    margin: 0 auto 0 auto;
-}
-
-table.listado-personas-SoloNombres {
-    width: 100%;
-    margin-bottom: 5%;
-}
+  }
+  
+  /* Estilos para la tabla en modo oscuro */
+  body.dark-mode table.listado-personas {
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  body.dark-mode table.listado-personas thead th {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+  }
+  
+  body.dark-mode table.listado-personas tbody td {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #fff;
+  }
+  
+  body.dark-mode table.listado-personas tbody tr {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
