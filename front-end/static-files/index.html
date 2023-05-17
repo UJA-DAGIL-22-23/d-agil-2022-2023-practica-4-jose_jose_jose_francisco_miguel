@@ -46,7 +46,7 @@
       <a href="javascript:FutbolAmer.muestracadena()" class="opcion-principal mostrar"
          title="Cadenas">Introduce cadena</a>
     
-    <button id="modoBtn" onclick="toggleModo()">Cambiar Modo</button>
+      <button id="modoBtn" onclick="toggleModo()">Cambiar Modo</button>
 
 
 
@@ -151,6 +151,13 @@
   <script src="js/ms-remo/deportistas.js"></script>
   <script src="js/ms-natacion.js"></script>
   <script src="js/ms-futbolAmericano/ms-futbolAmericano.js"></script>
+
+  <script>
+  function toggleModo() {
+    const body = document.body;
+    body.classList.toggle("dark-mode");
+  }
+  </script>
 
   <script>
     function buscarPorMinimoUnCriterio() {
