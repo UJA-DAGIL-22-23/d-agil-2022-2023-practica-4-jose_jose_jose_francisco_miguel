@@ -88,6 +88,12 @@
   right: 10px;
 }
 
+.texto {
+  top: 1px;
+  right: 100px;
+  position: absolute;
+}
+
 .switch-container button {
   position: absolute;
   top: 0;
