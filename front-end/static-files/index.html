@@ -14,7 +14,6 @@
 
     <!-- Cargamos nuestros CSS -->
     <link rel="stylesheet" href="css/front-end.css">
-
 </head>
 
 <body>
@@ -48,13 +47,6 @@
         <a href="javascript:FutbolAmer.muestracadena()" class="opcion-principal mostrar" title="Cadenas">Introduce
             cadena</a>
 
-            <div class="switch-container">
-                <button id="modoBtn" onclick="toggleModo()">
-                  <div class="switch-slider"></div>
-                </button>
-              </div>
-              
-              
         <div id="porNombre" style="display: none;">
             <form class="form">
                 <div class="form-header">
@@ -128,8 +120,13 @@
             </form>
         </div>
 
-
     </nav>
+
+    <div class="switch-container">
+        <button id="modoBtn" onclick="toggleModo()">
+            <div class="switch-slider"></div>
+        </button>
+    </div>
 
     <!--
           Article en el que se va a mostrar la info cuando se pinche una opción del menú
