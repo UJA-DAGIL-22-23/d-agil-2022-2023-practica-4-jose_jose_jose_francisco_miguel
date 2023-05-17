@@ -83,7 +83,7 @@ Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.pie = `        </tbody>
  * @param {Persona} Persona Objeto con los datos de la persona que queremos escribir en el TR
  * @returns La plantilla del cuerpo de la tabla con los datos actualizados 
  */
-Waterpolo.sustituyeTagsTodosLosDatosSoloNombres = function (plantilla, persona) {
+Waterpolo.sustituyeTagsTodosLosDatosSoloNombres = function (plantilla, persona) { //TDD HECHO
     return plantilla
         .replace(new RegExp(Waterpolo.plantillaTagsSoloNombres.NOMBRE, 'g'), persona.data.nombre)
 }
@@ -93,7 +93,7 @@ Waterpolo.sustituyeTagsTodosLosDatosSoloNombres = function (plantilla, persona) 
  * @param {Persona} Persona Objeto con los datos de la persona que queremos escribir en el TR
  * @returns La plantilla del cuerpo de la tabla con los datos actualizados 
  */
-Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza = function (persona) {
+Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza = function (persona) { //TDD HECHO
     return Waterpolo.sustituyeTagsTodosLosDatosSoloNombres(this.cuerpo, persona)
 }
 

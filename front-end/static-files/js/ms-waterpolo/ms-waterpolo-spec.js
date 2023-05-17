@@ -667,3 +667,38 @@ Esto afecta a los métodos:
     );
   });
 });
+
+describe('Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza', function() {
+  describe('plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza', function() {
+    describe('actualiza', function() {
+      beforeEach(function() {
+        // Configurar el estado inicial si es necesario
+        Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.cuerpo = `
+          <tr title="${Waterpolo.plantillaTagsSoloNombres.ID}">
+              <td>${Waterpolo.plantillaTagsSoloNombres.NOMBRE}</td>
+          </tr>
+        `;
+      });
+
+      it('debería actualizar la plantilla con los datos de la persona', function() {
+        // Arrange
+        var persona = {
+          data: {
+            nombre: 'John Doe'
+          }
+        };
+        var expected = `
+          <tr title="${Waterpolo.plantillaTagsSoloNombres.ID}">
+              <td>John Doe</td>
+          </tr>
+        `;
+        
+        // Act
+        var resultado = Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza(persona);
+        
+        // Assert
+        expect(resultado).toEqual(expected);
+      });
+    });
+  });
+});
