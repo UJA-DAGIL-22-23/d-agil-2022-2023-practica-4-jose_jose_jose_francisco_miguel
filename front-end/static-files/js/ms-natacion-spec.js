@@ -1520,4 +1520,101 @@ describe("Prueba de Natacion.imprimeOrdenadoNumParticipacionesJO", function() {
   });
 });
 
+// Proyecto grupal--------------------------------------------------------------------------------------------
+// HU 03: Ofrecer en la aplicación toda la funcionalidad de la práctica individual creada por el/la estudiante núm. 3 --------------------------------------------
+describe('Prueba de la función ponerBotones', function() {
+  it('Debería llamar a las funciones correspondientes', function() {
+    spyOn(Frontend, 'agregarHistorial');
+    spyOn(Frontend.Article, 'actualizar2');
+    Natacion.ponerBotones();
+    expect(Frontend.agregarHistorial).toHaveBeenCalled();
+    expect(Frontend.Article.actualizar2).toHaveBeenCalled();
+  });
+});
+
+//HU 07: Ver un listado solo con los nombres de todos los jugadores/equipos de todos los deportes incluidos en la app.
+
+describe("Natacion.recuperaVector", function() {
+  it("debe devolver un vector con los datos de natación desde la API Gateway", async function() {
+    //Configuración de la prueba
+    spyOn(window, "fetch").and.returnValue(Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({ data: [1, 2, 3] })
+    }));
+
+    const result = await Natacion.recuperaVector();
+
+    expect(result).toEqual([1, 2, 3]);
+    expect(window.fetch).toHaveBeenCalledWith(
+      Frontend.API_GATEWAY + "/natacion/getTodas"
+    );
+  });
+});
+
+describe("Natacion.listarnombreTodos", function() {
+  beforeEach(function() {
+    spyOn(Frontend, "agregarHistorial");
+    spyOn(Natacion, "recuperaVector").and.returnValue(Promise.resolve([{ nombre: "Juan" }, { nombre: "Pedro" }]));
+    spyOn(Waterpolo, "recuperaVector").and.returnValue(Promise.resolve([{ nombre: "Ana" }, { nombre: "María" }]));
+    spyOn(Remo, "recuperaVector").and.returnValue(Promise.resolve([]));
+    spyOn(FutbolAmer, "recuperaVector").and.returnValue(Promise.resolve([{ nombre: "Carlos" }]));
+
+    spyOn(Natacion, "imprimenombre");
+  });
+
+  it("debe obtener los vectores de cada MS y concatenarlos correctamente", async function() {
+   
+    await Natacion.listarnombreTodos();
+
+    //Verificamos de que se llamaron a las funciones correctas con los argumentos correctos
+    expect(Natacion.recuperaVector).toHaveBeenCalled();
+    expect(Waterpolo.recuperaVector).toHaveBeenCalled();
+    expect(Remo.recuperaVector).toHaveBeenCalled();
+    expect(FutbolAmer.recuperaVector).toHaveBeenCalled();
+
+    expect(Natacion.imprimenombre).toHaveBeenCalledWith([
+      { nombre: "Juan" },
+      { nombre: "Pedro" },
+      { nombre: "Ana" },
+      { nombre: "María" },
+      { nombre: "Carlos" }
+    ]);
+  });
+});
+
+// HU 08: Ver un listado solo con los nombres de todos los jugadores/equipos ordenados alfabéticamente de todos los deportes incluidos en la app. (Todos los nombres aparecerán ordenados en una sola tabla)
+
+describe("Natacion.listarnombreTodosOrdenado", function() {
+  beforeEach(function() {
+    spyOn(Frontend, "agregarHistorial");
+    spyOn(Natacion, "recuperaVector").and.returnValue(Promise.resolve([{ nombre: "Juan" }, { nombre: "Pedro" }]));
+    spyOn(Waterpolo, "recuperaVector").and.returnValue(Promise.resolve([{ nombre: "Ana" }, { nombre: "María" }]));
+    spyOn(Remo, "recuperaVector").and.returnValue(Promise.resolve([]));
+    spyOn(FutbolAmer, "recuperaVector").and.returnValue(Promise.resolve([{ nombre: "Carlos" }]));
+
+    spyOn(Natacion, "imprimenombreOrdenado");
+  });
+
+  it("debe obtener los vectores de cada MS y concatenarlos correctamente", async function() {
+  
+    await Natacion.listarnombreTodosOrdenado();
+
+  //Verificación de que se llamaron a las funciones correctas con los argumentos correctos
+    expect(Natacion.recuperaVector).toHaveBeenCalled();
+    expect(Waterpolo.recuperaVector).toHaveBeenCalled();
+    expect(Remo.recuperaVector).toHaveBeenCalled();
+    expect(FutbolAmer.recuperaVector).toHaveBeenCalled();
+
+    expect(Natacion.imprimenombreOrdenado).toHaveBeenCalledWith([
+      { nombre: "Juan" },
+      { nombre: "Pedro" },
+      { nombre: "Ana" },
+      { nombre: "María" },
+      { nombre: "Carlos" }
+    ]);
+  });
+});
+
+
+
   

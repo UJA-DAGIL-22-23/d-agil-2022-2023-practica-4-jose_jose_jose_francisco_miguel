@@ -602,5 +602,91 @@ FutbolAmer.guardar = async function () {
     }
 }
 
+//Practica Grupal-------------------------------------------------------------
+//HU 07-----------------------------------------------------------------------
+FutbolAmer.recuperaVector = async function () {
+    let response = null
+
+    // Intento conectar con el microservicio personas
+    try {
+        const url = Frontend.API_GATEWAY + "/futbol/getTodas"
+        response = await fetch(url)
+
+    } catch (error) {
+        console.error(error)
+    }
+
+    if (response) {
+        let vectorFutbolAmer = await response.json();
+        return vectorFutbolAmer.data;
+      }
+}
+//---------------------------------------------------------------------------
 
 
+//HU 09
+FutbolAmer.muestracadena = async function () {
+    Frontend.agregarHistorial("Pulsado botón Introduce cadena (todos los MS)");
+    const vectorNatacion = await Natacion.recuperaVector();
+    const vectorWaterpolo = await Waterpolo.recuperaVector();
+    const vectorRemo = await Remo.recuperaVector();
+    const vectorFutbolAmer = await FutbolAmer.recuperaVector();
+
+    const vectoresConcatenados = vectorNatacion.concat(vectorWaterpolo, vectorRemo, vectorFutbolAmer);
+
+    const nombresDeportes = {
+        Natacion: "Natación",
+        Waterpolo: "Waterpolo",
+        Remo: "Remo",
+        Futbol_Americano: "Futbol Americano"
+    };
+
+    const cadenaUsuario = prompt("Introduce una cadena:");
+    const resultados = vectoresConcatenados.filter(function (objeto) {
+        return objeto.data.nombre.includes(cadenaUsuario);
+    });
+
+    resultados.forEach(function (objeto) {
+        if (vectorNatacion.includes(objeto)) {
+            objeto.tabla = nombresDeportes.Natacion;
+        } else if (vectorWaterpolo.includes(objeto)) {
+            objeto.tabla = nombresDeportes.Waterpolo;
+        } else if (vectorRemo.includes(objeto)) {
+            objeto.tabla = nombresDeportes.Remo;
+        } else if (vectorFutbolAmer.includes(objeto)) {
+            objeto.tabla = nombresDeportes.Futbol_Americano;
+        }
+    });
+
+
+    this.imprimenombre(resultados, cadenaUsuario);
+
+}
+
+FutbolAmer.imprimenombre = function (vector,cadenaUsuario) {
+   
+    let msj = "";
+    msj += `<table class="listado-personas">
+    <thead>
+    <th>Nombre</th>
+    <th>Deporte</th>
+    </thead>
+    <tbody>
+`;
+
+
+    vector.forEach(function (jugador) {
+        const nombreTabla = jugador.tabla;
+        msj += FutbolAmer.nombreTr(jugador.data, nombreTabla);
+    });
+    msj += FutbolAmer.plantillaTablaPersonas.pie;
+    
+    Frontend.Article.actualizar2("Listado de jugadores con la cadena seleccionada", msj)
+}
+
+FutbolAmer.nombreTr = function (data, nombreTabla) {
+    return `<tr>
+    <td>${data.nombre}</td>
+    <td>${nombreTabla}</td>
+  </tr>`;
+}

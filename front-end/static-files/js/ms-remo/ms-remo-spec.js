@@ -137,3 +137,21 @@ Esto afecta a los métodos:
  por tanto: para esta práctica, se pueden dejar SIN HACER.
 
  */
+
+ // Proyecto grupal--------------------------------------------------------------------------------------------
+describe("Remo.recuperaVector", function() {
+    it("debe devolver un vector con los datos de natación desde la API Gateway", async function() {
+
+      spyOn(window, "fetch").and.returnValue(Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ data: [1, 2, 3] })
+      }));
+  
+      const result = await Remo.recuperaVector();
+
+      expect(result).toEqual([1, 2, 3]);
+      expect(window.fetch).toHaveBeenCalledWith(
+        Frontend.API_GATEWAY + "/remo/getTodas"
+      );
+    });
+  });

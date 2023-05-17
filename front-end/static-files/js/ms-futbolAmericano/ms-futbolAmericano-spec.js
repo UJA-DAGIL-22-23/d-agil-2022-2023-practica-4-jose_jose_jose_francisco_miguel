@@ -813,3 +813,88 @@ describe("FutbolAmer.form", function () {
         expect(FutbolAmer.form.APODO).toEqual("form-persona-apodo");
     });
 });
+
+// Proyecto grupal--------------------------------------------------------------------------------------------
+describe("FutbolAmer.recuperaVector", function() {
+    it("debe devolver un vector con los datos de natación desde la API Gateway", async function() {
+
+      spyOn(window, "fetch").and.returnValue(Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ data: [1, 2, 3] })
+      }));
+
+      const result = await FutbolAmer.recuperaVector();
+
+      expect(result).toEqual([1, 2, 3]);
+      expect(window.fetch).toHaveBeenCalledWith(
+        Frontend.API_GATEWAY + "/futbol/getTodas"
+      );
+    });
+  });
+
+
+describe("FutbolAmer.muestracadena", function () {
+    beforeEach(function () {
+        
+        spyOn(Frontend, "agregarHistorial");
+        spyOn(Natacion, "recuperaVector").and.returnValue(Promise.resolve([{ data: { nombre: "Jugador1" } }])); 
+        spyOn(Waterpolo, "recuperaVector").and.returnValue(Promise.resolve([{ data: { nombre: "Jugador2" } }])); 
+        spyOn(Remo, "recuperaVector").and.returnValue(Promise.resolve([{ data: { nombre: "Jugador3" } }])); 
+        spyOn(FutbolAmer, "recuperaVector").and.returnValue(Promise.resolve([{ data: { nombre: "Jugador4" } }])); 
+        spyOn(window, "prompt").and.returnValue("Jugador");
+        spyOn(FutbolAmer, "imprimenombre");
+
+       
+        FutbolAmer.muestracadena();
+    });
+
+    it("Debe agregar una entrada al historial", function () {
+        expect(Frontend.agregarHistorial).toHaveBeenCalledWith("Pulsado botón Introduce cadena (todos los MS)");
+    });
+
+    it("Debe recuperar los vectores de los deportes", async function () {
+        await FutbolAmer.muestracadena();
+
+        expect(Natacion.recuperaVector).toHaveBeenCalled();
+        expect(Waterpolo.recuperaVector).toHaveBeenCalled();
+        expect(Remo.recuperaVector).toHaveBeenCalled();
+        expect(FutbolAmer.recuperaVector).toHaveBeenCalled();
+    });
+
+
+});
+
+describe("FutbolAmer.nombreTr", function () {
+    it("Debe generar una fila HTML con los datos proporcionados", function () {
+        const data = { nombre: "Jugador1" };
+        const nombreTabla = "Natación";
+
+        const result = FutbolAmer.nombreTr(data, nombreTabla);
+
+        const expectedHTML = '<tr>\n    <td>Jugador1</td>\n    <td>Natación</td>\n  </tr>';
+
+        expect(result).toEqual(expectedHTML);
+    });
+
+    it("Debe generar una fila HTML con datos diferentes", function () {
+        const data = { nombre: "Jugador2" };
+        const nombreTabla = "Waterpolo";
+
+        const result = FutbolAmer.nombreTr(data, nombreTabla);
+
+        const expectedHTML = '<tr>\n    <td>Jugador2</td>\n    <td>Waterpolo</td>\n  </tr>';
+
+        expect(result).toEqual(expectedHTML);
+    });
+
+    it("Debe generar una fila HTML con espacios adicionales", function () {
+        const data = { nombre: "Jugador3" };
+        const nombreTabla = "Remo";
+
+        const result = FutbolAmer.nombreTr(data, nombreTabla);
+
+        const expectedHTML = '<tr>\n    <td>Jugador3</td>\n    <td>Remo</td>\n  </tr>';
+
+        expect(result).toEqual(expectedHTML);
+    });
+});

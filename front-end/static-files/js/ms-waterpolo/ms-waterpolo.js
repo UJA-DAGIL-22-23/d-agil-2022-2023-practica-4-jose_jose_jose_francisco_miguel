@@ -784,3 +784,24 @@ Waterpolo.imprimeCuatroCriterios = function (vector) {
 
     Frontend.Article.actualizar("Listado de jugadores/as por cuatro criterios", msj)
 }
+//Practica Grupal-------------------------------------------------------------
+//HU 07-----------------------------------------------------------------------
+Waterpolo.recuperaVector = async function () {
+    let response = null
+
+    // Intento conectar con el microservicio personas
+    try {
+        const url = Frontend.API_GATEWAY + "/waterpolo/getTodas"
+        response = await fetch(url)
+
+    } catch (error) {
+        console.error(error)
+    }
+
+    if (response) {
+        let vectorWaterpolo = await response.json();
+        return vectorWaterpolo.data;
+      }
+}
+
+//--------------------------------------------------------------------------------

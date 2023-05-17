@@ -842,31 +842,53 @@ Natacion.botones=`<h1>Aplicación Microservicios natacion</h1>
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 //HU 07: Ver un listado solo con los nombres de todos los jugadores/equipos de todos los deportes incluidos en la app.
 
+  Natacion.recuperaVector = async function () {
+    let response = null;
+  
+    try {
+      const url = Frontend.API_GATEWAY + "/natacion/getTodas";
+      response = await fetch(url);
+    } catch (error) {
+      alert("Error: No se han podido acceder al API Gateway");
+      console.error(error);
+    }
+  
+    if (response) {
+      let vectorNatacion = await response.json();
+      return vectorNatacion.data;
+    }
+  }
 
-  Natacion.listarnombreTodos = function (){
-    Frontend.agregarHistorial("Pulsado botón Listar nombres (natación)")
-    Natacion.recupera(Natacion.imprimenombreTodos);
-    Waterpolo.recupera(Natacion.imprimenombreTodos);
+  Natacion.listarnombreTodos = async function() {
+    Frontend.agregarHistorial("Pulsado botón Listar nombres (todos los MS)");
+  
+    // Obtener los vectores de cada MS y concatenarlos
+    const vectorNatacion = await Natacion.recuperaVector();
+    const vectorWaterpolo = await Waterpolo.recuperaVector();
+    const vectorRemo = await Remo.recuperaVector();
+    const vectorFutbolAmer = await FutbolAmer.recuperaVector();
     
-}
-
-// No hay forma de concatenar los vectores
-Natacion.imprimenombreTodos = function (vector1) {
-    let msj = '';
-    msj += '<table class="listado-personas">';
-    msj += '<thead><th>Nombre</th></thead>';
-    msj += '<tbody>';
+    const vectoresConcatenados = vectorNatacion.concat(vectorWaterpolo, vectorRemo, vectorFutbolAmer);
   
-    // Imprime los nombres de los deportistas de Natación
-    vector1.forEach(e => msj += Natacion.nombreTr(e));
+    // Mostrar los nombres del vector resultante
+    this.imprimenombre(vectoresConcatenados);
+  }
+  //-----------------------------------------------------------------------------------------------------------
+// HU 08: Ver un listado solo con los nombres de todos los jugadores/equipos ordenados alfabéticamente de todos los deportes incluidos en la app. (Todos los nombres aparecerán ordenados en una sola tabla)
+  Natacion.listarnombreTodosOrdenado = async function() {
+    Frontend.agregarHistorial("Pulsado botón Listar nombres (todos los MS)");
   
-    // Imprime los nombres de los deportistas de Waterpolo
-
+    // Obtener los vectores de cada MS y concatenarlos
+    const vectorNatacion = await Natacion.recuperaVector();
+    const vectorWaterpolo = await Waterpolo.recuperaVector();
+    const vectorRemo = await Remo.recuperaVector();
+    const vectorFutbolAmer = await FutbolAmer.recuperaVector();
+    
+    const vectoresConcatenados = vectorNatacion.concat(vectorWaterpolo, vectorRemo, vectorFutbolAmer);
   
-    msj += '</tbody></table>';
+    // Mostrar los nombres del vector resultante
+    this.imprimenombreOrdenado(vectoresConcatenados);
+  }
   
-    // Borra toda la info de Article y la sustituye por la que me interesa
-    Frontend.Article.actualizar2("Listado de nombres de deportistas", msj);
-  };
   
 //-----------------------------------------------------------------------------------------------------------
