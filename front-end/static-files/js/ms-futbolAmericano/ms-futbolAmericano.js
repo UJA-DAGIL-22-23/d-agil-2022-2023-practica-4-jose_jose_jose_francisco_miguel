@@ -354,7 +354,7 @@ FutbolAmer.imprimeMuchasPersonas2 = function (vector) {
 }
 
 FutbolAmer.listar = function () {
-    Frontend.agregarHistorial("Pulsado botón Aplicación Futbol Americano")
+    
     FutbolAmer.recupera(FutbolAmer.imprimeMuchasPersonas);
 }
 
