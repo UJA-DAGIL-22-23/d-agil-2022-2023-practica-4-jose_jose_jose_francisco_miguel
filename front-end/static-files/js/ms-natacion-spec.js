@@ -1158,7 +1158,7 @@ describe("Prueba de Natacion.imprimeOrdenadoNombre", function() {
   it("debería ordenar el vector por nombre ", function() {
     // Crear datos simulados
     const deportista1 = {
-      ref: { "@ref": { id: "abc123" } },
+      ref: { "@ref": { id: "362549803800859999" } },
       data: {
         nombre: "Luisa",
         apellidos: "Pérez",
@@ -1169,7 +1169,7 @@ describe("Prueba de Natacion.imprimeOrdenadoNombre", function() {
       }
     };
     const deportista2 = {
-      ref: { "@ref": { id: "def456" } },
+      ref: { "@ref": { id: "359176655445426381" } },
       data: {
         nombre: "Juan",
         apellidos: "García",
@@ -1180,7 +1180,7 @@ describe("Prueba de Natacion.imprimeOrdenadoNombre", function() {
       }
     };
     const deportista3 = {
-      ref: { "@ref": { id: "ghi789" } },
+      ref: { "@ref": { id: "362549803800859999" } },
       data: {
         nombre: "Pedro",
         apellidos: "Rodriguez",
@@ -1221,7 +1221,7 @@ describe("Prueba de Natacion.imprimeOrdenadoApellidos", function() {
   it("debería ordenar el vector por apellidos ", function() {
     // Crear datos simulados
     const deportista1 = {
-      ref: { "@ref": { id: "abc123" } },
+      ref: { "@ref": { id: "362549803800899999" } },
       data: {
         nombre: "Luisa",
         apellidos: "Pérez",
@@ -1232,7 +1232,7 @@ describe("Prueba de Natacion.imprimeOrdenadoApellidos", function() {
       }
     };
     const deportista2 = {
-      ref: { "@ref": { id: "def456" } },
+      ref: { "@ref": { id: "359176655445426381" } },
       data: {
         nombre: "Juan",
         apellidos: "García",
@@ -1243,7 +1243,7 @@ describe("Prueba de Natacion.imprimeOrdenadoApellidos", function() {
       }
     };
     const deportista3 = {
-      ref: { "@ref": { id: "ghi789" } },
+      ref: { "@ref": { id: "362549803800859999" } },
       data: {
         nombre: "Pedro",
         apellidos: "Rodriguez",
@@ -1284,7 +1284,7 @@ describe("Prueba de Natacion.imprimeOrdenadoFechaNacimiento", function() {
   it("debería ordenar el vector por fecha de nacimiento ", function() {
     // Crear datos simulados
     const deportista1 = {
-      ref: { "@ref": { id: "abc123" } },
+      ref: { "@ref": { id: "362549803800899999" } },
       data: {
         nombre: "Luisa",
         apellidos: "Pérez",
@@ -1295,7 +1295,7 @@ describe("Prueba de Natacion.imprimeOrdenadoFechaNacimiento", function() {
       }
     };
     const deportista2 = {
-      ref: { "@ref": { id: "def456" } },
+      ref: { "@ref": { id: "359176655445426381" } },
       data: {
         nombre: "Juan",
         apellidos: "García",
@@ -1306,7 +1306,7 @@ describe("Prueba de Natacion.imprimeOrdenadoFechaNacimiento", function() {
       }
     };
     const deportista3 = {
-      ref: { "@ref": { id: "ghi789" } },
+      ref: { "@ref": { id: "362549803800859999" } },
       data: {
         nombre: "Pedro",
         apellidos: "Rodriguez",
@@ -1350,7 +1350,7 @@ describe("Prueba de Natacion.imprimeOrdenadoNacionalidad", function() {
   it("debería ordenar el vector por nacionalidad ", function() {
     // Crear datos simulados
     const deportista1 = {
-      ref: { "@ref": { id: "abc123" } },
+      ref: { "@ref": { id: "362549803800899999" } },
       data: {
         nombre: "Luisa",
         apellidos: "Pérez",
@@ -1361,7 +1361,7 @@ describe("Prueba de Natacion.imprimeOrdenadoNacionalidad", function() {
       }
     };
     const deportista2 = {
-      ref: { "@ref": { id: "def456" } },
+      ref: { "@ref": { id: "359176655445426381" } },
       data: {
         nombre: "Juan",
         apellidos: "García",
@@ -1372,7 +1372,7 @@ describe("Prueba de Natacion.imprimeOrdenadoNacionalidad", function() {
       }
     };
     const deportista3 = {
-      ref: { "@ref": { id: "ghi789" } },
+      ref: { "@ref": { id: "362549803800849999" } },
       data: {
         nombre: "Pedro",
         apellidos: "Rodriguez",
@@ -1413,7 +1413,7 @@ describe("Prueba de Natacion.imprimeOrdenadoAniosParticipacionMundial", function
   it("debería ordenar el vector por años_de_participación_mundial ", function() {
     // Crear datos simulados
     const deportista1 = {
-      ref: { "@ref": { id: "abc123" } },
+      ref: { "@ref": { id: "362549803800899999" } },
       data: {
         nombre: "Luisa",
         apellidos: "Pérez",
@@ -1424,7 +1424,7 @@ describe("Prueba de Natacion.imprimeOrdenadoAniosParticipacionMundial", function
       }
     };
     const deportista2 = {
-      ref: { "@ref": { id: "def456" } },
+      ref: { "@ref": { id: "359176655445426381" } },
       data: {
         nombre: "Juan",
         apellidos: "García",
@@ -1435,7 +1435,7 @@ describe("Prueba de Natacion.imprimeOrdenadoAniosParticipacionMundial", function
       }
     };
     const deportista3 = {
-      ref: { "@ref": { id: "ghi789" } },
+      ref: { "@ref": { id: "362549803800859999" } },
       data: {
         nombre: "Pedro",
         apellidos: "Rodriguez",
@@ -1475,10 +1475,10 @@ describe("Prueba de Natacion.imprimeOrdenadoNumParticipacionesJO", function() {
   it("debería ordenar el vector por número de participaciones en Juegos Olímpicos ", function() {
     // Crear datos simulados
     const deportista1 = {
-      ref: { "@ref": { id: "abc123" } },
+      ref: { "@ref": { id: "359176062700093645" } },
       data: {
-        nombre: "Luisa",
-        apellidos: "Pérez",
+        nombre: "Julio",
+        apellidos: "Cesar Millan",
         fecha_nacimiento: { dia: 10, mes: 5, año: 1990 },
         nacionalidad: "Mexico",
         años_de_participacion_mundial: 2,
@@ -1486,7 +1486,7 @@ describe("Prueba de Natacion.imprimeOrdenadoNumParticipacionesJO", function() {
       }
     };
     const deportista2 = {
-      ref: { "@ref": { id: "def456" } },
+      ref: { "@ref": { id: "359176655445426381" } },
       data: {
         nombre: "Juan",
         apellidos: "García",
@@ -1497,7 +1497,7 @@ describe("Prueba de Natacion.imprimeOrdenadoNumParticipacionesJO", function() {
       }
     };
     const deportista3 = {
-      ref: { "@ref": { id: "ghi789" } },
+      ref: { "@ref": { id: "362549803800859999" } },
       data: {
         nombre: "Pedro",
         apellidos: "Rodriguez",
