@@ -232,7 +232,7 @@ Waterpolo.recupera = async function (callBackFn) {
  * Función para mostrar en pantalla solo los nombres de todas las personas que se han recuperado de la BBDD.
  * @param {Vector_de_personas} vector Vector con los nombres de las personas a mostrar
  */
-Waterpolo.imprimeSoloNombres = function (vector) {
+Waterpolo.imprimeSoloNombres = function (vector) { //TDD HECHO
 
     // Compongo el contenido que se va a mostrar dentro de la tabla
     let msj = Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.cabecera
@@ -247,7 +247,7 @@ Waterpolo.imprimeSoloNombres = function (vector) {
  * Función para mostrar en pantalla los nombres de todas las personas que se han recuperado de la BBDD pero ORDENADOS ALFABÉTICAMENTE.
  * @param {Vector_de_personas} vector Vector con los datos de las personas a mostrar
  */
-Waterpolo.imprimeSoloNombresOrdenados = function (vector) {
+Waterpolo.imprimeSoloNombresOrdenados = function (vector) { //TDD HECHO
 
     vector.sort(function (a, b) {
         return a.data.nombre.localeCompare(b.data.nombre);
@@ -265,7 +265,7 @@ Waterpolo.imprimeSoloNombresOrdenados = function (vector) {
 /**
  * Función principal para recuperar solo los nombres de las personas desde el MS y, posteriormente, imprimirlas.
  */
-Waterpolo.listarSoloNombres = function () {
+Waterpolo.listarSoloNombres = function () { //TDD HECHO
     porCampo.style.display = 'none';
     porNombre.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
@@ -277,7 +277,7 @@ Waterpolo.listarSoloNombres = function () {
 /**
  * Función principal para recuperar solo los nombres las personas desde el MS ORDENADO ALFABÉTICAMENTE y, posteriormente, imprimirlas.
  */
-Waterpolo.listarSoloNombresOrdenados = function () {
+Waterpolo.listarSoloNombresOrdenados = function () { //TDD HECHO
     porCampo.style.display = 'none';
     porNombre.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
@@ -361,7 +361,7 @@ Waterpolo.plantillaTablaPersonasTodosLosDatos.pie = `        </tbody>
  * @param {Persona} Persona Objeto con los datos del jugador/as que queremos escribir en el TR
  * @returns La plantilla del cuerpo de la tabla con los datos actualizados 
  */
-Waterpolo.sustituyeTagsTodosLosDatos = function (plantilla, persona) {
+Waterpolo.sustituyeTagsTodosLosDatos = function (plantilla, persona) { //TDD HECHO
     return plantilla
         .replace(new RegExp(Waterpolo.plantillaTagsTodosLosDatos.ID, 'g'), persona.ref['@ref'].id)
         .replace(new RegExp(Waterpolo.plantillaTagsTodosLosDatos.NOMBRE, 'g'), persona.data.nombre)
@@ -378,7 +378,7 @@ Waterpolo.sustituyeTagsTodosLosDatos = function (plantilla, persona) {
  * @param {Persona} Persona Objeto con todos los datos del jugador/a que queremos escribir en el TR
  * @returns La plantilla del cuerpo de la tabla con los datos actualizados 
  */
-Waterpolo.plantillaTablaPersonasTodosLosDatos.actualiza = function (persona) {
+Waterpolo.plantillaTablaPersonasTodosLosDatos.actualiza = function (persona) { //TDD HECHO  
     return Waterpolo.sustituyeTagsTodosLosDatos(this.cuerpo, persona)
 }
 

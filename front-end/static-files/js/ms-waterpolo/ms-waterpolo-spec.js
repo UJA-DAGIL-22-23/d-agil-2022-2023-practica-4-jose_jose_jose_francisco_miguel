@@ -702,3 +702,70 @@ describe('Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza', f
     });
   });
 });
+
+describe('Waterpolo', function() {
+  describe('plantillaTablaPersonasTodosLosDatos', function() {
+    describe('actualiza', function() {
+      beforeEach(function() {
+        // Configurar el estado inicial si es necesario
+        Waterpolo.plantillaTablaPersonasTodosLosDatos.cuerpo = `
+          <tr title="${Waterpolo.plantillaTagsTodosLosDatos.ID}">
+              <td>${Waterpolo.plantillaTagsTodosLosDatos.ID}</td>
+              <td>${Waterpolo.plantillaTagsTodosLosDatos.NOMBRE}</td>
+              <td>${Waterpolo.plantillaTagsTodosLosDatos.APELLIDOS}</td>
+              <td>${Waterpolo.plantillaTagsTodosLosDatos.FEC_NAC}</td>
+              <td>${Waterpolo.plantillaTagsTodosLosDatos.COMPETICIONES}</td>
+              <td>${Waterpolo.plantillaTagsTodosLosDatos.NACIONALIDAD}</td>
+              <td>${Waterpolo.plantillaTagsTodosLosDatos.PESO}</td>
+              <td>${Waterpolo.plantillaTagsTodosLosDatos.POSICION}</td>
+              <td><div><a href="javascript:Waterpolo.mostrar('${Waterpolo.plantillaTagsTodosLosDatos.ID}')" class="opcion-principal mostrar">Mostrar Jugador/a</a></div></td>
+          </tr>
+        `;
+      });
+
+      it('debería actualizar la plantilla con los datos de la persona', function() {
+        // Arrange
+        var persona = {
+          ref: {
+            '@ref': {
+              id: '12345'
+            }
+          },
+          data: {
+            nombre: 'John',
+            apellidos: 'Doe',
+            fec_nac: {
+              dia: 1,
+              mes: 1,
+              anio: 1990
+            },
+            competiciones: 'Liga Nacional',
+            nacionalidad: 'España',
+            peso: 80,
+            posicion: 'Portero'
+          }
+        };
+        var expected = `
+          <tr title="12345">
+              <td>12345</td>
+              <td>John</td>
+              <td>Doe</td>
+              <td>1/1/1990</td>
+              <td>Liga Nacional</td>
+              <td>España</td>
+              <td>80</td>
+              <td>Portero</td>
+              <td><div><a href="javascript:Waterpolo.mostrar('12345')" class="opcion-principal mostrar">Mostrar Jugador/a</a></div></td>
+          </tr>
+        `;
+        
+        // Act
+        var resultado = Waterpolo.plantillaTablaPersonasTodosLosDatos.actualiza(persona);
+        
+        // Assert
+        expect(resultado).toEqual(expected);
+      });
+    });
+  });
+});
+
