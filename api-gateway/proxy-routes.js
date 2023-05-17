@@ -49,7 +49,18 @@ const ROUTES = [
                 [`^/futbol`]: '',
             },
         }
-    }
+    },
+    {
+        url: '/beisbol',
+
+        proxy: {
+            target: "http://localhost:8006",
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/beisbol`]: '',
+            },
+        }
+    },
 ]
 
 exports.routes = ROUTES;
