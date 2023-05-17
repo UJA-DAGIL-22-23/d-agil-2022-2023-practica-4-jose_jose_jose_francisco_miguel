@@ -86,7 +86,18 @@ Donde se ofrece la funcionalidad de un listado ordenado alfabeticamente con todo
 #### Funcionalidades implementadas por el estudiante 4: Jose Manuel Gamarra Espinar
 
 ##### HU_04
+En esta historia de usuario se mete toda la funcionalidad del microservicio Futbol Americano:
+
+<img src='assets/img/HU_04.JPG'>
+
 ##### HU_09
+Esta historia de usuario tiene por objetivo mostrar el nombre y el deporte de todos los jugadores/equipos que contengan una determinada cadena introducida por el usuario. (Por ejemplo, si el usuario introduce “EST” se mostrarán todos los nombres junto con el deporte practicado de todos los jugadores/equipos cuyo nombre incluya “EST”).
+
+Como usuario quiero ver un listado solo con los nombres de todos los jugadores/as que contengan una determinada cadena para ver el nombre de los/las jugadores/as de la base de datos que contengan una determinada cadena.
+
+Y en la imagen se puede observar que paso la cadena "Jai" y obtengo 2 resultados. Está implementado otro botón Listado Jugador/Deporte, en el que saca todos los jugadores con todos los deportes.
+
+<img src='assets/img/HU_09.JPG'>
 
 #### Funcionalidades implementadas por el estudiante 5: Miguel Liébana Beltrán
 
