@@ -702,3 +702,25 @@ Jugadores.botones=`<h1>Aplicación Microservicios beisbol</h1>
     title="Realiza un listado de todas las personas con todos sus datos">Listado Datos</a>
 </nav>
 <br/>`
+
+//Practica Grupal-------------------------------------------------------------
+//HU 07-----------------------------------------------------------------------
+Jugadores.recuperaVector = async function () {
+    let response = null
+
+    // Intento conectar con el microservicio personas
+    try {
+        const url = Frontend.API_GATEWAY + "/beisbol/getTodas"
+        response = await fetch(url)
+
+    } catch (error) {
+        console.error(error)
+    }
+
+    if (response) {
+        let vectorBeisbol = await response.json();
+        return vectorBeisbol.data;
+      }
+}
+
+//--------------------------------------------------------------------------------

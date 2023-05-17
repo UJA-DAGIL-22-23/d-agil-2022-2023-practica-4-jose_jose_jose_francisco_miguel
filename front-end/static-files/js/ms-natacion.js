@@ -867,8 +867,9 @@ Natacion.botones=`<h1>Aplicación Microservicios natacion</h1>
     const vectorWaterpolo = await Waterpolo.recuperaVector();
     const vectorRemo = await Remo.recuperaVector();
     const vectorFutbolAmer = await FutbolAmer.recuperaVector();
+    const vectorBeisbol = await Jugadores.recuperaVector();
     
-    const vectoresConcatenados = vectorNatacion.concat(vectorWaterpolo, vectorRemo, vectorFutbolAmer);
+    const vectoresConcatenados = vectorNatacion.concat(vectorWaterpolo, vectorRemo, vectorFutbolAmer, vectorBeisbol);
   
     // Mostrar los nombres del vector resultante
     this.imprimenombre(vectoresConcatenados);
@@ -883,8 +884,9 @@ Natacion.botones=`<h1>Aplicación Microservicios natacion</h1>
     const vectorWaterpolo = await Waterpolo.recuperaVector();
     const vectorRemo = await Remo.recuperaVector();
     const vectorFutbolAmer = await FutbolAmer.recuperaVector();
+    const vectorBeisbol = await Jugadores.recuperaVector();
     
-    const vectoresConcatenados = vectorNatacion.concat(vectorWaterpolo, vectorRemo, vectorFutbolAmer);
+    const vectoresConcatenados = vectorNatacion.concat(vectorWaterpolo, vectorRemo, vectorFutbolAmer, vectorBeisbol);
   
     // Mostrar los nombres del vector resultante
     this.imprimenombreOrdenado(vectoresConcatenados);

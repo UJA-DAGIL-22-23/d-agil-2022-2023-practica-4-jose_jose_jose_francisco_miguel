@@ -1558,6 +1558,8 @@ describe("Natacion.listarnombreTodos", function() {
     spyOn(Waterpolo, "recuperaVector").and.returnValue(Promise.resolve([{ nombre: "Ana" }, { nombre: "María" }]));
     spyOn(Remo, "recuperaVector").and.returnValue(Promise.resolve([]));
     spyOn(FutbolAmer, "recuperaVector").and.returnValue(Promise.resolve([{ nombre: "Carlos" }]));
+    spyOn(Jugadores, "recuperaVector").and.returnValue(Promise.resolve([{ nombre: "Luis" }]));
+
 
     spyOn(Natacion, "imprimenombre");
   });
@@ -1571,13 +1573,15 @@ describe("Natacion.listarnombreTodos", function() {
     expect(Waterpolo.recuperaVector).toHaveBeenCalled();
     expect(Remo.recuperaVector).toHaveBeenCalled();
     expect(FutbolAmer.recuperaVector).toHaveBeenCalled();
+    expect(Jugadores.recuperaVector).toHaveBeenCalled();
 
     expect(Natacion.imprimenombre).toHaveBeenCalledWith([
       { nombre: "Juan" },
       { nombre: "Pedro" },
       { nombre: "Ana" },
       { nombre: "María" },
-      { nombre: "Carlos" }
+      { nombre: "Carlos" },
+      { nombre: "Luis" }
     ]);
   });
 });
