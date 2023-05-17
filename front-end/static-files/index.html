@@ -2,201 +2,208 @@
 <html>
 
 <head>
-  <title>Aplicación Microservicios deportes</title>
+    <title>Aplicación Microservicios deportes</title>
 
-  <!-- Cargamos biblioteca Jasmine -->
+    <!-- Cargamos biblioteca Jasmine -->
 
-  <link rel="stylesheet" href="lib/jasmine-4.5.0/jasmine.css">
-  <script src="lib/jasmine-4.5.0/jasmine.js"></script>
-  <script src="lib/jasmine-4.5.0/jasmine-html.js"></script>
-  <script src="lib/jasmine-4.5.0/boot0.js"></script>
-  <script src="lib/jasmine-4.5.0/boot1.js"></script>
+    <link rel="stylesheet" href="lib/jasmine-4.5.0/jasmine.css">
+    <script src="lib/jasmine-4.5.0/jasmine.js"></script>
+    <script src="lib/jasmine-4.5.0/jasmine-html.js"></script>
+    <script src="lib/jasmine-4.5.0/boot0.js"></script>
+    <script src="lib/jasmine-4.5.0/boot1.js"></script>
 
-  <!-- Cargamos nuestros CSS -->
-  <link rel="stylesheet" href="css/front-end.css">
+    <!-- Cargamos nuestros CSS -->
+    <link rel="stylesheet" href="css/front-end.css">
 
 </head>
 
 <body>
-  <div>
-    <h4>Historial de usuario</h4>
-    <ul id="historial">
-    </ul>
-  </div>
+    <div>
+        <h4>Historial de usuario</h4>
+        <ul id="historial">
+        </ul>
+    </div>
 
-  <h1>Aplicación Microservicios deportes</h1>
-  <!-- Barra de navegación de la aplicación -->
-  <nav>
-      <a href="javascript:Waterpolo.procesarAcercaDe()" class="opcion-principal"
-         title="Llama a la ruta /acercade del MS Plantilla">Acerca de</a>
-      <a href="javascript:Waterpolo.ponerBotones()" class="opcion-principal"
-         title="Funcionalidades de la aplicación waterpolo">Aplicación Waterpolo</a>
-      <a href="javascript:Deportistas.ponerBotones()" class="opcion-principal"
-         title="Funcionalidades de la aplicación remo">Aplicación remo</a>
-      <a href="javascript:Natacion.ponerBotones()" class="opcion-principal"
-         title="Funcionalidades de la aplicación natacion">Aplicación natacion</a>
-      <a href="javascript:FutbolAmer.listar()" class="opcion-principal mostrar"
-         title="Realiza un listado de todas las personas que hay en la BBDD">Aplicacion Futbol Americano</a>
+    <h1>Aplicación Microservicios deportes</h1>
+    <!-- Barra de navegación de la aplicación -->
+    <nav>
+        <a href="javascript:Waterpolo.procesarAcercaDe()" class="opcion-principal"
+            title="Llama a la ruta /acercade del MS Plantilla">Acerca de</a>
+        <a href="javascript:Waterpolo.ponerBotones()" class="opcion-principal"
+            title="Funcionalidades de la aplicación waterpolo">Aplicación Waterpolo</a>
+        <a href="javascript:Deportistas.ponerBotones()" class="opcion-principal"
+            title="Funcionalidades de la aplicación remo">Aplicación remo</a>
+        <a href="javascript:Natacion.ponerBotones()" class="opcion-principal"
+            title="Funcionalidades de la aplicación natacion">Aplicación natacion</a>
+        <a href="javascript:FutbolAmer.listar()" class="opcion-principal mostrar"
+            title="Realiza un listado de todas las personas que hay en la BBDD">Aplicacion Futbol Americano</a>
 
-      <a href="javascript:Natacion.listarnombreTodos()" class="opcion-principal mostrar"
-         title="Realiza un listado de todas los nombres de deportistas que hay en todas las BBDD">Listar nombres todos los deportistas</a>
-      <a href="javascript:Natacion.listarnombreTodosOrdenado()" class="opcion-principal mostrar"
-         title="Realiza un listado de todas los nombres de deportistas que hay en todas las BBDD ordenados alfabeticamente">Listar nombres todos los deportistas por orden alfabetico</a>
+        <a href="javascript:Natacion.listarnombreTodos()" class="opcion-principal mostrar"
+            title="Realiza un listado de todas los nombres de deportistas que hay en todas las BBDD">Listar nombres
+            todos los deportistas</a>
+        <a href="javascript:Natacion.listarnombreTodosOrdenado()" class="opcion-principal mostrar"
+            title="Realiza un listado de todas los nombres de deportistas que hay en todas las BBDD ordenados alfabeticamente">Listar
+            nombres todos los deportistas por orden alfabetico</a>
 
-      <a href="javascript:FutbolAmer.muestracadena()" class="opcion-principal mostrar"
-         title="Cadenas">Introduce cadena</a>
-    
-         <div class="switch-container">
+        <a href="javascript:FutbolAmer.muestracadena()" class="opcion-principal mostrar" title="Cadenas">Introduce
+            cadena</a>
+
+        <div class="switch-container">
             <button id="modoBtn" onclick="toggleModo()">Cambiar Modo</button>
             <div class="switch-slider"></div>
-          </div>
+        </div>
 
 
 
 
-      <div id="porNombre" style="display: none;">
-          <form class="form">
-              <div class="form-header">
-                  <h2>Buscar por Nombre</h2>
-              </div>
-              <div class="form-group">
-                  <label for="buscarNombre">Ingrese el nombre:</label>
-                  <input type="text" id="buscarNombre" name="buscarNombre">
-              </div>
-              <div class="form-group">
-                  <button class="opcion-principal mostrar" type="button" onclick="buscarPorNombre()">Buscar</button>
-              </div>
-          </form>
-      </div>
+        <div id="porNombre" style="display: none;">
+            <form class="form">
+                <div class="form-header">
+                    <h2>Buscar por Nombre</h2>
+                </div>
+                <div class="form-group">
+                    <label for="buscarNombre">Ingrese el nombre:</label>
+                    <input type="text" id="buscarNombre" name="buscarNombre">
+                </div>
+                <div class="form-group">
+                    <button class="opcion-principal mostrar" type="button" onclick="buscarPorNombre()">Buscar</button>
+                </div>
+            </form>
+        </div>
 
-      <div id="porCampo" style="display: none;">
-          <form class="form">
-              <div class="form-header">
-                  <h2>Ordenar Por ...</h2>
-              </div>
-              <div class="form-group">
-                  <label for="campo">Seleccione el campo:</label>
-                  <select id="campo" name="campo">
-                      <option value="nombre">Nombre</option>
-                      <option value="apellidos">Apellidos</option>
-                      <option value="fec_nac">Fecha Nacimiento</option>
-                      <option value="nacionalidad">Nacionalidad</option>
-                      <option value="peso">Peso</option>
-                      <option value="posicion">Posicion</option>
-                  </select>
-              </div>
-              <div class="form-group">
-                  <button type="submit" id="boton-aceptar" class="opcion-principal mostrar">Listar</button>
-              </div>
-          </form>
-      </div>
+        <div id="porCampo" style="display: none;">
+            <form class="form">
+                <div class="form-header">
+                    <h2>Ordenar Por ...</h2>
+                </div>
+                <div class="form-group">
+                    <label for="campo">Seleccione el campo:</label>
+                    <select id="campo" name="campo">
+                        <option value="nombre">Nombre</option>
+                        <option value="apellidos">Apellidos</option>
+                        <option value="fec_nac">Fecha Nacimiento</option>
+                        <option value="nacionalidad">Nacionalidad</option>
+                        <option value="peso">Peso</option>
+                        <option value="posicion">Posicion</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="boton-aceptar" class="opcion-principal mostrar">Listar</button>
+                </div>
+            </form>
+        </div>
 
-      <div id="porMinimoUnCriterio" style="display: none;">
-          <form class="form">
-              <div class="form-header">
-                  <h2>Busca por un criterio mínimo</h2>
-              </div>
-              <div class="form-group">
-                  <input type="text" id="nombre" name="nombre" placeholder="Nombre">
-                  <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
-                  <input type="text" id="nacionalidad" name="nacionalidad" placeholder="Nacionalidad">
-                  <input type="text" id="posicion" name="posicion" placeholder="Posición">
-              </div>
-              <div class="form-group">
-                  <button class="opcion-principal mostrar" type="button" onclick="buscarPorMinimoUnCriterio()">Buscar</button>
-              </div>
-          </form>
-      </div>
+        <div id="porMinimoUnCriterio" style="display: none;">
+            <form class="form">
+                <div class="form-header">
+                    <h2>Busca por un criterio mínimo</h2>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
+                    <input type="text" id="nacionalidad" name="nacionalidad" placeholder="Nacionalidad">
+                    <input type="text" id="posicion" name="posicion" placeholder="Posición">
+                </div>
+                <div class="form-group">
+                    <button class="opcion-principal mostrar" type="button"
+                        onclick="buscarPorMinimoUnCriterio()">Buscar</button>
+                </div>
+            </form>
+        </div>
 
-      <div id="porCuatroCriterios" style="display: none;">
-          <form class="form">
-              <div class="form-header">
-                  <h2>Busca por cuatro criterios</h2>
-              </div>
-              <div class="form-group">
-                  <input type="text" id="nombre5" name="nombre5" placeholder="Nombre">
-                  <input type="text" id="apellidos5" name="apellidos5" placeholder="Apellidos">
-                  <input type="text" id="nacionalidad5" name="nacionalidad5" placeholder="Nacionalidad">
-                  <input type="text" id="posicion5" name="posicion5" placeholder="Posición">
-              </div>
-              <div class="form-group">
-                  <button class="opcion-principal mostrar" type="button" onclick="buscarPorCuatroCriterios()">Buscar</button>
-              </div>
-          </form>
-      </div>
+        <div id="porCuatroCriterios" style="display: none;">
+            <form class="form">
+                <div class="form-header">
+                    <h2>Busca por cuatro criterios</h2>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="nombre5" name="nombre5" placeholder="Nombre">
+                    <input type="text" id="apellidos5" name="apellidos5" placeholder="Apellidos">
+                    <input type="text" id="nacionalidad5" name="nacionalidad5" placeholder="Nacionalidad">
+                    <input type="text" id="posicion5" name="posicion5" placeholder="Posición">
+                </div>
+                <div class="form-group">
+                    <button class="opcion-principal mostrar" type="button"
+                        onclick="buscarPorCuatroCriterios()">Buscar</button>
+                </div>
+            </form>
+        </div>
 
 
-  </nav>
+    </nav>
 
-  <!--
+    <!--
           Article en el que se va a mostrar la info cuando se pinche una opción del menú
           Todos los apartados de este article se rellenarán con funciones en Javascript
       -->
-  <article id="seccion-principal" class="ocultar">
-    <!-- Título del article -->
-    <h2 id="seccion-principal-titulo"></h2>
-    <!-- Contenido del article -->
-    <div id="seccion-principal-contenido">
-      <div id="tabla-formulario-persona" class="ocultar"></div>
-    </div>
-  </article>
+    <article id="seccion-principal" class="ocultar">
+        <!-- Título del article -->
+        <h2 id="seccion-principal-titulo"></h2>
+        <!-- Contenido del article -->
+        <div id="seccion-principal-contenido">
+            <div id="tabla-formulario-persona" class="ocultar"></div>
+        </div>
+    </article>
 
-  <!--
+    <!--
         ...............  ZONA DE CARGA DE FICHEROS JS .........................
 
         Debe ponerse al final del documento para que estén creados los elementos del DOM.
     -->
 
-  <!-- Cargamos ficheros JS propios del proyecto -->
-  <script src="js/front-end.js"></script>
-  <script src="js/ms-waterpolo/ms-waterpolo.js"></script>
-  <script src="js/ms-remo/ms-remo.js"></script>
-  <script src="js/ms-remo/deportistas.js"></script>
-  <script src="js/ms-natacion.js"></script>
-  <script src="js/ms-futbolAmericano/ms-futbolAmericano.js"></script>
+    <!-- Cargamos ficheros JS propios del proyecto -->
+    <script src="js/front-end.js"></script>
+    <script src="js/ms-waterpolo/ms-waterpolo.js"></script>
+    <script src="js/ms-remo/ms-remo.js"></script>
+    <script src="js/ms-remo/deportistas.js"></script>
+    <script src="js/ms-natacion.js"></script>
+    <script src="js/ms-futbolAmericano/ms-futbolAmericano.js"></script>
 
-  <script>
-  function toggleModo() {
-    const body = document.body;
-    body.classList.toggle("dark-mode");
-  }
-  </script>
+    <script>
+        function toggleModo() {
+            const body = document.body;
+            const modoBtn = document.getElementById("modoBtn");
 
-  <script>
-    function buscarPorMinimoUnCriterio() {
-      var nombre1 = document.getElementById("nombre").value;
-      var apellidos1 = document.getElementById("apellidos").value;
-      var nacionalidad1 = document.getElementById("nacionalidad").value;
-      var posicion1 = document.getElementById("posicion").value;
-      Waterpolo.buscarMinimoUnCriterio(nombre1, apellidos1, nacionalidad1, posicion1);
-    }
-  </script>
+            body.classList.toggle("dark-mode");
+            modoBtn.classList.toggle("dark-mode");
+        }
+    </script>
 
-  <script>
-    function buscarPorCuatroCriterios() {
-      var nombre3 = document.getElementById("nombre5").value;
-      var apellidos3 = document.getElementById("apellidos5").value;
-      var nacionalidad3 = document.getElementById("nacionalidad5").value;
-      var posicion3 = document.getElementById("posicion5").value;
-      Waterpolo.buscarCuatroCriterios(nombre3, apellidos3, nacionalidad3, posicion3);
-    }
-  </script>
+    <script>
+        function buscarPorMinimoUnCriterio() {
+            var nombre1 = document.getElementById("nombre").value;
+            var apellidos1 = document.getElementById("apellidos").value;
+            var nacionalidad1 = document.getElementById("nacionalidad").value;
+            var posicion1 = document.getElementById("posicion").value;
+            Waterpolo.buscarMinimoUnCriterio(nombre1, apellidos1, nacionalidad1, posicion1);
+        }
+    </script>
 
-  <script>
-    function buscarPorNombre() {
-      var buscarNombre = document.getElementById("buscarNombre").value;
-      Waterpolo.buscaPorNombre(buscarNombre);
-    }
-  </script>
+    <script>
+        function buscarPorCuatroCriterios() {
+            var nombre3 = document.getElementById("nombre5").value;
+            var apellidos3 = document.getElementById("apellidos5").value;
+            var nacionalidad3 = document.getElementById("nacionalidad5").value;
+            var posicion3 = document.getElementById("posicion5").value;
+            Waterpolo.buscarCuatroCriterios(nombre3, apellidos3, nacionalidad3, posicion3);
+        }
+    </script>
 
-  <!-- Cargamos ficheros spec con los tests -->
-  <!--<script src="js/front-end-spec.js"></script>
+    <script>
+        function buscarPorNombre() {
+            var buscarNombre = document.getElementById("buscarNombre").value;
+            Waterpolo.buscaPorNombre(buscarNombre);
+        }
+    </script>
+
+    <!-- Cargamos ficheros spec con los tests -->
+    <!--<script src="js/front-end-spec.js"></script>
   <script src="js/ms-waterpolo/ms-waterpolo-spec.js"></script> -->
-  <script src="js/ms-remo/ms-remo-spec.js"></script>
-  <script src="js/ms-remo/deportistas-spec.js"></script>
-  <script src="js/ms-futbolAmericano/ms-futbolAmericano-spec.js"></script>
-  <script src="js/front-end-spec.js"></script>
-  <script src="js/ms-natacion-spec.js"></script>
+    <script src="js/ms-remo/ms-remo-spec.js"></script>
+    <script src="js/ms-remo/deportistas-spec.js"></script>
+    <script src="js/ms-futbolAmericano/ms-futbolAmericano-spec.js"></script>
+    <script src="js/front-end-spec.js"></script>
+    <script src="js/ms-natacion-spec.js"></script>
 </body>
 
 </html>
