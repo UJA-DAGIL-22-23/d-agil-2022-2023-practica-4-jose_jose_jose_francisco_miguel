@@ -153,7 +153,6 @@ Jugadores.tablaJugadoresDatos = {}
 // Cabecera de la tabla
 Jugadores.tablaJugadoresNombres.cabecera = `<table width="100%" class="listado-personas">
                     <thead>
-                        <th width="10%">Id</th>
                         <th width="20%">Nombre</th>
                     </thead>
                     <tbody>
@@ -332,7 +331,6 @@ Jugadores.recuperaUnaPersona = async function (idPersona, callBackFn) {
 // Elemento TR que muestra los nombres de una persona
 Jugadores.tablaJugadoresNombres.cuerpo = `
     <tr title="${Jugadores.plantillaTags.ID}">
-        <td>${Jugadores.plantillaTags.ID}</td>
         <td>${Jugadores.plantillaTags.NOMBRE}</td>
     </tr>
     `;
