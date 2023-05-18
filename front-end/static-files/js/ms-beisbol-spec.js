@@ -70,6 +70,7 @@ describe("Pruebas para Jugadores.ordenarListadoNombresAlfabeticamente HU 03", fu
       expect(Jugadores.recupera).toHaveBeenCalled();
     });
   });
+
   
   describe("Pruebas para Natacion.imprimenombreOrdenado HU 03", function() {
     it("debe ordenar el vector alfabéticamente por nombre", function() {
@@ -89,4 +90,29 @@ describe("Pruebas para Jugadores.ordenarListadoNombresAlfabeticamente HU 03", fu
     });
   });
   
+
+  
+//-----------------------------------------------------------------------------------------------------------
+//HU 04: Ver un listado con los datos de todos los jugadores.-------
+
+  describe("Jugadores.sustituyeTagsDatos", function () {
+    it("debería reemplazar todas las etiquetas con los datos del jugador", function () {
+      const jugador = "ID: 1a2b3c, Nombre: Pepe, Apellidos: Gonzalez, Fecha de nacimiento: 20/02/2000, participaciones en mundial: 3, partidos como MVP: 1";
+      const datosJugador = {
+        ref: { "@ref": { id: "1a2b3c" } },
+        data: {
+          nombre: "Pepe",
+          apellidos: "Gonzalez",
+          fechaNacimiento: { dia: "20", mes: "02", año: "1990" },
+          participacionesMundial: "3",
+          partidosMVP: "1"
+        }
+      };
+      const resultadoEsperado = `ID: 1a2b3c, Nombre: Pepe, Apellidos: Gonzalez, Fecha de nacimiento: 20/02/2000, participaciones en mundial: 3, partidos como MVP: 1`;
+  
+      const resultadoObtenido = Plantilla.sustituyeTagsTodosLosDatos(jugador, datosJugador);
+  
+      expect(resultadoObtenido).toEqual(resultadoEsperado);
+    });
+  });
   
