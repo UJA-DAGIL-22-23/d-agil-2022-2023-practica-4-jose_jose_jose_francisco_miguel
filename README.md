@@ -58,7 +58,11 @@ HU 06: Ver en una sola página la información de todos los autores de la aplica
 <img src='assets/img/HU_6.PNG'>
 
 
-##### HU_10
+HU 10: Modificar la visualización de la app con un modo ALTO CONTRASTE. (Es decir: el usuario podrá cambiar entre visualizar la app en el modo normal o en modo ALTO CONTRASTE pulsando solo un botón). Puntos 0,3
+
+<img src='assets/img/HU_10.PNG'>
+
+<img src='assets/img/HU_10_2.PNG'>
 
 
 #### Funcionalidades implementadas por el estudiante 2: José Carpio Blanca
