@@ -126,3 +126,15 @@ Durante este sprint, el equipo de trabajo se ha comprometido a implementar todas
 También se ha realizado de forma continua el Daily Scrum virtualmente donde cada uno respondía a las preguntas sobre qué hice ayer, qué hago hoy y qué problemas estoy teniendo.
 
 
+#### QUÉ HEMOS HECHO BIEN
+Hemos implementado todas las historias de usuario optando a mas de 2 puntos.
+Hemos mantenido la comunicacion en todo momento por WhatsApp.
+Hemos hecho el 
+
+
+#### QUÉ HAY QUE MEJORAR
+
+
+
+#### COMPROMISOS
+
