@@ -429,7 +429,7 @@ Waterpolo.ordenarPor = function () { //No me sale este TDD, no sé si es porque 
  * @param {String} campo campo por el que se ordenan los/as jugadores/as
  * @param {*} callBackFn Función a la que se llamará una vez recibidos los datos.
  */
-Waterpolo.muestraJugadoresOrdenadosPor = async function (campo, callBackFn) { //No se le puede hacer TDD porque usa una función asíncrona
+Waterpolo.muestraJugadoresOrdenadosPor = async function (campo, callBackFn) { //No se le puede hacer TDD porque es una función asíncrona
     try {
         const url = Frontend.API_GATEWAY + "/waterpolo/getTodas"
         const response = await fetch(url);
@@ -506,7 +506,7 @@ Waterpolo.mostrar = function (id) { //TDD HECHO
  * @param {*} id id del jugador/a que queremos mostrar los datos
  * @param {*} callBackFn Función que se va a llamara cuando recuperemos al jugador/a
  */
-Waterpolo.obtieneJugador = async function (id, callBackFn) { //No se le puede hacer TDD porque usa una función asíncrona
+Waterpolo.obtieneJugador = async function (id, callBackFn) { //No se le puede hacer TDD porque es una función asíncrona
     try {
         const url = Frontend.API_GATEWAY + "/waterpolo/getPorId/" + id
         const response = await fetch(url);
@@ -576,12 +576,12 @@ Waterpolo.plantillaFormularioUnJugador.actualiza = function (jugador) { //TDD HE
 }
 
 // Función que nos muestra el/la siguiente jugador/a de la base de datos
-Waterpolo.jugadorSiguiente = function () { //No sé si se le puede hacer TDD porque usa una función asíncrona
+Waterpolo.jugadorSiguiente = function () { //No se pude hacer TDD porque solo llama a una función asíncrona
     Waterpolo.recupera(this.siguiente)
 }
 
 // Función que nos muestra el/la anterior jugador/a de la base de datos
-Waterpolo.jugadorAnterior = function () { //No sé si se le puede hacer TDD porque usa una función asíncrona
+Waterpolo.jugadorAnterior = function () { //No se pude hacer TDD porque solo llama a una función asíncrona
     Waterpolo.recupera(this.anterior)
 }
 
@@ -629,7 +629,7 @@ Waterpolo.anterior = function (vector) { //TDD HECHO
 /**
  * Función que busca un/a jugador/a por su nombre
  */
-Waterpolo.buscarPorNombre = function () {
+Waterpolo.buscarPorNombre = function () { //TDD HECHO
     porNombre.style.display = 'block';
     porCampo.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
@@ -640,7 +640,7 @@ Waterpolo.buscarPorNombre = function () {
 /**
  * Función que busca a un/a jugador/a por un nombre.
  */
-Waterpolo.buscaPorNombre = function (buscarNombre) {
+Waterpolo.buscaPorNombre = function (buscarNombre) { //No se pude hacer TDD porque solo llama a una función asíncrona
     this.recuperaPorNombre(buscarNombre, this.imprime);
 }
 
@@ -648,7 +648,7 @@ Waterpolo.buscaPorNombre = function (buscarNombre) {
  * Función que filtrará los datos de la base de datos por nombre.
  * @param {función} callBackFn Función a la que se llamará una vez recibidos los datos.
  */
-Waterpolo.recuperaPorNombre = async function (buscarNombre, callBackFn) {
+Waterpolo.recuperaPorNombre = async function (buscarNombre, callBackFn) { //No se le puede hacer TDD porque es una función asíncrona
     let response = null
 
     try {
