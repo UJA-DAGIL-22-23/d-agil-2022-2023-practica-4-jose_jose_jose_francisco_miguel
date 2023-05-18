@@ -497,7 +497,7 @@ Waterpolo.cuerpoTr = function (p) { //TDD HECHO
  * Función que muestra los datos de un/a jugador/a
  * @param {*} id ID del jugador que queremos mostrar los datos
  */
-Waterpolo.mostrar = function (id) {
+Waterpolo.mostrar = function (id) { //TDD HECHO
     this.obtieneJugador(id, this.jugador)
 }
 
@@ -523,7 +523,7 @@ Waterpolo.obtieneJugador = async function (id, callBackFn) { //No se le puede ha
  * Función para actualizar la página web con los datos de un/a jugador/a
  * @param {*} jugador Datos del jugador/a que queremos mostrar
  */
-Waterpolo.jugador = function (jugador) {
+Waterpolo.jugador = function (jugador) { //TDD HECHO
 
     let msj = Waterpolo.plantillaFormularioUnJugador.actualiza(jugador)
     Frontend.Article.actualizar("Jugador/a elegido/a", msj)
@@ -570,7 +570,7 @@ Waterpolo.plantillaFormularioUnJugador.formulario = `
  * @param {*} jugador La información del jugador/a que queremos mostrar
  * @returns 
  */
-Waterpolo.plantillaFormularioUnJugador.actualiza = function (jugador) {
+Waterpolo.plantillaFormularioUnJugador.actualiza = function (jugador) { //TDD HECHO
 
     return Waterpolo.sustituyeTagsTodosLosDatos(this.formulario, jugador)
 }

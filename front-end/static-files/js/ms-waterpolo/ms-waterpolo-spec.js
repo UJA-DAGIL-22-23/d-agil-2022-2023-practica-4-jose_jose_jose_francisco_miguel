@@ -838,3 +838,37 @@ describe("Waterpolo", function() {
     });
   });
 });
+
+
+describe("Waterpolo", function() {
+  describe("plantillaFormularioUnJugador.actualiza", function() {
+    describe("actualiza", function() {
+      beforeEach(function() {
+        spyOn(Waterpolo, "sustituyeTagsTodosLosDatos").and.callThrough();
+      });
+
+      it("debería llamar a Waterpolo.sustituyeTagsTodosLosDatos con los parámetros correctos", function() {
+        // Configurar los datos de prueba
+        var jugador = {
+          ref: { '@ref': { id: 123 } },
+          data: {
+            nombre: "Jugador 1",
+            apellidos: "Apellido 1",
+            fec_nac: { dia: 1, mes: 1, anio: 1990 },
+            competiciones: "Comp1",
+            nacionalidad: "Nac1",
+            peso: 80,
+            posicion: "Pos1"
+          }
+        };
+        var formularioEsperado = Waterpolo.plantillaFormularioUnJugador.formulario;
+
+        // Llamar a la función que se va a probar
+        Waterpolo.plantillaFormularioUnJugador.actualiza(jugador);
+
+        // Verificar que Waterpolo.sustituyeTagsTodosLosDatos haya sido llamado con los parámetros correctos
+        expect(Waterpolo.sustituyeTagsTodosLosDatos).toHaveBeenCalledWith(formularioEsperado, jugador);
+      });
+    });
+  });
+});
