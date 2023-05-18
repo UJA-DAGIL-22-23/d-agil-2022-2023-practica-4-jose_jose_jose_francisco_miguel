@@ -22,6 +22,8 @@
 * **Apellidos**: Gamarra Espinar
 * **Correo**: jmge0004@red.ujaen.es
 ### Estudiante 5
+<img src='/miguel.jpg' width='200px'>
+
 * **Nombre**: Miguel
 * **Apellidos**: Liébana Beltrán
 * **Correo**:mlb00033@red.ujaen.es
