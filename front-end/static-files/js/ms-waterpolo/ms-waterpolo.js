@@ -671,7 +671,7 @@ Waterpolo.recuperaPorNombre = async function (buscarNombre, callBackFn) { //No s
  * Función que nos muestra un/a jugador/a de la base de datos
  * @param {Vector_de_persona} vector Vector con los datos de los plantilla a mostrar
  */
-Waterpolo.imprime = function (vector) {
+Waterpolo.imprime = function (vector) { //TDD HECHO
     let msj = "";
     msj += Waterpolo.plantillaTablaPersonasTodosLosDatosSINID.cabecera;
     vector.forEach(e => msj += Waterpolo.cuerpoTr(e))
@@ -684,7 +684,7 @@ Waterpolo.imprime = function (vector) {
  * Función que nos muestra un/a jugador/a de la base de datos
  * @param {Vector_de_persona} vector Vector con los datos de los plantilla a mostrar
  */
-Waterpolo.imprimeMinimoUnCriterio = function (vector) {
+Waterpolo.imprimeMinimoUnCriterio = function (vector) { //TDD HECHO
     let msj = "";
     msj += Waterpolo.plantillaTablaPersonasTodosLosDatosSINID.cabecera;
     vector.forEach(e => msj += Waterpolo.cuerpoTr(e))
@@ -696,7 +696,7 @@ Waterpolo.imprimeMinimoUnCriterio = function (vector) {
 /**
  * Función que busca un/a jugador/a por mínimo un criterio.
  */
-Waterpolo.buscarPorUnCriterioMinimo = function () {
+Waterpolo.buscarPorUnCriterioMinimo = function () { //TDD HECHO
     porNombre.style.display = 'none';
     porCampo.style.display = 'none';
     porMinimoUnCriterio.style.display = 'block';
