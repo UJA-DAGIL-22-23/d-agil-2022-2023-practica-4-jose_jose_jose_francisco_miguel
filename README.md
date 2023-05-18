@@ -117,3 +117,8 @@ Donde se ofrece de toda la funcionalidad del microservicio Beisbol:
 
 <img src='assets/img/HU_05.png'>
 
+### Captura de Trello al final del Sprint
+<img src='assets/img/trello_fin.PNG'>
+
+### Sprint Retrospective
+
