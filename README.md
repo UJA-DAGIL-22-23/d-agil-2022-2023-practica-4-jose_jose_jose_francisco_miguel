@@ -125,16 +125,24 @@ Durante este sprint, el equipo de trabajo se ha comprometido a implementar todas
 
 También se ha realizado de forma continua el Daily Scrum virtualmente donde cada uno respondía a las preguntas sobre qué hice ayer, qué hago hoy y qué problemas estoy teniendo.
 
-
 #### QUÉ HEMOS HECHO BIEN
-Hemos implementado todas las historias de usuario optando a mas de 2 puntos.
-Hemos mantenido la comunicacion en todo momento por WhatsApp.
-Hemos hecho el 
-
+Como ya hemos mencionado, se han implementado todas las historias de usuario que estaban en el Product Backlog al principio del incremento. Aunque no hiciese falta toda su implementación, el equipo ha podido distribuir y desarrollar correctamente todo el trabajo debido a la poca complejidad, de forma que se han asignado un mínimo de 2 HU por usuario salvo algunos casos especiales en los que se han asignado 1 o 3.
 
 #### QUÉ HAY QUE MEJORAR
+Tanto las historias de usuario 7,8 y 9 están implementadas en 3 botones diferentes, aunque realmente se puede hacer en 1 botón. Realmente este tipo de cosas son más estéticas al mostrarse al usuario que problemas serios de planificación o desarrollo.
 
+Otro punto a mejorar sería la inserción de comentarios dentro del código, ya los comentarios a lo largo del proyecto son nulos, y puede incrementar la curva de aprendizaje de alguien externo que empiece a trabajar en el proyecto a partir del siguiente sprint.
 
+Por último, mencionar también algunos problemas que hemos tenido al principio de la práctica, como por ejemplo que todas las prácticas individuales tenían el mismo espacio de nombres o estaban conectadas al backend bajo los mismos puertos. Estos problemas eran fáciles de resolver con editores de texto pero problématicos si alguno sub´kia su repositorio sin cambiar lo indicado.
 
 #### COMPROMISOS
+El equipo de desarrollo se compromete a mejorar los problemas ya mencionados en el anterior apartado, así como establecer fechas límite en las siguientes sprint en la implementación individual de historias de usuario.
 
+También nos comprometemos a corregir e implementar las correciones del profesorado con el objetivo de aumentar la eficacia y eficiencia del código.
+
+Por último, nos comprometemos a la revisión del plan de pruebas desarrollado y mejorarlo en el caso de que fuese insuficiente el número de pruebas realizadas.
+
+### Sprint Review
+Como hemos implementado todas las historias de usuario disponibles en el Product Backlog, no hace falta reorganizar el Product Backlog para el nuevo sprint. En el caso de que el equipo de desarrollo se reuniesen de nuevo con los clientes y éstos añadiesen nuevas historias, se pondrían en el Product Backlog del nuevo sprint. 
+
+Si se hubiese dado el caso en el que no se han completado todas las tareas asignadas o algunas elegidas se han quedado sin implementar, se reordenaría el Product Backlog para la siguiente sprint
