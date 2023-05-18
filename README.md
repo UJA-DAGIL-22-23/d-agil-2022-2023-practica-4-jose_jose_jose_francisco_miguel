@@ -4,9 +4,12 @@
 
 <img src='/jcollado.png' width='200px'>
 
-* **Nombre**: José
-* **Apellidos**: Collado Bravo
-* **Correo**: jcb00029@red.ujaen.es
+
+<img src='/jcollado.png' width='200px'>
+
+* **Nombre**: José José
+* **Apellidos**: Collado Bravo Collado Bravo
+* **Correo**: jcb00029@red.ujaen.es jcb00029@red.ujaen.es
 ### Estudiante 2
 * **Nombre**: José
 * **Apellidos**: Carpio Blanca
@@ -25,6 +28,8 @@
 * **Apellidos**: Gamarra Espinar
 * **Correo**: jmge0004@red.ujaen.es
 ### Estudiante 5
+<img src='/miguel.jpg' width='200px'>
+
 * **Nombre**: Miguel
 * **Apellidos**: Liébana Beltrán
 * **Correo**:mlb00033@red.ujaen.es
@@ -101,6 +106,9 @@ Y en la imagen se puede observar que paso la cadena "Jai" y obtengo 2 resultados
 
 #### Funcionalidades implementadas por el estudiante 5: Miguel Liébana Beltrán
 
-##### HU_05
+##### HU_05 Implementación funcionalidad estudiante numero 5
+Donde se ofrece de toda la funcionalidad del microservicio Beisbol:
 
+<img src='assets/img/HU_05.JPG'>
 
+<img src='assets/img/HU_05.JPG'>
