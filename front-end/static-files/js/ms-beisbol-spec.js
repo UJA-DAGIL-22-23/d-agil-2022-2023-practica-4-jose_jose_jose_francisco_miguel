@@ -10,10 +10,10 @@
 // Constantes para usar en las pruebas
 const elementoTituloPrueba = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_TITULO)
 const elementoContenidoPrueba = document.getElementById(Frontend.ID_SECCION_PRINCIPAL_CONTENIDO)
-const TITULO_HOME = "Beisbol Home"
-const TITULO_ACERCA_DE = "Natacion Acerca de"
+const TITULO_HOME_BEISBOL = "Beisbol Home"
+const TITULO_ACERCA_DE_BEISBOL = "Beisbol Acerca de"
 
-const datosDescargadosPrueba = {
+const datosDescargadosPrueba5 = {
     mensaje: "Mensaje de prueba descargado",
     autor: "Prueba de autor",
     email: "Prueba de email",
@@ -72,16 +72,17 @@ describe("Pruebas para Jugadores.ordenarListadoNombresAlfabeticamente HU 03", fu
   });
 
   
-  describe("Pruebas para Natacion.imprimenombreOrdenado HU 03", function() {
+  describe("Pruebas para Jugadores.ordenarNombres HU 03", function() {
     it("debe ordenar el vector alfabéticamente por nombre", function() {
       // Preparamos los datos
       let vector = [
-        { data: { nombre: "Miguel" } },
-        { data: { nombre: "Ilde" } },
-        { data: { nombre: "Alvaro" } }
+        { data: {nombre: "Miguel" } },
+        { data: {nombre: "Alvaro" } },
+        { data: {nombre: "Ilde" } }
       ];
   
-      Jugadores.ordenarListadoNombresAlfabeticamente(vector);
+      Jugadores.OrdenarNombres(vector);
+
   
       // Verifico que el vector fue ordenado correctamente
       expect(vector[0].data.nombre).toBe("Alvaro");
@@ -110,7 +111,7 @@ describe("Pruebas para Jugadores.ordenarListadoNombresAlfabeticamente HU 03", fu
       };
       const resultadoEsperado = `ID: 1a2b3c, Nombre: Pepe, Apellidos: Gonzalez, Fecha de nacimiento: 20/02/2000, participaciones en mundial: 3, partidos como MVP: 1`;
   
-      const resultadoObtenido = Plantilla.sustituyeTagsTodosLosDatos(jugador, datosJugador);
+      const resultadoObtenido = Jugadores.sustituyeTagsDatos(jugador, datosJugador);
   
       expect(resultadoObtenido).toEqual(resultadoEsperado);
     });

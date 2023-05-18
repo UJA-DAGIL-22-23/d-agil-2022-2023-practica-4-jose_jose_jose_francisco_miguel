@@ -239,7 +239,6 @@ Jugadores.sustituyeTags = function (plantilla, jugador) {
 
 Jugadores.sustituyeTagsNombre = function (plantilla, jugador) {
     return plantilla
-        .replace(new RegExp(Jugadores.plantillaTags.ID, 'g'), jugador.ref['@ref'].id)
         .replace(new RegExp(Jugadores.plantillaTags.NOMBRE, 'g'), jugador.data.nombre)
 }
 
