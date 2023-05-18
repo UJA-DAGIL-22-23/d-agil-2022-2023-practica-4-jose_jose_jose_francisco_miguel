@@ -447,7 +447,7 @@ Waterpolo.muestraJugadoresOrdenadosPor = async function (campo, callBackFn) { //
  * @param {String} campo campo por el que se van a mostrar los datos
  * @param {Vector_de_jugadores} vector Vector con los datos de los/as jugadores/as a mostrar
  */
-Waterpolo.imprimePor = function (campo, vector) {
+Waterpolo.imprimePor = function (campo, vector) { //No me sale este TDD
     //Ordeno los campos numericos de mayor a menor. Los alfabéticos se hacen solos con el .sort()
     let ordena = vector.data.sort((a, b) => {
         if (campo === "fec_nac") {
@@ -486,7 +486,7 @@ Waterpolo.imprimePor = function (campo, vector) {
  * @param {p} p Datos del jugador/a a mostrar
  * @returns El cuerpo de la tabla con los datos del jugador/a
  */
-Waterpolo.cuerpoTr = function (p) {
+Waterpolo.cuerpoTr = function (p) { //TDD HECHO
     const d = p.data
     const fecha = new Date(d.fec_nac.anio, d.fec_nac.mes - 1, d.fec_nac.dia);
     const fechaFormateada = fecha.toLocaleDateString();
@@ -506,7 +506,7 @@ Waterpolo.mostrar = function (id) {
  * @param {*} id id del jugador/a que queremos mostrar los datos
  * @param {*} callBackFn Función que se va a llamara cuando recuperemos al jugador/a
  */
-Waterpolo.obtieneJugador = async function (id, callBackFn) {
+Waterpolo.obtieneJugador = async function (id, callBackFn) { //No se le puede hacer TDD porque usa una función asíncrona
     try {
         const url = Frontend.API_GATEWAY + "/waterpolo/getPorId/" + id
         const response = await fetch(url);

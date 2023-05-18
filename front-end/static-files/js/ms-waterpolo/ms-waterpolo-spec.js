@@ -768,3 +768,28 @@ describe('Waterpolo', function() {
     });
   });
 });
+
+describe("Waterpolo", function() {
+  describe("cuerpoTr", function() {
+    it("debería devolver una cadena HTML con los datos formateados correctamente", function() {
+      // Configurar los datos de prueba
+      var jugador = {
+        data: {
+          nombre: "Jugador 1",
+          apellidos: "Apellido 1",
+          fec_nac: { anio: 1990, mes: 1, dia: 1 },
+          competiciones: "Comp1",
+          nacionalidad: "Nac1",
+          peso: 80,
+          posicion: "Pos1"
+        }
+      };
+
+      // Llamar a la función que se va a probar
+      var resultado = Waterpolo.cuerpoTr(jugador);
+
+      // Verificar el resultado esperado
+      expect(resultado).toEqual('<tr><td>Jugador 1</td><td>Apellido 1</td><td>1/1/1990</td><td>Comp1</td><td>Nac1</td><td>80</td><td>Pos1</td></tr>');
+    });
+  });
+});
