@@ -145,6 +145,6 @@ Por último, nos comprometemos a la revisión del plan de pruebas desarrollado y
 ### Sprint Review
 Como hemos implementado todas las historias de usuario disponibles en el Product Backlog, no hace falta reorganizar el Product Backlog para el nuevo sprint. En el caso de que el equipo de desarrollo se reuniesen de nuevo con los clientes y éstos añadiesen nuevas historias, se pondrían en el Product Backlog del nuevo sprint. 
 
-Si se hubiese dado el caso en el que no se han completado todas las tareas asignadas o algunas elegidas se han quedado sin implementar, se reordenaría el Product Backlog para la siguiente sprint.
+Si se hubiese dado el caso en el que no se han completado todas las tareas asignadas o algunas elegidas se han quedado sin implementar, se reordenaría el Product Backlog para el siguiente sprint con las historias de usuario no implementadas en este sprint.
 
 Como conclusión, en este incremento se han podido realizar de forma satisfactoria todas las historias de usuario aportando sus correspondientes capturas de pantalla, en el repositorio, más concretamente en este readme están puestas las imágenes del tablero trello del inicio y final asi como las imágenes de las historias correspondientes.
