@@ -904,3 +904,19 @@ describe("Waterpolo", function() {
     });
   });
 });
+
+describe("Waterpolo", function() {
+  describe("buscarHastaCuatroCriterios", function() {
+    beforeEach(function() {
+      spyOn(Frontend, "agregarHistorial").and.callThrough();
+    });
+
+    it("debería llamar a Frontend.agregarHistorial con el mensaje correcto", function() {
+      // Llamar a la función que se va a probar
+      Waterpolo.buscarHastaCuatroCriterios();
+
+      // Verificar que Frontend.agregarHistorial haya sido llamado con el mensaje correcto
+      expect(Frontend.agregarHistorial).toHaveBeenCalledWith("Pulsado botón Buscar Por Cuatro Criterios");
+    });
+  });
+});

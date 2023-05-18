@@ -707,7 +707,7 @@ Waterpolo.buscarPorUnCriterioMinimo = function () { //TDD HECHO
 /**
  * Función para buscar a un/a jugador/a por mínimo un criterio.
  */
-Waterpolo.buscarMinimoUnCriterio = function (nombre, apellidos, nacionalidad, posicion) {
+Waterpolo.buscarMinimoUnCriterio = function (nombre, apellidos, nacionalidad, posicion) { //No se pude hacer TDD porque solo llama a una función asíncrona
     this.recuperaPorMinimoUnCriterio(nombre, apellidos, nacionalidad, posicion, this.imprimeMinimoUnCriterio);
 }
 
@@ -715,7 +715,7 @@ Waterpolo.buscarMinimoUnCriterio = function (nombre, apellidos, nacionalidad, po
  * Función que filtrará los datos de la base de datos por mínimo un criterio.
  * @param {función} callBackFn Función a la que se llamará una vez recibidos los datos.
  */
-Waterpolo.recuperaPorMinimoUnCriterio = async function (nombre2, apellidos2, nacionalidad2, posicion2, callBackFn) {
+Waterpolo.recuperaPorMinimoUnCriterio = async function (nombre2, apellidos2, nacionalidad2, posicion2, callBackFn) { //No se le puede hacer TDD porque es una función asíncrona
     let response = null
 
     try {
@@ -737,7 +737,7 @@ Waterpolo.recuperaPorMinimoUnCriterio = async function (nombre2, apellidos2, nac
 /**
  * Función que busca un/a jugador/a por cuatro criterios.
  */
-Waterpolo.buscarHastaCuatroCriterios = function () {
+Waterpolo.buscarHastaCuatroCriterios = function () { //TDD HECHO
     porNombre.style.display = 'none';
     porCampo.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
@@ -748,7 +748,7 @@ Waterpolo.buscarHastaCuatroCriterios = function () {
 /**
  * Función para buscar a un/a jugador/a por cuatro criterios.
  */
-Waterpolo.buscarCuatroCriterios = function (nombre, apellidos, nacionalidad, posicion) {
+Waterpolo.buscarCuatroCriterios = function (nombre, apellidos, nacionalidad, posicion) { //No se pude hacer TDD porque solo llama a una función asíncrona
     this.recuperaPorCuatroCriterios(nombre, apellidos, nacionalidad, posicion, this.imprimeCuatroCriterios);
 }
 
@@ -756,7 +756,7 @@ Waterpolo.buscarCuatroCriterios = function (nombre, apellidos, nacionalidad, pos
  * Función que filtrará los datos de la base de datos por cuatro criterios.
  * @param {función} callBackFn Función a la que se llamará una vez recibidos los datos.
  */
-Waterpolo.recuperaPorCuatroCriterios = async function (nombre4, apellidos4, nacionalidad4, posicion4, callBackFn) {
+Waterpolo.recuperaPorCuatroCriterios = async function (nombre4, apellidos4, nacionalidad4, posicion4, callBackFn) { //No se le puede hacer TDD porque es una función asíncrona
     let response = null
 
     try {
