@@ -116,4 +116,22 @@ describe("Pruebas para Jugadores.ordenarListadoNombresAlfabeticamente HU 03", fu
       expect(resultadoObtenido).toEqual(resultadoEsperado);
     });
   });
+
+  // Proyecto grupal--------------------------------------------------------------------------------------------
+  describe("Jugadores.recuperaVector", function() {
+    it("debe devolver un vector con los datos de natación desde la API Gateway", async function() {
+  
+      spyOn(window, "fetch").and.returnValue(Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ data: [1, 2, 3] })
+      }));
+  
+      const result = await Jugadores.recuperaVector();
+  
+      expect(result).toEqual([1, 2, 3]);
+      expect(window.fetch).toHaveBeenCalledWith(
+        Frontend.API_GATEWAY + "/beisbol/getTodas"
+      );
+    });
+  });
   
