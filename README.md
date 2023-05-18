@@ -121,4 +121,8 @@ Donde se ofrece de toda la funcionalidad del microservicio Beisbol:
 <img src='assets/img/trello_fin.PNG'>
 
 ### Sprint Retrospective
+Durante este sprint, el equipo de trabajo se ha comprometido a implementar todas las HU que se encontraban en el Product Backlog. Esto incluye el desarrollo de una aplicación web de deportes basado en microservicios que incluyen remo, natación, waterpolo, béisbol y fútbol americano.
+
+También se ha realizado de forma continua el Daily Scrum virtualmente donde cada uno respondía a las preguntas sobre qué hice ayer, qué hago hoy y qué problemas estoy teniendo.
+
 
