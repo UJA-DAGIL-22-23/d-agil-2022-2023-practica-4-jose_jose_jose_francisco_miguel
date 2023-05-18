@@ -29,7 +29,7 @@
 
 * **Nombre**: Miguel
 * **Apellidos**: Liébana Beltrán
-* **Correo**:mlb00033@red.ujaen.es
+* **Correo**: mlb00033@red.ujaen.es
 
 ## Enlace al tablero Trello
 https://trello.com/b/b3EMiSkn/practica4-da
@@ -45,7 +45,7 @@ Tambien todas las HU han sido asignadas al princio de la siguiente forma:
 - El estudiante 2 se encargará de las historias de Usuario: 02 y 11.
 - El estudiante 3 se encargará de las historias de Usuario: 03, 07 y 08.
 - El estudiante 4 se encargará de las historias de Usuario: 04 y 09.
-- El estudiante 5 se encargará de las historias de Usuario: 05.
+- El estudiante 5 se encargará de la historia de Usuario: 05.
 
 #### Funcionalidades implementadas por el estudiante 1: José Collado Bravo
 
