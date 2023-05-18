@@ -4,9 +4,6 @@
 
 <img src='/jcollado.png' width='200px'>
 
-
-<img src='/jcollado.png' width='200px'>
-
 * **Nombre**: José José
 * **Apellidos**: Collado Bravo Collado Bravo
 * **Correo**: jcb00029@red.ujaen.es jcb00029@red.ujaen.es
@@ -109,6 +106,5 @@ Y en la imagen se puede observar que paso la cadena "Jai" y obtengo 2 resultados
 ##### HU_05 Implementación funcionalidad estudiante numero 5
 Donde se ofrece de toda la funcionalidad del microservicio Beisbol:
 
-<img src='assets/img/HU_05.JPG'>
+<img src='assets/img/HU_05.png'>
 
-<img src='assets/img/HU_05.JPG'>
