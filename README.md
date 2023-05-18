@@ -5,8 +5,8 @@
 <img src='/jcollado.png' width='200px'>
 
 * **Nombre**: José
-* **Apellidos**: Collado Bravo Collado Bravo
-* **Correo**: jcb00029@red.ujaen.es jcb00029@red.ujaen.es
+* **Apellidos**: Collado Bravo
+* **Correo**: jcb00029@red.ujaen.es
 ### Estudiante 2
 * **Nombre**: José
 * **Apellidos**: Carpio Blanca
