@@ -776,7 +776,7 @@ Waterpolo.recuperaPorCuatroCriterios = async function (nombre4, apellidos4, naci
     }
 }
 
-Waterpolo.imprimeCuatroCriterios = function (vector) {
+Waterpolo.imprimeCuatroCriterios = function (vector) { //TDD HECHO
     let msj = "";
     msj += Waterpolo.plantillaTablaPersonasTodosLosDatosSINID.cabecera;
     vector.forEach(e => msj += Waterpolo.cuerpoTr(e))
@@ -786,7 +786,7 @@ Waterpolo.imprimeCuatroCriterios = function (vector) {
 }
 //Practica Grupal-------------------------------------------------------------
 //HU 07-----------------------------------------------------------------------
-Waterpolo.recuperaVector = async function () {
+Waterpolo.recuperaVector = async function () { //No se le puede hacer TDD porque es una función asíncrona
     let response = null
 
     // Intento conectar con el microservicio personas
