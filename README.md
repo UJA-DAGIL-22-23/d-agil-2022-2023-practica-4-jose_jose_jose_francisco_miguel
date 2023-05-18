@@ -51,18 +51,18 @@ Tambien todas las HU han sido asignadas al princio de la siguiente forma:
 
 HU 01: Ofrecer en la aplicación toda la funcionalidad de la práctica individual creada por el/la estudiante núm. 1. Puntos: 0,25
 
-<img src='assets/img/HU_1.PNG'>
+<img src='assets/img/HU_1.png'>
 
 HU 06: Ver en una sola página la información de todos los autores de la aplicación al pulsar en el botón “Acerca de”. Puntos 0,1
 
-<img src='assets/img/HU_6.PNG'>
+<img src='assets/img/HU_6.png'>
 
 
 HU 10: Modificar la visualización de la app con un modo ALTO CONTRASTE. (Es decir: el usuario podrá cambiar entre visualizar la app en el modo normal o en modo ALTO CONTRASTE pulsando solo un botón). Puntos 0,3
 
-<img src='assets/img/HU_10.PNG'>
+<img src='assets/img/HU_10.png'>
 
-<img src='assets/img/HU_10_2.PNG'>
+<img src='assets/img/HU_10_2.png'>
 
 
 #### Funcionalidades implementadas por el estudiante 2: José Carpio Blanca
