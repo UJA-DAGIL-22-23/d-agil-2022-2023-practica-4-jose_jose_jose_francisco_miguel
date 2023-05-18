@@ -49,7 +49,9 @@ Tambien todas las HU han sido asignadas al princio de la siguiente forma:
 
 #### Funcionalidades implementadas por el estudiante 1: José Collado Bravo
 
-##### HU_1
+HU 01: Ofrecer en la aplicación toda la funcionalidad de la práctica individual creada por el/la estudiante núm. 1. Puntos: 0,25
+
+<img src='assets/img/HU_1.PNG'>
 
 ##### HU_06
 
