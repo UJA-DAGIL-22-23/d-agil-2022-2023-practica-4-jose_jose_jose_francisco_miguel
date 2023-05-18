@@ -122,3 +122,15 @@ Donde se ofrece de toda la funcionalidad del microservicio Beisbol:
 
 ### Sprint Retrospective
 
+#### QUÉ HEMOS HECHO BIEN
+Hemos implementado todas las historias de usuario optando a mas de 2 puntos.
+Hemos mantenido la comunicacion en todo momento por WhatsApp.
+Hemos hecho el 
+
+
+#### QUÉ HAY QUE MEJORAR
+
+
+
+#### COMPROMISOS
+
