@@ -216,9 +216,10 @@ Jugadores.pieTable = function () {
 
 
 // Pie de la tabla
-Jugadores.tablaJugadoresNombres.pie = `        </tbody>
-             </table>
-             `;
+Jugadores.tablaJugadoresNombres.pie = `</tbody></table>`;
+// Pie de la tabla
+Jugadores.tablaJugadoresDatos.pie = `</tbody></table>`;
+
 
 
 /**
@@ -410,7 +411,7 @@ Jugadores.imprimeListadoDatos = function (vector) {
     let msj = "";
     msj += Jugadores.tablaJugadoresDatos.cabecera;
     vector.forEach(e => msj += Jugadores.tablaJugadoresDatos.actualiza(e))
-    msj += Jugadores.pieTable;
+    msj += Jugadores.tablaJugadoresDatos.pie;
 
     // Borro toda la info de Article y la sustituyo por la que me interesa
     Frontend.Article.actualizar( "Listado de jugadores", msj )
