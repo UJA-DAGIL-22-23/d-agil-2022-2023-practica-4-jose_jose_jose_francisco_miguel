@@ -398,7 +398,7 @@ Waterpolo.listarTodosLosDatos = function (vector) { //TDD HECHO
 /**
  * Función principal para recuperar todo los datos de todos/as los/as jugadores/as desde el MS y, posteriormente, imprimirlas.
  */
-Waterpolo.listarTodoLosDatos = function () { //TDD HECHO
+Waterpolo.listarTodoLosDatos = function () { //No me sale este TDD, no sé si es porque usa una función asíncrona en la línea 406
     porNombre.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
     porCuatroCriterios.style.display = 'none';
