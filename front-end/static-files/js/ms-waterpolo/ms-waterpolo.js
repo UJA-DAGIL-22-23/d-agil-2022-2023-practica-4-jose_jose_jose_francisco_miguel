@@ -102,7 +102,7 @@ Waterpolo.plantillaTablaPersonasTodosLosDatosSoloNombres.actualiza = function (p
  * @param {string} ruta Ruta a descargar
  * @param {función} callBackFn Función a la que se llamará una vez recibidos los datos.
  */
-Waterpolo.descargarRuta = async function (ruta, callBackFn) {
+Waterpolo.descargarRuta = async function (ruta, callBackFn) { //No se le hace TDD porque es una función asíncrona
     let response = null
 
     // Intento conectar con el microservicio Plantilla
@@ -125,7 +125,7 @@ Waterpolo.descargarRuta = async function (ruta, callBackFn) {
 /**
  * Función principal para mostrar los datos enviados por la ruta "home" de MS Plantilla
  */
-Waterpolo.mostrarHome = function (datosDescargados) {
+Waterpolo.mostrarHome = function (datosDescargados) { //TDD HECHO por Víctor
     // Si no se ha proporcionado valor para datosDescargados
     datosDescargados = datosDescargados || this.datosDescargadosNulos
 
@@ -141,7 +141,7 @@ Waterpolo.mostrarHome = function (datosDescargados) {
 /**
  * Función principal para mostrar los datos enviados por la ruta "acerca de" de MS Plantilla
  */
-Waterpolo.mostrarAcercaDe = function (datosDescargados) {
+Waterpolo.mostrarAcercaDe = function (datosDescargados) { //TDD HECHO por Víctor
     // Si no se ha proporcionado valor para datosDescargados
     datosDescargados = datosDescargados || this.datosDescargadosNulos
 
@@ -181,7 +181,7 @@ Waterpolo.mostrarAcercaDe = function (datosDescargados) {
 /**
  * Función principal para responder al evento de elegir la opción "Home"
  */
-Waterpolo.procesarHome = function () {
+Waterpolo.procesarHome = function () { //TDD HECHO por Víctor
     porCampo.style.display = 'none';
     porNombre.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
@@ -194,7 +194,7 @@ Waterpolo.procesarHome = function () {
 /**
  * Función principal para responder al evento de elegir la opción "Acerca de"
  */
-Waterpolo.procesarAcercaDe = function () {
+Waterpolo.procesarAcercaDe = function () { //TDD HECHO por Víctor
     porCampo.style.display = 'none';
     porNombre.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
@@ -208,7 +208,7 @@ Waterpolo.procesarAcercaDe = function () {
  * @param {función} callBackFn Función a la que se llamará una vez recibidos los datos.
  */
 
-Waterpolo.recupera = async function (callBackFn) {
+Waterpolo.recupera = async function (callBackFn) { //No se le hace TDD porque es una función asíncrona
     let response = null
 
     // Intento conectar con el microservicio personas
@@ -382,7 +382,7 @@ Waterpolo.plantillaTablaPersonasTodosLosDatos.actualiza = function (persona) { /
     return Waterpolo.sustituyeTagsTodosLosDatos(this.cuerpo, persona)
 }
 
-Waterpolo.listarTodosLosDatos = function (vector) {
+Waterpolo.listarTodosLosDatos = function (vector) { //TDD HECHO
     porCampo.style.display = 'none';
     porNombre.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
@@ -398,7 +398,7 @@ Waterpolo.listarTodosLosDatos = function (vector) {
 /**
  * Función principal para recuperar todo los datos de todos/as los/as jugadores/as desde el MS y, posteriormente, imprimirlas.
  */
-Waterpolo.listarTodoLosDatos = function () {
+Waterpolo.listarTodoLosDatos = function () { //TDD HECHO
     porNombre.style.display = 'none';
     porMinimoUnCriterio.style.display = 'none';
     porCuatroCriterios.style.display = 'none';
@@ -409,7 +409,7 @@ Waterpolo.listarTodoLosDatos = function () {
 /**
  * Función que se activa cuando se pulsa el botón de ordenar por campo
  */
-Waterpolo.ordenarPor = function () {
+Waterpolo.ordenarPor = function () { //No me sale este TDD, no sé si es porque usa una función asíncrona en la línea 423
     const porCampo = document.querySelector('#porCampo');
     porCampo.style.display = 'block';
     porNombre.style.display = 'none';
@@ -429,7 +429,7 @@ Waterpolo.ordenarPor = function () {
  * @param {String} campo campo por el que se ordenan los/as jugadores/as
  * @param {*} callBackFn Función a la que se llamará una vez recibidos los datos.
  */
-Waterpolo.muestraJugadoresOrdenadosPor = async function (campo, callBackFn) {
+Waterpolo.muestraJugadoresOrdenadosPor = async function (campo, callBackFn) { //No se le puede hacer TDD porque usa una función asíncrona
     try {
         const url = Frontend.API_GATEWAY + "/waterpolo/getTodas"
         const response = await fetch(url);
