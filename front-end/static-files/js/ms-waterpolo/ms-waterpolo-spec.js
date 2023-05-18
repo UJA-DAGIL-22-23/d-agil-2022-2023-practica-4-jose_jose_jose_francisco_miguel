@@ -793,3 +793,48 @@ describe("Waterpolo", function() {
     });
   });
 });
+
+describe("Waterpolo", function() {
+  describe("mostrar", function() {
+    beforeEach(function() {
+      spyOn(Waterpolo, "obtieneJugador");
+      spyOn(Frontend.Article, "actualizar");
+    });
+
+    it("debería llamar a Waterpolo.obtieneJugador con el ID proporcionado", function() {
+      // Configurar el ID de prueba
+      var id = 123;
+
+      // Llamar a la función que se va a probar
+      Waterpolo.mostrar(id);
+
+      // Verificar que Waterpolo.obtieneJugador haya sido llamado con el ID correcto
+      expect(Waterpolo.obtieneJugador).toHaveBeenCalledWith(id, jasmine.any(Function));
+    });
+
+    it("debería llamar a Frontend.Article.actualizar con el título y contenido adecuados", function() {
+      // Configurar los datos de prueba
+      var jugador = {
+        ref: { '@ref': { id: 123 } },
+        data: {
+          nombre: "Jugador 1",
+          apellidos: "Apellido 1",
+          fec_nac: { dia: 1, mes: 1, anio: 1990 },
+          competiciones: "Comp1",
+          nacionalidad: "Nac1",
+          peso: 80,
+          posicion: "Pos1"
+        }
+      };
+      var msjEsperado = Waterpolo.plantillaFormularioUnJugador.actualiza(jugador);
+
+      // Llamar a la función que se va a probar
+      Waterpolo.mostrar(123);
+      var callBackFn = Waterpolo.obtieneJugador.calls.mostRecent().args[1];
+      callBackFn(jugador);
+
+      // Verificar que Frontend.Article.actualizar haya sido llamado con los parámetros adecuados
+      expect(Frontend.Article.actualizar).toHaveBeenCalledWith("Jugador/a elegido/a", msjEsperado);
+    });
+  });
+});
