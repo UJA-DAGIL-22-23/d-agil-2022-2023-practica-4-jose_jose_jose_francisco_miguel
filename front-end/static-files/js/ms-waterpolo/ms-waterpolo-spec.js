@@ -528,7 +528,7 @@ describe('Waterpolo.anterior', function () {
 
 });
 
-describe('Waterpolo.anterior', function () {
+describe('Waterpolo.siguiente', function () {
 
   // Creamos un vector de ejemplo para las pruebas
   let vector = [

@@ -576,17 +576,17 @@ Waterpolo.plantillaFormularioUnJugador.actualiza = function (jugador) { //TDD HE
 }
 
 // Función que nos muestra el/la siguiente jugador/a de la base de datos
-Waterpolo.jugadorSiguiente = function () {
+Waterpolo.jugadorSiguiente = function () { //No sé si se le puede hacer TDD porque usa una función asíncrona
     Waterpolo.recupera(this.siguiente)
 }
 
 // Función que nos muestra el/la anterior jugador/a de la base de datos
-Waterpolo.jugadorAnterior = function () {
+Waterpolo.jugadorAnterior = function () { //No sé si se le puede hacer TDD porque usa una función asíncrona
     Waterpolo.recupera(this.anterior)
 }
 
 // Función que nos muestra el/la siguiente jugador/a de la base de datos
-Waterpolo.siguiente = function (vector) {
+Waterpolo.siguiente = function (vector) { //TDD HECHO
     let pos
     let indices = []
     if (Array.isArray(vector)) {
@@ -606,7 +606,7 @@ Waterpolo.siguiente = function (vector) {
 }
 
 // Función que nos muestra el/la anterior jugador/a de la base de datos
-Waterpolo.anterior = function (vector) {
+Waterpolo.anterior = function (vector) { //TDD HECHO
     let pos
     let indices = []
     if (Array.isArray(vector)) {
