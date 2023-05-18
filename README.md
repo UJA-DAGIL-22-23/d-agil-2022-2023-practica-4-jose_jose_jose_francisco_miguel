@@ -53,7 +53,10 @@ HU 01: Ofrecer en la aplicación toda la funcionalidad de la práctica individua
 
 <img src='assets/img/HU_1.PNG'>
 
-##### HU_06
+HU 06: Ver en una sola página la información de todos los autores de la aplicación al pulsar en el botón “Acerca de”. Puntos 0,1
+
+<img src='assets/img/HU_6.PNG'>
+
 
 ##### HU_10
 
